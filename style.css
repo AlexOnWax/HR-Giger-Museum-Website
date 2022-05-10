@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Play&display=swap');
+body {
+    box-sizing: border-box;
+    margin: auto;
+    background-image: url(/img/fond-giger-png.png);
+    background-color: #251F1C;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-origin: initial;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    font-family: 'Play', sans-serif;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 550px;
+}
+.logo-title-header {
+    display: flex;
+    gap: 20px;
+}
+
+#language-change {
+    position: absolute;
+    right: 20px;
+} 
+
+header ul {
+    list-style-type: none;
+    display: flex;
+    gap:50px;
+    font-size: 16px;
+}
+.main {
+    margin-left: 80px;
+    display: flex;
+    margin-bottom: 90px;
+
+}
+.main h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 96px;
+    font-weight: lighter;
+}
+.img-menu {
+    width: 240px;
+    height: 693px;
+    
+    
+}
+.img-menu1{
+    background-image: url(/img/Rectangle\ 78.png);
+    width: 240px;
+    height: 682px;
+}
+.img-menu2{
+    background-image: url(/img/Rectangle\ 81.png);
+    width: 240px;
+    height: 682px;
+
+}
+.img-menu3{
+    background-image: url(/img/Rectangle\ 80.png);
+    width: 240px;
+    height: 682px;
+
+}
+.grid-main-img {
+    margin-left: 200px;
+    display: flex;
+    gap: 25px;
+}
+
+footer {
+    display: flex;
+    gap: 20px;
+    align-items:center;
+    justify-content: space-between;
+    margin:0 20px 0 20px ;
+}
+.nav-all {
+    display: flex;
+    gap: 40px;
+   
+}
+.navdot {
+    width:20px ;
+    height: 20px;
+    background-color: #C4C4C4;
+    border-radius: 50%;
+
+}
