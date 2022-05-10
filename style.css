@@ -1,23 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Play&display=swap');
+
 body {
     box-sizing: border-box;
-    margin: auto;
+    margin: 0;
+    padding: 0;
+    background-color: black;
     background-image: url(/img/fond-giger-png.png);
-    background-color: #251F1C;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
-    background-origin: initial;
     background-size: cover;
-    background-attachment: fixed;
+    height: 100vh;
     color: #fff;
     font-family: 'Play', sans-serif;
 }
+/*Header----------------*/
 header {
+    position: fixed;
+    top: 0px;
+    width: 70%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    justify-content: space-between;
-    padding-right: 550px;
+    justify-content: space-between
 }
 .logo-title-header {
     display: flex;
@@ -35,38 +39,61 @@ header ul {
     gap:50px;
     font-size: 16px;
 }
-.main {
-    margin-left: 80px;
-    display: flex;
-    margin-bottom: 90px;
+/*Header----------------*/
 
+
+/*general----------------*/
+.paragraphe {
+    font-size: 32px;
 }
-.main h1 {
+.title-page {
+    font-size: 40px;
+    font-family: 'Cinzel', serif;
+    font-weight: normal;
+}
+h2 {
+    align-self: flex-start;
+}
+/*general-----------------*/
+
+
+/*landing page-------------*/
+.main-landing-page {
+   height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main-landing-page h1 {
     font-family: 'Cinzel', serif;
     font-size: 96px;
     font-weight: lighter;
 }
-.img-menu {
-    width: 240px;
-    height: 693px;
-    
-    
-}
+/*landing page-------------*/
+
+
+/*firstpage Main menu--------------*/
+
 .img-menu1{
     background-image: url(/img/Rectangle\ 78.png);
-    width: 240px;
-    height: 682px;
+    width: 230px;
+    min-height: 600px ;
+    max-height: 612px;
 }
 .img-menu2{
     background-image: url(/img/Rectangle\ 81.png);
-    width: 240px;
-    height: 682px;
-
+    width: 230px;
+    min-height: 600px ;
+    max-height: 612px;
 }
 .img-menu3{
     background-image: url(/img/Rectangle\ 80.png);
-    width: 240px;
-    height: 682px;
+    width: 230px;
+    min-height: 600px ;
+    max-height: 612px;
 
 }
 .grid-main-img {
@@ -74,13 +101,79 @@ header ul {
     display: flex;
     gap: 25px;
 }
+/*firstpage Main menu--------------*/
 
-footer {
+
+
+/*second page News-----------------*/
+.news-text-flex {
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    width: 500px;
+}
+.main-news {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90%;
+    width: 100%;
+
+}
+#title-article-news {
+    font-size: 36px;
+}
+/*second page News-----------------*/
+
+
+
+/*3rd page exhibition---------------*/
+.main-exhibition {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90%;
+    width: 100%;
+}
+ #grid-exhibition {
+     display: grid;
+     grid-template-columns:1fr 1fr 1fr 1fr ;
+     grid-template-rows:1fr 1fr 1fr ;
+     gap: 28px;
+ }
+/*3rd page exhibition---------------*/
+ 
+/*4rd page Access---------------*/
+
+.main-access {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90%;
+    width: 100%;
+}
+#grid-access{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+
+
+
+
+
+
+/*4rd page Access---------------*/
+
+
+/*footer-----------------------*/
+footer {
+    position:fixed;
+    bottom:0px;
+    width: 100%;
+    display: flex;
     align-items:center;
     justify-content: space-between;
-    margin:0 20px 0 20px ;
+   
 }
 .nav-all {
     display: flex;
@@ -94,3 +187,4 @@ footer {
     border-radius: 50%;
 
 }
+/*footer-----------------------*/
