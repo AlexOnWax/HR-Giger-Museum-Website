@@ -30,6 +30,39 @@ body {
 }
 
 /*general-----------------*/
+/*scroll horizontal*/
+.flex {
+ 
+  display: flex;
+  flex-direction: column;
+  /* width: 100vh;
+  /transform: rotate(90deg) translateX(-100vh);
+  transform-origin: top left;  */
+
+    
+}
+/* .container {
+    width: 100vw;
+    height: 100vh;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+} */
+/* .page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+} */
+
+
+
+
+/*scroll horizontal*/
+
+
+
 
 
 /*Header----------------*/
@@ -163,7 +196,7 @@ header ul {
      gap: 28px;
  }
  .page-exhibition .title-page {
-     
+    align-self: flex-start;
      margin-top: 100px;
  }
 /*3rd page exhibition---------------*/
@@ -235,6 +268,7 @@ header ul {
     width: 100%;
 }
 .page-video .title-page {
+    align-self: flex-start;
     margin-top: 100px;
 }
 .main-video video {
