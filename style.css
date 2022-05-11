@@ -3,6 +3,10 @@
     --font-title:'Cinzel', serif;
     --font-text: 'Play', sans-serif;
 }
+/*enlever scrollbar*/
+::-webkit-scrollbar {
+    display: none;
+}
 
 body {
     box-sizing: border-box;
@@ -18,6 +22,9 @@ body {
     color: #fff;
     font-family: var(--font-text);
     overflow-y: hidden;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    
 }
 /*general----------------*/
 .paragraphe {
@@ -31,11 +38,17 @@ body {
 }
 
 /*general-----------------*/
+
+
+
 /*scroll horizontal*/
 .flex {
- 
+ /*Enlever scrollbar pour mozzilla et ie*/
+/* -ms-overflow-style: none;
+scrollbar-width:none; */
   display: grid;
   grid-template-rows: 1fr;
+  
   grid-template-columns: repeat( 7,100vw);
    
 }
@@ -60,7 +73,8 @@ header {
 }
 .logo-title-header {
     display: flex;
-    gap: 20px;
+    gap: 15px;
+    align-items: center;
 }
 
 #language-change {
