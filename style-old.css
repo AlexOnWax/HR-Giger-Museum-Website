@@ -1,8 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Play&display=swap');
-:root {
-    --font-title:'Cinzel', serif;
-    --font-text: 'Play', sans-serif;
-}
 
 body {
     box-sizing: border-box;
@@ -16,22 +12,8 @@ body {
     background-size: cover;
     height: 100vh;
     color: #fff;
-    font-family: var(--font-text);
+    font-family: 'Play', sans-serif;
 }
-/*general----------------*/
-.paragraphe {
-    font-size: 32px;
-}
-.title-page {
-    font-size: 40px;
-    font-family: var(--font-title);
-    font-weight: normal;
-    
-}
-
-/*general-----------------*/
-
-
 /*Header----------------*/
 header {
     position: fixed;
@@ -39,7 +21,7 @@ header {
     width: 70%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between
 }
 .logo-title-header {
     display: flex;
@@ -60,12 +42,24 @@ header ul {
 /*Header----------------*/
 
 
+/*general----------------*/
+.paragraphe {
+    font-size: 32px;
+}
+.title-page {
+    font-size: 40px;
+    font-family: 'Cinzel', serif;
+    font-weight: normal;
+}
+h2 {
+    align-self: flex-start;
+}
+/*general-----------------*/
 
 
-
-/*firstpage Landing Page--------------*/
-.page-landing {
-   height: 100vh;
+/*landing page-------------*/
+.main-landing-page {
+   height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -73,11 +67,15 @@ header ul {
     align-items: center;
 }
 
-.page-landing h1 {
-    font-family: var(--font-title);
+.main-landing-page h1 {
+    font-family: 'Cinzel', serif;
     font-size: 96px;
     font-weight: lighter;
 }
+/*landing page-------------*/
+
+
+/*firstpage Main menu--------------*/
 
 .img-menu1{
     background-image: url(/img/Rectangle\ 78.png);
@@ -103,18 +101,11 @@ header ul {
     display: flex;
     gap: 25px;
 }
-/*firstpage Landing Page--------------*/
+/*firstpage Main menu--------------*/
+
 
 
 /*second page News-----------------*/
-.page-news {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
 .news-text-flex {
     display: flex;
     flex-direction: column;
@@ -131,22 +122,11 @@ header ul {
 #title-article-news {
     font-size: 36px;
 }
-.page-news .title-page {
-   align-self: flex-start;
-}
 /*second page News-----------------*/
 
 
 
 /*3rd page exhibition---------------*/
-.page-exhibition {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
 .main-exhibition {
     display: flex;
     justify-content: space-around;
@@ -160,20 +140,10 @@ header ul {
      grid-template-rows:1fr 1fr 1fr ;
      gap: 28px;
  }
- .page-exhibition .title-page {
-     align-self: flex-start;
- }
 /*3rd page exhibition---------------*/
  
 /*4rd page Access---------------*/
-.page-access {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
+
 .main-access {
     display: flex;
     justify-content: space-around;
@@ -182,32 +152,15 @@ header ul {
     width: 100%;
 }
 #grid-access{
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-     justify-items: center;
-     align-items: center;
-     gap: 20px;
-     margin-right: 100px;
+}
 
-}
-.page-access .title-page {
-    align-self: flex-start;
-    
-}
-#opening-hours {
-    grid-area: 1/1/3/2;
-    width:335px ;
-    text-align: center;
-}
-#pub-hours {
-    width:335px ;
-    text-align: center;
 
-}
-#img-map {
-    grid-area: 2/2/3/3;
-}
+
+
+
+
 
 /*4rd page Access---------------*/
 
