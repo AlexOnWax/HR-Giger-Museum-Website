@@ -34,7 +34,9 @@ body {
     font-weight: normal;
     
 }
-
+.page {
+    scroll-snap-align: center;
+}
 /*general-----------------*/
 
 
@@ -44,10 +46,10 @@ body {
  /*Enlever scrollbar pour mozzilla et ie*/
 /* -ms-overflow-style: none;
 scrollbar-width:none; */
-scroll-snap-type: mandatory;
-    overflow-y: hidden;
-    overflow-x:hidden;
-    scroll-behavior: smooth;
+scroll-snap-type: x mandatory;
+overflow-y: hidden;
+overflow-x:hidden;
+scroll-behavior: smooth;
     
   display: grid;
   grid-template-rows: 1fr;
@@ -91,6 +93,12 @@ header ul {
     display: flex;
     gap:50px;
     font-size: 16px;
+   
+
+}
+header a {
+    text-decoration: none;
+    color: #fff;
 }
 /*Header----------------*/
 
@@ -106,6 +114,7 @@ header ul {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    scroll-snap-align: center;
 }
 
 .page-landing h1 {
