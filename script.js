@@ -1,7 +1,24 @@
-const body = document.querySelector("body");
+const cont = document.querySelector(".flex");
 const header = document.querySelector(".logo-title-header")
+const arrowR = document.querySelector("#arrow")
+const arrowL = document.querySelector("#arrowleft")
 
-body.addEventListener('wheel',(x) => {
-x.preventDefault();
-body.scrollLeft += x.deltaY;
+cont.addEventListener("wheel",(x) => {
+// evt.preventDefault();
+  cont.scrollLeft += (x.deltaY*15.4);
+ 
+  
+
+});
+
+
+arrowR.addEventListener('click',() =>{
+    
+    cont.scrollLeft +=1600;
+
+});
+arrowL.addEventListener('click',() =>{
+    
+    cont.scrollLeft -=1600;
+
 });
