@@ -40,6 +40,19 @@ body {
 .page {
     scroll-snap-align: center;
 }
+
+.card {
+    transition: border-radius cubic-bezier(0.075, 0.82, 0.165, 1) 1s,
+                 transform cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+   }
+   
+   .card:hover {
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    transform: scale(1.05);
+   }
+
+ 
 /*general-----------------*/
 
 
@@ -82,10 +95,10 @@ header {
     align-items: center;
 }
 
-#language-change {
+/* #language-change {
     position: absolute;
     right: 20px;
-} 
+}  */
 
 header ul {
     list-style-type: none;
@@ -99,6 +112,13 @@ header a {
     text-decoration: none;
     color: #fff;
 }
+
+ 
+.hover_menu:hover {
+      
+    border-bottom: solid rgba(145, 107, 107, 0.418);
+   }
+  
 /*Header----------------*/
 
 
@@ -306,7 +326,7 @@ header a {
     align-self: flex-start;
     margin-top: 100px;
 }
-.main-video video {
+.main-video iframe{
     margin: 0 0px 140px 0px;
 }
 
@@ -448,7 +468,11 @@ footer {
 #text-footer {
     padding-left: 20px;
 }
-.fond-arrow:hover {
+.fond-arrow-right:hover {
+    fill-opacity: 1;
+    
+}
+.fond-arrow-:left {
     fill-opacity: 1;
 }
 
@@ -468,29 +492,48 @@ footer {
 /*footer-----------------------*/
 
 
-/*test grab-----------------------*/
-
-/* .flex.active {
-    background: rgba(88, 81, 39, 0.3);
-    cursor: grabbing;
-    cursor: -webkit-grabbing;
-    transform: scale(1);
-} */
-
-.card {
-    transition: border-radius cubic-bezier(0.075, 0.82, 0.165, 1) 1s,
-                 transform cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
-   }
+/*test -----------------------*/
+.bouton-langue {
+    position: absolute;
+    right: 20px;
+}
+#checkbox { 
    
-   .card:hover {
-    border-bottom-right-radius: 50px;
-    border-top-left-radius: 50px;
-    transform: scale(1.05);
-   }
+    display:none
+}
+.toggler {
+    display: block;
+    width: 55px;
+    height: 30px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+}
+.ball,.fr,.en {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 
-  
-    .hover_menu:hover {
-      
-    border-bottom: solid rgba(145, 107, 107, 0.418);
-   }
-  
+    
+}
+.ball {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border: solid #fff;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    /* left: 1px; */
+    z-index: 10;
+    transition: transform .5s ease-in-out;
+}
+.fr {
+    left: 5px;
+}
+.en {
+    right: 5px;
+}
+#checkbox:checked + .ball {
+    transform: translate(29px, -50%);
+}

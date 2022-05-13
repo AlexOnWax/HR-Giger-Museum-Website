@@ -4,6 +4,7 @@ const arrowR = document.querySelector("#arrow-right");
 const arrowL = document.querySelector("#arrow-left");
 const body = document.querySelector("body");
 const navDots = document.querySelectorAll(".navdot");
+const pageNews = document.querySelector('#page-news')
 let isDown= false;
 let startX;
 let scrollLeft
@@ -28,29 +29,9 @@ arrowL.addEventListener("click", () => {
   cont.scrollLeft -= scrollSize;
 });
 
+pageNews.addEventListener('mouseover', () => {
+  arrowL.style.display="none"
+})
 
 
-
-// cont.addEventListener('mousedown', (e) => {
-//   isDown = true;
-//   cont.classList.add('active');
-//   startX = e.pageX - cont.offsetLeft;
-//   scrollLeft = cont.scrollLeft;
-// });
-// cont.addEventListener('mouseleave', () => {
-//   isDown = false;
-//   cont.classList.remove('active');
-// });
-// cont.addEventListener('mouseup', () => {
-//   isDown = false;
-//   cont.classList.remove('active');
-// });
-// cont.addEventListener('mousemove', (e) => {
-//   if(!isDown) return;
-//   e.preventDefault();
-//   const x = e.pageX - cont.offsetLeft;
-//   const walk = (x - startX) * 2; //scroll-fast
-//   cont.scrollLeft = scrollLeft - walk;
-//   console.log(walk);
-// });
 
