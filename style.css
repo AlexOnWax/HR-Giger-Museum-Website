@@ -523,3 +523,17 @@ footer {
   }
   /*second page News-----------------*/
 }
+
+
+#left_arrow-main {
+  position: absolute;
+  left: 0;
+  bottom: 50vh;
+  visibility: hidden;
+
+}
+#right_arrow-main {
+  position: absolute;
+right:0;
+bottom: 50vh;
+}

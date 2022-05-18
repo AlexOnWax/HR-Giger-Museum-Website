@@ -23,17 +23,13 @@ let i=0
 // });
 
 
-cont.addEventListener("wheel", (x) => {
-  // evt.preventDefault();
-  cont.scrollLeft += x.deltaY * 15.4;
-  
-});
 
-/*NavBar reactive*/
+
+/*NavBar reactive --------------------------------------------*/
 const sections =document.querySelectorAll(".page")
 const sectionsArr = Array.from(sections);
 const navItems = document.querySelectorAll('ul li a');
-console.log(sectionsArr);
+
 
 function activateNavByIndex(index) {
   if (sections[index].classList.contains('active'))
@@ -67,7 +63,7 @@ for (let i = 0; i < sections.length; i++) {
 }
 
 
-
+// carrousel----------------------------------------------
 nbr=5;
 p=0;
 const container =document.getElementById('container')
@@ -86,7 +82,7 @@ afficherMasquer()
 
 g.onclick=function() {
     if(p>-nbr+1) {
-      console.log(p);
+      
 
             p--;
     container.style.transform="translate("+p*800+"px)";
@@ -112,5 +108,56 @@ function afficherMasquer() {
         d.style.visibility="hidden"
     }else{
         d.style.visibility="visible"
+    }
+}
+//--------------------------------------------------------------
+//-----------fleche du main--------------------------------------
+nbrMain=7;
+pMain=0;
+
+const gMain = document.getElementById('left_arrow-main')
+const dMain = document.getElementById('right_arrow-main')
+
+
+// afficherMasquerMain()
+/* scroll*/
+
+afficherMasquer()
+
+  dMain.addEventListener("click", () => {
+    
+     if(pMain<7);
+    pMain++;
+  cont.scrollLeft += scrollSize;
+  afficherMasquerMain()
+  console.log(pMain)
+});
+
+  gMain.addEventListener("click", () => {
+    if(pMain>0) {
+    pMain--;
+  cont.scrollLeft -= scrollSize;
+  afficherMasquerMain()
+    }
+});
+
+cont.addEventListener("wheel", (x) => {
+  // evt.preventDefault();
+  cont.scrollLeft += x.deltaY * 10;
+  
+});
+
+   
+
+function afficherMasquerMain() {
+    if (pMain==0){
+        gMain.style.visibility="hidden"
+    }else {
+        gMain.style.visibility="visible"
+    }
+    if(pMain<nbrMain-1){
+        dMain.style.visibility="visible"
+    }else{
+        dMain.style.visibility="hidden"
     }
 }
