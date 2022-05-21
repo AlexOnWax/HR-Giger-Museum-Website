@@ -33,8 +33,10 @@ body {
 }
 .active {
   border-bottom: solid rgb(199, 155, 155);
-  transition: 0.5s;
+  transition: 0.2s;
+ 
 }
+
 .card {
   transition: border-radius cubic-bezier(0.075, 0.82, 0.165, 1) 1s,
     transform cubic-bezier(0.075, 0.82, 0.165, 1) 1s;

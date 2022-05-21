@@ -1,0 +1,14 @@
+
+.active {
+    border-bottom: solid 4px rgb(253, 0, 0);
+    color: brown;
+}
+nav {
+    position: fixed;
+    background: black;
+  
+}
+nav a {
+    color: aliceblue;
+    text-decoration: none;
+}
