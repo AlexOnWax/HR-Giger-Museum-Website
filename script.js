@@ -1,6 +1,6 @@
 const cont = document.querySelector(".flex");
 const body = document.querySelector("body");
-
+const targetElements = document.querySelectorAll(".page");
 
 let isDown= false;
 let startX;
@@ -9,11 +9,11 @@ let scrollSize = body.clientWidth;
 let i=0
 
 /* scroll*/
-// cont.addEventListener("wheel", (x) => {
-//   // evt.preventDefault();
-//   cont.scrollLeft += x.deltaY * 15.4;
+cont.addEventListener("wheel", (x) => {
+  // evt.preventDefault();
+  cont.scrollLeft += x.deltaY * 15.4;
   
-// });
+});
 
 // arrowRight.forEach((arrowR) => {
 //   arrowR.addEventListener("click", () => {
@@ -83,14 +83,16 @@ afficherMasquer()
 g.onclick=function() {
     if(p>-nbr+1) {
       
-
+      
             p--;
     container.style.transform="translate("+p*800+"px)";
     container.style.transition="all 0.5s ease"
     afficherMasquer()
     }
 d.onclick=function() {
+  
     if(p<0) {
+      
             p++;
     container.style.transform="translate("+p*800+"px)";
     container.style.transition="all 0.5s ease"
@@ -119,45 +121,74 @@ const gMain = document.getElementById('left_arrow-main')
 const dMain = document.getElementById('right_arrow-main')
 
 
-// afficherMasquerMain()
-/* scroll*/
+dMain.addEventListener("click", () => {
 
-afficherMasquer()
+cont.scrollLeft += scrollSize;
+});
 
-  dMain.addEventListener("click", () => {
+
+gMain.addEventListener("click", () => {
+
+cont.scrollLeft -= scrollSize;
+ }
+);
+
+
+// afficherMasquer()
+
+//   dMain.addEventListener("click", () => {
     
-     if(pMain<7);
-    pMain++;
-  cont.scrollLeft += scrollSize;
-  afficherMasquerMain()
-  console.log(pMain)
-});
-
-  gMain.addEventListener("click", () => {
-    if(pMain>0) {
-    pMain--;
-  cont.scrollLeft -= scrollSize;
-  afficherMasquerMain()
-    }
-});
-
-cont.addEventListener("wheel", (x) => {
-  // evt.preventDefault();
-  cont.scrollLeft += x.deltaY * 10;
+//      if(pMain<7);
+//     pMain++;
+//   cont.scrollLeft += scrollSize;
+//   afficherMasquerMain()
   
-});
+// });
 
-   
 
-function afficherMasquerMain() {
-    if (pMain==0){
-        gMain.style.visibility="hidden"
-    }else {
-        gMain.style.visibility="visible"
+//   gMain.addEventListener("click", () => {
+//     if(pMain>0) {
+//     pMain--;
+//   cont.scrollLeft -= scrollSize;
+//   afficherMasquerMain()
+//     }
+// });
+
+// function afficherMasquerMain() {
+//     if (pMain===0){
+//         gMain.style.visibility="hidden"
+//     }else {
+//         gMain.style.visibility="visible"
+//     }
+//     if(pMain<nbrMain-1){
+//         dMain.style.visibility="visible"
+//     }else{
+//         dMain.style.visibility="hidden"
+//     }
+// }
+
+const createObserver = function () {
+  let options = {
+    root: null,
+    rootMargin: "100px",
+    threshold: 0.5
+  };
+
+let observer = new IntersectionObserver(
+  function (entries, observer) {
+      handleIntersect(entries, observer); 
+    }, 
+  options);
+  targetElements.forEach((targetElement) => {
+    observer.observe(targetElement);
+  });
+};
+
+const handleIntersect = function (entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.children[0].classList.add("bounce-me");
+      observer.unobserve(entry.target);
     }
-    if(pMain<nbrMain-1){
-        dMain.style.visibility="visible"
-    }else{
-        dMain.style.visibility="hidden"
-    }
-}
+  });
+};

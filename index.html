@@ -33,7 +33,7 @@
       <ul>
         <li><a class="hover_menu" href="/#page-landing">MAIN MENU</a></li>
         <li><a class="hover_menu" href="/#page-news">NEWS</a></li>
-        <li><a class="hover_menu" href="/#page-exhibition">EXHIBITION</a></li>
+        <li><a class="hover_menu" href="/#page-exhibition">MUSEUM'S GALLERY</a></li>
         <li><a class="hover_menu" href="/#page-access">MUSEUM</a></li>
         <li><a class="hover_menu" href="/#page-video">SHORT MOVIES</a></li>
         <li><a class="hover_menu" href="/#page-bio">BIOGRAPHIE</a></li>
@@ -50,11 +50,11 @@
 
     <div id="page-landing" class="page  page-landing">
 
-
+<div id="main-title">
       <h1>
         HR.<br />GIGER<br />
         MUSEUM
-      </h1>
+      </h1></div>
       <div class="grid-main-img">
         <div class="img-menu1 card"></div>
         <div class="img-menu2 card"></div>
@@ -92,14 +92,14 @@
       </div>
     </div>
 
-     <!-- Exhibition-->
+     <!-- MUSEUM'S GALLERY-->
     <div id="page-exhibition" class="page  page-exhibition">
 
       <h2 class="title-page">
-        EXHIBITION
+        MUSEUM'S GALLERY
       </h2>
       <div class="main-exhibition">
-
+        <h3>Enjoy the last exhibition photos</h3>
         <div id="carrousel">
           <div id="container">
           </div>
@@ -121,21 +121,17 @@
 
 
         <div id="grid-access">
-          <p id="opening-hours">
-            OPENING HOURS NOVEMBER TO END OF MARCH
-            Monday Closed Tuesday to Friday 1pm to 5pm Saturday and Sunday 10am to 6pm APRIL TO END OF OCTOBER Monday to
-            Friday 10am to 6pm Saturday and Sunday 10am to 6.30pm Friday April 1, 2022 1pm to 5pm
-          </p>
-          <img id="img-museum" src="/img/photo-musée_exterieur.png" width="400" height="300" alt="">
-          <img id="img-map" src="/img/map-museum.png" width="400" height="300" alt="">
-          <img id="img-pub" src="/img/photo-pub-giger.png" width="437" height="300" alt="">
-          <p id="pub-hours">
-            HR GIGER BAR
-            OPENING HOURS
-            NOVEMBER TO END OF MARCH Tuesday to Friday from 11am to 8.30pm Saturday and Sunday from 10am to 8.30pm APRIL
-            TO END OF OCTOBER Monday to Sunday 10am to 8.30pm
-            Friday April 1, 2022 11am to 8.30pm
-          </p>
+
+
+          <div id="opening-hours">
+           <h2> OPENING HOURS NOVEMBER TO END OF MARCH</h2>
+            <p>Monday Closed<br> Tuesday to Friday 1pm to 5pm<br>  Saturday and Sunday 10am to 6pm </p> 
+          </div>
+          <img id="img-museum" src="/img/photo-musée_exterieur.png" width="360" height="460" alt="">
+          <div id="pub-hours">
+            <h2> HR GIGER BAR OPENING HOURS</h2>
+            <p>NOVEMBER TO END OF MARCH<br> Tuesday to Friday from 11am to 8.30pm<br> Saturday and Sunday from 10am to 8.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -185,8 +181,9 @@
       <div class="main-sub">
         <form action="submit">
           <h2>Subscribe to the newsletter</h2>
-          <fieldset>Youremail@mail.com</fieldset>
-          <button>Submit</button>
+          <input type="email" placeholder="Youremail@mail.com">
+          <label for="submit">Submit</label>
+          
         </form>
         <div class="information">
           <h3>Follow Us</h3>
