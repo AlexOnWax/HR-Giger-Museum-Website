@@ -472,22 +472,66 @@ footer {
 
 
 @media screen and (max-width: 56.1875rem) {
+  
+  body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    background-image: url(/img/fond_giger.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+    font-family: var(--font-text);
+  }
   .flex {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
-    gap: 5em;
+    gap: 10em;
     overflow-x: visible;
     
   }
   .page {
     width: 100%;
   }
-  header {
-    display: none;
-  }
+ 
+  /*Header----------------*/
+header {
+  position: fixed;
+  top: 0rem;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  background-color: rgba(0,0,0,0.5);
+
+}
+.logo-title-header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  
+  margin-left: 1rem;
+  padding-top: 1rem;
+  
+}
+.logo-title-header img {
+  width: 15px;
+  height: 30px;
+}
+header ul {
+ display: none;
+}
+
+
+/*Header----------------*/
   footer {
    
     display: none;
@@ -496,10 +540,11 @@ footer {
 /*general----------------*/
 
 .title-page {/*?????*/
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: var(--font-title);
   font-weight: normal;
-   margin-left: 4rem;
+   margin-left: 0rem;
+   
 }
 #left_arrow-main {
 display: none;
@@ -513,10 +558,10 @@ display: none;
 
 /*firstpage Landing Page--------------*/
 .page-landing {
-  height: 100vh;
+  height: 55rem;
   width: 100vw;
   display: flex;
- flex-direction: column;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   scroll-snap-align: center;
@@ -533,13 +578,20 @@ display: none;
   grid-template-rows: 1fr 1fr;
   justify-items: center;
   align-items: center;
-  gap: 3.125rem;
+  gap: 0.5rem;
+  height: 100vw;
 }
 #title-museum_landing-page {
 margin-left: 0rem;
+
 }
 .img-menu1 {
-  display: none;
+  background-image: url(/img/img-mobile.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 390px;
+  height:550px;
 }
 .img-menu2 {
   display: none;
@@ -549,14 +601,17 @@ display: none;
   }
 .grid-main-img {
   display: none;
-  
+  display: flex;
+  gap: 0rem;
+  margin-right: 0em;
 }
+
 
 /*firstpage Landing Page--------------*/
 
 /*2d  page Access Museum---------------*/
 .page-access {
-  height: 100vh;
+  height: auto;
   width: 100vw;
 }
 
@@ -566,47 +621,61 @@ display: none;
   align-items: center;
   height: auto;
   width: 100vw;
+  
 }
 #grid-access {
   display: grid;
   grid-template-columns: 1fr ;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 200px 200px 200px 200px;
   justify-items: center;
   align-items: center;
-  gap:0.5rem;
+  gap:5rem;
   padding: 0;
   font-size: 1rem;
+ 
 }
 .page-access .title-page {
-  align-self: flex-start;
+  
   margin-top: 0.1rem;
+  font-size: 3rem;
+  margin: 0;
+  text-align: center;
 }
 #opening-hours {
   grid-area: 2/1/3/2;
   width: auto;
-  align-self: flex-start;
+  align-self: center;
+}
+#opening-hours > h2 {
+  font-size: 1.7rem;
+}
+#opening-hours > p {
+  font-size: 1.6rem;
+  text-align: center;
 }
 #img-museum {
   grid-area: 1/1/2/2;
-  align-self: flex-end;
+  align-self: center;
+  width: 100vw;
 }
 
 .news-text-flex {
   display: flex;
   flex-direction: column;
-  align-self: flex-start;
+  align-self: center;
 max-width:auto ;
 }
 #img-psy {
-  align-self: flex-end;
+  align-self: center;
   grid-area: 3/1/4/2;
+  width: 100vw;
 }
 #title-article-news {
   font-size: 2.25rem;
   border-bottom: solid;
 }
 .paragraphe-news {
-  font-size: 3rem;
+  font-size: 1.6rem;
   grid-area: 4/1/5/2;
 }
 #title-article-news > span {
@@ -619,11 +688,11 @@ max-width:auto ;
 
 /*3rd" page GALLERY---------------*/
 .page-exhibition {
-  height: 100vh;
+  height: auto;
   width: 100vw;
   display: flex; 
   flex-direction: column;
-  justify-content: space-around;
+  justify-content:center;
   align-items: center;
 }
 .main-exhibition {
@@ -636,7 +705,7 @@ max-width:auto ;
 }
 .main-exhibition > h3 {
   font-family: var(--font-text);
-  font-size: 1rem;
+  font-size: 2rem;
 
 }
 #carrousel {/*carrousel*/
@@ -683,9 +752,11 @@ max-width:auto ;
   background-size: cover;
 }
 .page-exhibition .title-page {
-  
   align-self: flex-start;
-  margin-top: 8rem;
+  margin-top: 0.1rem;
+  font-size: 3rem;
+  margin: 0;
+  text-align: center;
 }
 
 /*3rd page  GALLERY---------------*/
@@ -707,10 +778,15 @@ max-width:auto ;
 }
 .page-video .title-page {
   align-self: flex-start;
-  margin-top: 0rem;
+  margin-top: 0.1rem;
+  font-size: 3rem;
+  margin: 0;
+  text-align: center;
 }
 .main-video iframe {
   margin: 0 ;
+  width:100vw ;
+  height:300px ;
 }
 
 /*4th page Video---------------*/
@@ -731,11 +807,17 @@ max-width:auto ;
   width: 100%;
 }
 .page-bio .title-page {
-  margin-top: 8rem;
+  align-self: flex-start;
+  margin-top: 0.1rem;
+  font-size: 3rem;
+  margin: 0;
+  text-align: center;
 }
-.text-bio-link {
-  width: 90rem;
-  font-size: 1rem;
+.text-bio-link  {
+  width: 80%;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 5px;
 }
 
 /*5th page Bio---------------*/
