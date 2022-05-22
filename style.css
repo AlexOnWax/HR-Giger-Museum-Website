@@ -22,11 +22,11 @@ body {
 }
 /*general----------------*/
 .title-page {
-  padding-left: 1.5625rem;
+  margin-left: 4rem;
 }
 
 .title-page {
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-family: var(--font-title);
   font-weight: normal;
 }
@@ -39,18 +39,26 @@ body {
   transition: 0.2s;
  
 }
-
 .card {
   transition: border-radius cubic-bezier(0.075, 0.82, 0.165, 1) 1s,
     transform cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
 }
-
 .card:hover {
   border-bottom-right-radius: 3.125rem;
   border-top-left-radius: 3.125rem;
   transform: scale(1.01);
 }
+#left_arrow-main {
+  position: absolute;
+  left: 0;
+  bottom: 50vh;
 
+}
+#right_arrow-main {
+  position: absolute;
+right:0;
+bottom: 50vh;
+}
 /*general-----------------*/
 
 /*scroll horizontal*/
@@ -61,7 +69,7 @@ body {
   scroll-behavior: smooth;
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: repeat(7, 100vw);
+  grid-template-columns: repeat(6, 100vw);
   gap: 100em;
 }
 
@@ -69,20 +77,20 @@ body {
 
 /*Header----------------*/
 header {
-  /* padding: 0 0 0 3.125rem; */
   position: fixed;
   top: 0rem;
-  width: 85%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
-  
+  z-index: 2;
 }
 .logo-title-header {
   display: flex;
-  gap: .9375rem;
+  gap: 2rem;
   align-items: center;
+  margin-left: 3rem;
+  padding-top: 1rem;
 }
 
 header ul {
@@ -90,6 +98,7 @@ header ul {
   display: flex;
   gap: 2.5rem;
   font-size: 2rem;
+  padding-right: 9.375rem;
 }
 header a {
   text-decoration: none;
@@ -97,6 +106,7 @@ header a {
 }
 
 /*Header----------------*/
+
 /*switch Langue -----------------------*/
 .bouton-langue {
   position: absolute;
@@ -128,7 +138,6 @@ header a {
   border: solid #fff;
   background-color: rgb(255, 255, 255);
   border-radius: 50%;
-
   z-index: 10;
   transition: transform 0.5s ease-in-out;
 }
@@ -157,8 +166,6 @@ header a {
   font-family: var(--font-title);
   font-size: 12.5rem;
   font-weight: lighter;
-  
-  
 }
 #main-title {
   display: grid;
@@ -169,8 +176,7 @@ header a {
   gap: 3.125rem;
 }
 #title-museum_landing-page {
-
-margin-left: 6.25rem;
+margin-left: 12.5rem;
 }
 .img-menu1 {
   background-image: url(/img/triptic_1.png);
@@ -187,7 +193,6 @@ margin-left: 6.25rem;
   background-size: cover;
   width: 15vw;
   height: 80vh;
-
 }
 .img-menu3 {
   background-image: url(/img/triptic_3.png);
@@ -196,69 +201,80 @@ margin-left: 6.25rem;
   background-size: cover;
   width: 15vw;
   height: 80vh;
-  
-}
+  }
 .grid-main-img {
-
   display: flex;
-  gap: 1.5625rem;
+  gap: 2rem;
   margin-right: 3.125rem;
 }
+
 /*firstpage Landing Page--------------*/
 
-/*second page News-----------------*/
-.paragraphe-news {
-  font-size: 3.125rem;
-}
-
-.page-news {
+/*2d  page Access Museum---------------*/
+.page-access {
   height: 100vh;
   width: 100%;
+}
+
+.main-access {
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: center;
-  scroll-snap-align: center;
-  position: relative;
+  align-items: center;
+  height: 90vh;
+  width: 100%;
+}
+#grid-access {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  gap:2rem;
+  padding: 0 5rem 16.875rem 3.125rem;
+  font-size: 2.5rem;
+}
+.page-access .title-page {
+  align-self: flex-start;
+  margin-top: 8rem;
+}
+#opening-hours {
+  grid-area: 2/1/3/2;
+  width: 55rem;
+  align-self: flex-start;
+}
+#img-museum {
+  grid-area: 1/1/2/2;
+  align-self: flex-end;
 }
 .news-text-flex {
   display: flex;
   flex-direction: column;
-  width: 60vw;
-  padding-right: 25.5rem ;
+  align-self: flex-start;
+max-width:600px ;
 }
-.main-news {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr;
-  justify-items: center;
-  align-items: center;
-  gap: 3.125rem;
-  margin-left: 3.125rem;
+#img-psy {
+  align-self: flex-end;
 }
-
 #title-article-news {
   font-size: 2.25rem;
   border-bottom: solid;
+}
+.paragraphe-news {
+  font-size: 3rem;
 }
 #title-article-news > span {
   font-size: 1rem;
   font-weight: lighter;
 }
-.page-news .title-page {
-  align-self: flex-start;
-  
-  position: absolute;
-  top: 6.25rem;
-  left:1.25rem;
-}
-/*second page News-----------------*/
 
-/*3rd page MUSEUM'S GALLERY---------------*/
+/*2d page Access Museum---------------*/
+
+
+/*3rd" page GALLERY---------------*/
 .page-exhibition {
   height: 100vh;
   width: 100%;
-  display: flex;
+  display: flex; 
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -273,10 +289,10 @@ margin-left: 6.25rem;
 }
 .main-exhibition > h3 {
   font-family: var(--font-text);
-  font-size: 2.5rem;
+  font-size: 4rem;
 
 }
-#carrousel {
+#carrousel {/*carrousel*/
   width: 800px;
   height: 500px;
   border: solid .25rem #fff;
@@ -285,106 +301,55 @@ margin-left: 6.25rem;
   overflow: hidden;
   margin-bottom: 9.375rem;
 }
-#container {
+#container {/*carrousel*/
   width: 800px;
   height: 500px;
 }
-.bouton {
+.bouton {/*carrousel*/
   position: absolute;
   width: 4.375rem;
   cursor: pointer;
   top: 50%;
 }
-#g {
+#g {/*carrousel*/
   left: 0;
   opacity: 0.9;
   transition: all 0.3s ease;
 }
-#d {
+#d {/*carrousel*/
   right: 0;
   opacity: 0.9;
   transition: all 0.3s ease;
 }
-#g:hover {
+#g:hover {/*carrousel*/
   transform: scale(1.1);
   opacity: 1;
 }
-#d:hover {
+#d:hover {/*carrousel*/
   transform: scale(1.1);
   opacity: 1;
 }
-.photo {
+.photo {/*carrousel*/
   width: 800px;
   height: 500px;
   margin: 0;
   display: inline-block;
   background-size: cover;
 }
-
 .page-exhibition .title-page {
   align-self: flex-start;
-  margin-top: 6.25rem;
-}
-.page-exhibition p {
-  font-size: 1.5625rem;
-}
-/*3rd page MUSEUM'S GALLERY---------------*/
-
-/*4rd page Access---------------*/
-.page-access {
-  height: 100vh;
-  width: 100%;
+  margin-top: 8rem;
 }
 
-.main-access {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 90vh;
-  width: 100%;
-}
-#grid-access {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  justify-items: center;
-  align-items: center;
-  gap: 1.25rem;
-  padding: 0 5rem 16.875rem 3.125rem;
-  font-size: 2.5rem;
-}
-.page-access .title-page {
-  align-self: flex-start;
-  margin-top: 6.25rem;
-}
-#opening-hours {
-  grid-area: 1/2/2/3;
-  width: 55rem;
-  
- 
-}
-
-#pub-hours  {
-  width: 55rem;
-  grid-area: 2/2/3/3;
-  
-}
+/*3rd page  GALLERY---------------*/
 
 
-#img-museum {
-  grid-area: 1/1/3/2;
-}
 
-/*4rd page Access---------------*/
-
-/*5rd page Video---------------*/
+/*4th page Video---------------*/
 .page-video {
   height: 100vh;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+ 
 }
 .main-video {
   display: flex;
@@ -396,15 +361,15 @@ margin-left: 6.25rem;
 }
 .page-video .title-page {
   align-self: flex-start;
-  margin-top: 6.25rem;
+  margin-top: 8rem;
 }
 .main-video iframe {
   margin: 0 0rem 8.75rem 0rem;
 }
 
-/*5rd page Video---------------*/
+/*4th page Video---------------*/
 
-/*6rd page Bio---------------*/
+/*5th page Bio---------------*/
 .page-bio {
   height: 100vh;
   width: 100%;
@@ -420,16 +385,16 @@ margin-left: 6.25rem;
   width: 100%;
 }
 .page-bio .title-page {
-  margin-top: 6.25rem;
+  margin-top: 8rem;
 }
 .text-bio-link {
-  width: 46.5625rem;
-  font-size: 2rem;
+  width: 90rem;
+  font-size: 3rem;
 }
 
-/*6rd page Bio---------------*/
+/*5th page Bio---------------*/
 
-/*7rd page Subscribe---------------*/
+/*6th page Subscribe---------------*/
 
 .page-sub {
   height: 100vh;
@@ -445,17 +410,16 @@ margin-left: 6.25rem;
   height: 90vh;
   width: 100%;
 }
-
 fieldset {
   border-radius: 1.5625rem;
 }
 .page-sub .title-page {
-  margin-top: 6.25rem;
+  margin-top: 8rem;
 }
 .social_logo {
   display: flex;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 5rem;
 }
 form {
   display: flex;
@@ -464,8 +428,8 @@ form {
 }
 form > input {
   border-radius: 1.5625rem;
-  padding: .75rem;
-  width: 18.75rem;
+  padding: 1rem;
+  width: 21.875rem;
 }
 button{
   background-color: rgba(85, 63, 63, 0.61);
@@ -474,12 +438,18 @@ button{
   padding: .625rem;
   border: none; 
   width: 6.25rem;
-  
+}
+.information {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
 }
 button:hover{
   cursor: pointer;
 }
-/*7rd page Subscribe---------------*/
+/*6th page Subscribe---------------*/
 
 /*footer-----------------------*/
 footer {
@@ -489,13 +459,21 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 2rem;
 }
-
-#text-footer {
-  padding-left: 1.25rem;
-}
-
 /*footer-----------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 56.1875rem) {
   .flex {
@@ -511,82 +489,7 @@ footer {
   header {
     display: none;
   }
-  /*firstpage Landing Page--------------*/
-
-  .page-landing {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .page-landing h1 {
-    font-family: var(--font-title);
-    font-size: 3.75rem;
-    font-weight: lighter;
-  }
-
-  .img-menu1 {
-    background-image: url(/);
-    display: none;
-  }
-  .img-menu2 {
-    background-image: url(/);
-    display: none;
-  }
-  .img-menu3 {
-    background-image: url(/);
-    display: none;
-  }
-  /*firstpage Landing Page--------------*/
-
-  /*second page News-----------------*/
-  .paragraphe-news {
-    font-size: 1rem;
-    width: 40%;
-    text-align: center;
-  }
-
-  .page-news {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .news-text-flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vh;
-  }
-  .main-news {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    width: 100%;
-    padding: 0;
-  }
-  #title-article-news {
-    font-size: 2.25rem;
-    border-bottom: none;
-  }
-  .page-news .title-page {
-    margin-top: 6.25rem;
-  }}
-  /*second page News-----------------*/
-
-
-
-#left_arrow-main {
-  position: absolute;
-  left: 0;
-  bottom: 50vh;
-
 }
-#right_arrow-main {
-  position: absolute;
-right:0;
-bottom: 50vh;
-}
+
+
+

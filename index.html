@@ -31,11 +31,10 @@
 
     <nav>
       <ul>
-        <li><a class="hover_menu" href="/#page-landing">MAIN MENU</a></li>
-        <li><a class="hover_menu" href="/#page-news">NEWS</a></li>
-        <li><a class="hover_menu" href="/#page-exhibition">MUSEUM'S GALLERY</a></li>
+        <li><a class="hover_menu" href="/#page-landing">HOMEPAGE</a></li>
         <li><a class="hover_menu" href="/#page-access">MUSEUM</a></li>
-        <li><a class="hover_menu" href="/#page-video">SHORT MOVIES</a></li>
+        <li><a class="hover_menu" href="/#page-exhibition">GALLERY</a></li>
+        <li><a class="hover_menu" href="/#page-video">MOVIE</a></li>
         <li><a class="hover_menu" href="/#page-bio">BIOGRAPHIE</a></li>
         <li><a class="hover_menu" href="/#page-sub">CONTACT</a></li>
 
@@ -64,29 +63,35 @@
     </div>
 
 </div>
+<!--ACCESS TO THE MUSEUM-->
+<div id="page-access" class="page  page-access">
+
+  <h2 class="title-page">
+    ACCESS TO THE MUSEUM
+  </h2>
+  <div class="main-access">
 
 
-    <!-- News -->
+    <div id="grid-access">
 
 
-    <div id="page-news" class="page  page-news">
+      <div id="opening-hours">
+       <h2> OPENING HOURS NOVEMBER TO END OF MARCH</h2>
+        <p>Monday Closed<br> Tuesday to Friday 1pm to 5pm<br>  Saturday and Sunday 10am to 6pm </p> 
+      </div>
+      <img id="img-museum" src="/img/photo-musée_exterieur.png" width="500" height="300" alt="">
+          <img id="img-psy" src="/img/psychonauten_actual_exhibition.png" width="500" height="300" alt="Affiche de l'actuelle exposition">
 
-
-      <h2 class="title-page">
-        NEWS / PROJECTS
-      </h2>
-
-      <div class="main-news">
-
-
-        <img class="card" src="/img/psychonauten_actual_exhibition.png" width="350" height="510" alt="Affiche de l'actuelle exposition">
-        <div class="news-text-flex">
-          <h3 id="title-article-news">PSYCHONAUTEN II <span>From May 14 to November 2022</span></h3>
-          <p class="paragraphe-news">A group exhibition of Stanisky Grof Curated by Nadia Honarchian and Claude Steiner, in cooperation with Carmen Giger-Scheifele, the exhibition is a sequel of the Psychonauten l group exhibition in 2008, which was in honour of Albert Hofmann, the discoverer of LSD</p>
-        </div>
+      <div class="news-text-flex">
+        <h3 id="title-article-news">PSYCHONAUTEN II <span>From May 14 to November 2022</span></h3>
+        <p class="paragraphe-news">A group exhibition of Stanisky Grof Curated by Nadia Honarchian and Claude Steiner, in cooperation with Carmen Giger-Scheifele, the exhibition is a sequel of the Psychonauten l group exhibition in 2008, which was in honour of Albert Hofmann, the discoverer of LSD</p>
       </div>
     </div>
+  </div>
+</div>
 
+
+    
      <!-- MUSEUM'S GALLERY-->
     <div id="page-exhibition" class="page  page-exhibition">
 
@@ -94,7 +99,7 @@
         MUSEUM'S GALLERY
       </h2>
       <div class="main-exhibition">
-        <h3>Enjoy the last exhibition photos</h3>
+        <h3>Photos Gallery from the last exhibitions</h3>
         <div id="carrousel">
           <div id="container">
           </div>
@@ -106,31 +111,7 @@
       </div>
     </div>
 
-    <!--ACCESS TO THE MUSEUM-->
-    <div id="page-access" class="page  page-access">
-
-      <h2 class="title-page">
-        ACCESS TO THE MUSEUM
-      </h2>
-      <div class="main-access">
-
-
-        <div id="grid-access">
-
-
-          <div id="opening-hours">
-           <h2> OPENING HOURS NOVEMBER TO END OF MARCH</h2>
-            <p>Monday Closed<br> Tuesday to Friday 1pm to 5pm<br>  Saturday and Sunday 10am to 6pm </p> 
-          </div>
-          <img id="img-museum" src="/img/photo-musée_exterieur.png" width="600" height="600" alt="">
-          <div id="pub-hours">
-            <h2> HR GIGER BAR OPENING HOURS</h2>
-            <p>NOVEMBER TO END OF MARCH<br> Tuesday to Friday from 11am to 8.30pm<br> Saturday and Sunday from 10am to 8.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    
     <!--VIDEO-->
     <div id="page-video" class="page  page-video">
 
@@ -174,8 +155,9 @@
     <div id="page-sub" class="page page-sub">
 
       <div class="main-sub">
+          <h2>Subscribe to the newsletter</h2>
         <form action="submit">
-          <!-- <h2>Subscribe to the newsletter</h2> -->
+        
 
           <form id="formulaire" name="formulaire" action="submit" novalidate >
             <input type="email" required pattern="[A-Za-z]+" placeholder="Youremail@mail.com">
@@ -188,7 +170,10 @@
             <img src="/img/facebook.png" width="50" height="50" alt="">
             <img src="/img/insta.png" width="50" height="50" alt="">
             <img src="/img/twitter.png" width="50" height="50" alt="">
+
           </div>
+          <h3>Find Us</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10968.623040872852!2d7.0823266!3d46.5841581!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x43428807b9fdfe74!2sMuseum%20HR%20Giger!5e0!3m2!1sfr!2sfr!4v1653235108702!5m2!1sfr!2sfr" width="350" height="190" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
         </div>
 
