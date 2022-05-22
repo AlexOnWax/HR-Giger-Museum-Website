@@ -3,7 +3,9 @@
   --font-title: "Cinzel", serif;
   --font-text: "Play", sans-serif;
 }
-
+html {
+  font-size: 62.5%;
+}
 body {
   box-sizing: border-box;
   margin: 0;
@@ -60,6 +62,7 @@ body {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(7, 100vw);
+  gap: 100em;
 }
 
 /*scroll horizontal*/
@@ -86,7 +89,7 @@ header ul {
   list-style-type: none;
   display: flex;
   gap: 2.5rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 header a {
   text-decoration: none;
@@ -152,7 +155,7 @@ header a {
 
 .page-landing h1 {
   font-family: var(--font-title);
-  font-size: 7rem;
+  font-size: 12.5rem;
   font-weight: lighter;
   
   
@@ -163,7 +166,7 @@ header a {
   grid-template-rows: 1fr;
   justify-items: center;
   align-items: center;
-  gap: 50px;
+  gap: 3.125rem;
 }
 #title-museum_landing-page {
 
@@ -205,7 +208,7 @@ margin-left: 6.25rem;
 
 /*second page News-----------------*/
 .paragraphe-news {
-  font-size: 1.5625rem;
+  font-size: 3.125rem;
 }
 
 .page-news {
@@ -222,7 +225,7 @@ margin-left: 6.25rem;
   display: flex;
   flex-direction: column;
   width: 60vw;
-  padding-right: 200px ;
+  padding-right: 25.5rem ;
 }
 .main-news {
   display: grid;
@@ -230,8 +233,8 @@ margin-left: 6.25rem;
   grid-template-rows: 1fr;
   justify-items: center;
   align-items: center;
-  gap: 50px;
-  margin-left: 50px;
+  gap: 3.125rem;
+  margin-left: 3.125rem;
 }
 
 #title-article-news {
@@ -239,15 +242,15 @@ margin-left: 6.25rem;
   border-bottom: solid;
 }
 #title-article-news > span {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: lighter;
 }
 .page-news .title-page {
   align-self: flex-start;
   
   position: absolute;
-  top: 100px;
-  left:20px;
+  top: 6.25rem;
+  left:1.25rem;
 }
 /*second page News-----------------*/
 
@@ -274,8 +277,8 @@ margin-left: 6.25rem;
 
 }
 #carrousel {
-  width: 50rem;
-  height: 31.25rem;
+  width: 800px;
+  height: 500px;
   border: solid .25rem #fff;
   box-shadow: 0 0 .875rem rgba(0, 0, 0, 0.3);
   position: relative;
@@ -283,8 +286,8 @@ margin-left: 6.25rem;
   margin-bottom: 9.375rem;
 }
 #container {
-  width: 50rem;
-  height: 31.25rem;
+  width: 800px;
+  height: 500px;
 }
 .bouton {
   position: absolute;
@@ -311,8 +314,8 @@ margin-left: 6.25rem;
   opacity: 1;
 }
 .photo {
-  width: 50rem;
-  height: 31.25rem;
+  width: 800px;
+  height: 500px;
   margin: 0;
   display: inline-block;
   background-size: cover;
@@ -348,7 +351,7 @@ margin-left: 6.25rem;
   align-items: center;
   gap: 1.25rem;
   padding: 0 5rem 16.875rem 3.125rem;
-  font-size: 1.375rem;
+  font-size: 2.5rem;
 }
 .page-access .title-page {
   align-self: flex-start;
@@ -356,13 +359,13 @@ margin-left: 6.25rem;
 }
 #opening-hours {
   grid-area: 1/2/2/3;
-  width: 29.375rem;
+  width: 55rem;
   
  
 }
 
 #pub-hours  {
-  width: 29.375rem;
+  width: 55rem;
   grid-area: 2/2/3/3;
   
 }
@@ -421,7 +424,7 @@ margin-left: 6.25rem;
 }
 .text-bio-link {
   width: 46.5625rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 /*6rd page Bio---------------*/
@@ -460,15 +463,15 @@ form {
   gap: .9375rem;
 }
 form > input {
-  border-radius: 25px;
-  padding: 12px;
+  border-radius: 1.5625rem;
+  padding: .75rem;
   width: 18.75rem;
 }
 button{
   background-color: rgba(85, 63, 63, 0.61);
-  border-radius: 15px;
+  border-radius: .9375rem;
   color: white;
-  padding: 10px;
+  padding: .625rem;
   border: none; 
   width: 6.25rem;
   
