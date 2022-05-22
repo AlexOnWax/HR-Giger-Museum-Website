@@ -53,7 +53,7 @@
 <div id="main-title">
   <div id="title-museum_landing-page">
       <h1>
-        HR.<br />GIGER<br />
+        HR.GIGER
         MUSEUM
       </h1></div>
       <div class="grid-main-img">
@@ -175,10 +175,11 @@
 
       <div class="main-sub">
         <form action="submit">
-          <h2>Subscribe to the newsletter</h2>
-          <input type="email" placeholder="Youremail@mail.com">
-          <label for="submit">Submit</label>
-          
+          <!-- <h2>Subscribe to the newsletter</h2> -->
+
+          <form id="formulaire" name="formulaire" action="submit" novalidate >
+            <input type="email" required pattern="[A-Za-z]+" placeholder="Youremail@mail.com">
+            <button id="btn" type="submit"> Submit </button>
         </form>
         <div class="information">
           <h3>Follow Us</h3>
