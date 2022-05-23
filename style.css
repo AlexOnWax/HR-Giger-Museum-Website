@@ -492,7 +492,7 @@ footer {
     scroll-behavior: smooth;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(6,100vh);
     gap: 10em;
     overflow-x: visible;
     
@@ -613,10 +613,16 @@ display: none;
 .page-access {
   height: auto;
   width: 100vw;
+  display: grid;
+ grid-template-columns: 1fr;
+ grid-template-rows: 1fr 1fr;
+ gap: 50px;
+  
 }
 
 .main-access {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: auto;
@@ -626,7 +632,7 @@ display: none;
 #grid-access {
   display: grid;
   grid-template-columns: 1fr ;
-  grid-template-rows: 200px 200px 200px 200px;
+  grid-template-rows: 200px 200px 200px 200px ;
   justify-items: center;
   align-items: center;
   gap:5rem;
@@ -636,9 +642,9 @@ display: none;
 }
 .page-access .title-page {
   
-  margin-top: 0.1rem;
+  
   font-size: 3rem;
-  margin: 0;
+  margin: auto;
   text-align: center;
 }
 #opening-hours {
@@ -673,10 +679,13 @@ max-width:auto ;
 #title-article-news {
   font-size: 2.25rem;
   border-bottom: solid;
+  text-align: center;
 }
 .paragraphe-news {
   font-size: 1.6rem;
   grid-area: 4/1/5/2;
+  text-align: center;
+  
 }
 #title-article-news > span {
   font-size: 1rem;
@@ -690,10 +699,8 @@ max-width:auto ;
 .page-exhibition {
   height: auto;
   width: 100vw;
-  display: flex; 
-  flex-direction: column;
-  justify-content:center;
-  align-items: center;
+  display: block; 
+  margin-top: 100px;
 }
 .main-exhibition {
   display: flex;
@@ -753,7 +760,7 @@ max-width:auto ;
 }
 .page-exhibition .title-page {
   align-self: flex-start;
-  margin-top: 0.1rem;
+  margin-top: 0rem;
   font-size: 3rem;
   margin: 0;
   text-align: center;
@@ -764,7 +771,7 @@ max-width:auto ;
 
 /*4th page Video---------------*/
 .page-video {
-  height: 100vh;
+  height: 850px;
   width: 100vw;
  
 }
@@ -793,7 +800,7 @@ max-width:auto ;
 
 /*5th page Bio---------------*/
 .page-bio {
-  height: 100vh;
+  height: 850px;
   width: 100vw;
 }
 
@@ -825,7 +832,7 @@ max-width:auto ;
 /*6th page Subscribe---------------*/
 
 .page-sub {
-  height: 100vh;
+  height: 850px;
   width: 100vw;
 }
 .main-sub {
@@ -877,7 +884,51 @@ button:hover{
 }
 /*6th page Subscribe---------------*/
 
-
+/*switch Langue -----------------------*/
+.bouton-langue {
+  position: absolute;
+  right: 0.9rem;
+top: 0.9rem;
+}
+#checkbox {
+  display: none;
+}
+.toggler {
+  display: block;
+  width: 3rem;
+  height:2rem;
+  border: .125rem solid #fff;
+  border-radius: 1.875rem;
+  position: relative;
+  cursor: pointer;
+}
+.ball,
+.fr,
+.en {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ball {
+  display: inline-block;
+  width: 0.2rem;
+  height: 0.2rem;
+  border: solid #fff;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  z-index: 10;
+  transition: transform 0.5s ease-in-out;
+}
+.fr {
+  left: 0.2em;
+}
+.en {
+  right: 0.2rem;
+}
+#checkbox:checked + .ball {
+  transform: translate(1.8125rem, -50%);
+}
+/*switch Langue -----------------------*/
 
 
 }
