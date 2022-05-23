@@ -1,12 +1,32 @@
 const cont = document.querySelector(".flex");
 const body = document.querySelector("body");
 const targetElements = document.querySelectorAll(".page");
+const burgerMenu =document.querySelector(".box")
+const listHeader =document.querySelector(".list-nav")
 
 let isDown= false;
 let startX;
 let scrollLeft
 let scrollSize = body.clientWidth;
 let i = 0;
+
+
+/*Menu Burger*/
+const btn = document.querySelector(".btn1");
+
+btn.addEventListener('click', presentation)
+
+function presentation() {
+    btn.classList.toggle('active')
+}
+
+burgerMenu.addEventListener('click', () => {
+
+listHeader.classList.toggle('active-burger')
+})
+
+
+
 
 /* scroll*/
 
@@ -22,14 +42,14 @@ cont.addEventListener("wheel", (x) => {
 /*NavBar reactive --------------------------------------------*/
 const sections = document.querySelectorAll(".page");
 const sectionsArr = Array.from(sections);
-const navItems = document.querySelectorAll("ul li a");
+const navItems = document.querySelectorAll(".list-nav a");
 
 function activateNavByIndex(index) {
-  const currentActive = document.querySelectorAll("nav .active");
+  const currentActive = document.querySelectorAll("nav .active-card");
   for (let i = currentActive.length - 1; i >= 0; i--) {
-    currentActive[i].classList.remove("active");
+    currentActive[i].classList.remove("active-card");
   }
-  navItems[index].classList.add("active");
+  navItems[index].classList.add("active-card");
 }
 
 
