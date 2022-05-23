@@ -51,7 +51,7 @@ for (let i = 0; i < sections.length; i++) {
 }
 
 // carrousel----------------------------------------------
-nbr = 4;
+nbr = 5;
 p = 0;
 const container = document.getElementById("container");
 const g = document.getElementById("g");
@@ -96,6 +96,55 @@ function afficherMasquer() {
     d.style.visibility = "hidden";
   } else {
     d.style.visibility = "visible";
+  }
+}
+//--------------------------------------------------------------
+// carrousel Responsive----------------------------------------------
+nbrR = 4;
+pR = 0;
+const containerResponsvive = document.getElementById("container-responsive");
+const gR = document.getElementById("g-responsive");
+const dR = document.getElementById("d-responsive");
+containerResponsvive.style.width = 300 * nbrR + "px";
+
+for (i = 1; i <= nbr; i++) {
+  divR = document.createElement("div");
+  divR.className = "photo-responsive";
+  divR.style.backgroundImage = "url('img/carrouselR/carr" + i + ".jpg')";
+  containerResponsvive.appendChild(divR);
+}
+afficherMasquerR()
+
+gR.onclick=function() {
+    if(pR>-nbrR+1) {
+      
+      
+            pR--;
+    containerResponsvive.style.transform="translate("+pR*300+"px)";
+    containerResponsvive.style.transition="all 0.5s ease"
+    afficherMasquerR()
+    }
+dR.onclick=function() {
+  
+    if(pR<0) {
+      
+            pR++;
+    containerResponsvive.style.transform="translate("+pR*300+"px)";
+    containerResponsvive.style.transition="all 0.5s ease"
+    afficherMasquerR()
+    }
+  };
+};
+function afficherMasquerR() {
+  if (pR == -nbrR + 1) {
+    gR.style.visibility = "hidden";
+  } else {
+    gR.style.visibility = "visible";
+  }
+  if (pR == 0) {
+    dR.style.visibility = "hidden";
+  } else {
+    dR.style.visibility = "visible";
   }
 }
 //--------------------------------------------------------------
