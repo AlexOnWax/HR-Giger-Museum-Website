@@ -25,6 +25,7 @@ burgerMenu.addEventListener('click', () => {
 listHeader.classList.toggle('active-burger')
 })
 
+
 /* scroll*/
 cont.addEventListener("wheel", (x) => {
   // evt.preventDefault();
@@ -32,6 +33,7 @@ cont.addEventListener("wheel", (x) => {
   
 
 });
+
 
 /*NavBar reactive --------------------------------------------*/
 const sections = document.querySelectorAll(".page");
@@ -94,12 +96,27 @@ for (let i = 0; i < sections.length; i++) {
   intersectionObserverArrow.observe(sectionsArrow[0]);
   
 }
+/*utilisation de Observer pour la disparition de la fleches de gauche*/
+
+const intersectionCallbackArrow2 = (x) => {
+  
+  if(x[0].isIntersecting === true){
+ dMain.style.visibility='hidden'
+  }else{console.log(x);
+    dMain.style.visibility='visible'
+  } }
+    
+;
+const intersectionOptionsArrow2 = {
+  threshold: [0.9],
+};
+const intersectionObserverArrow2 = new IntersectionObserver(intersectionCallbackArrow2,intersectionOptionsArrow2);
 
 
-
-
-
-
+for (let i = 0; i < sections.length; i++) {
+  intersectionObserverArrow2.observe(sectionsArrow[5]);
+  
+}
 
 
 
@@ -152,7 +169,7 @@ function afficherMasquer() {
     d.style.visibility = "visible";
   }
 }
-//--------------------------------------------------------------
+
 
 // carrousel Responsive----------------------------------------------
 nbrR = 4;
@@ -202,132 +219,6 @@ function afficherMasquerR() {
     dR.style.visibility = "visible";
   }
 }
-//--------------------------------------------------------------
-//-----------fleche du main--------------------------------------
-// nbrMain = 6;
-// pMain = 0;
 
-//  const gMain = document.getElementById("left_arrow-main");
-//  const dMain = document.getElementById("right_arrow-main");
-
-// dMain.addEventListener("click", () => {
-  
-// cont.scrollLeft += scrollSize;
-// });
-
-
-// gMain.addEventListener("click", () => {
-  
-// cont.scrollLeft -= scrollSize;
-//  }
-// );
-
-
-// afficherMasquer()
-
-//   dMain.addEventListener("click", () => {
-    
-//      if(pMain<-nbrMain+1);
-//     pMain++;
-//   cont.scrollLeft += scrollSize;
-//   afficherMasquerMain()
-  
-// });
-
-
-//   gMain.addEventListener("click", () => {
-//     if(pMain>0) {
-//     pMain++;
-//   cont.scrollLeft -= scrollSize;
-//   afficherMasquerMain()
-//     }
-// });
-
-// function afficherMasquerMain() {
-//     if (pMain===0){
-//         gMain.style.visibility="hidden"
-//     }else {
-//         gMain.style.visibility="visible"
-//     }
-//     if(pMain<-nbrMain-1){
-//         dMain.style.visibility="visible"
-//     }else{
-//         dMain.style.visibility="hidden"
-//     }
-// }
-
-// const createObserver = function () {
-//   let options = {
-//     root: null,
-//     rootMargin: "100px",
-//     threshold: 0.5
-//   };
-
-// let observer = new IntersectionObserver(
-//   function (entries, observer) {
-//       handleIntersect(entries, observer); 
-//     }, 
-//   options);
-//   targetElements.forEach((targetElement) => {
-//     observer.observe(targetElement);
-//   });
-// };
-
-// const handleIntersect = function (entries, observer) {
-//   entries.forEach((entry) => {
-//     if (entry.isIntersecting) {
-//       entry.target.children[0].classList.add("bounce-me");
-//       observer.unobserve(entry.target);
-//     }
-//   });
-// };
-// afficherMasquerMain();
-
-/* scroll*/
-
-// afficherMasquer();
-
-// dMain.addEventListener("click", () => {
-//   if (pMain < 7);
-//   pMain++;
-//   cont.scrollLeft += scrollSize;
-//   afficherMasquerMain();
-  
-// });
-
-// gMain.addEventListener("click", () => {
-//   if (pMain > 0) {
-//     pMain--;
-//     cont.scrollLeft -= scrollSize;
-//     afficherMasquerMain();
-//   }
-// });
-// cont.addEventListener("wheel", (y) => {
-//   // evt.preventDefault();
- 
-//   if (y.wheelDelta <= 0) {
-//     cont.scrollLeft += y.deltaY * 10;
-//     pMain++;
-//     afficherMasquerMain();
-//   } else if (y.wheelDelta >= 0) {
-//     cont.scrollLeft += y.deltaY * 10;
-//     pMain--;
-//     afficherMasquerMain();
-//   }
-// });
-
-
-// function afficherMasquerMain() {
-//   if (pMain <= 0) {
-//     gMain.style.visibility = "hidden";
-//   } else {
-//     gMain.style.visibility = "visible";
-//   }
-//   if (pMain < nbrMain - 1) {
-//     dMain.style.visibility = "visible";
-//   } else {
-//     dMain.style.visibility = "hidden";
-//   }
-// }
 
 
