@@ -25,19 +25,13 @@ burgerMenu.addEventListener('click', () => {
 listHeader.classList.toggle('active-burger')
 })
 
-
-
-
 /* scroll*/
-
 cont.addEventListener("wheel", (x) => {
   // evt.preventDefault();
-  cont.scrollLeft += x.deltaY * 15.4;
+  cont.scrollLeft += x.deltaY * 20;
   
+
 });
-
-
-// });
 
 /*NavBar reactive --------------------------------------------*/
 const sections = document.querySelectorAll(".page");
@@ -49,6 +43,7 @@ function activateNavByIndex(index) {
   for (let i = currentActive.length - 1; i >= 0; i--) {
     currentActive[i].classList.remove("active-card");
   }
+    
   navItems[index].classList.add("active-card");
 }
 
@@ -57,6 +52,7 @@ const intersectionCallback = (alexTest) => {
   if (alexTest[0].intersectionRatio > 0.25) {
     activateNavByIndex(sectionsArr.indexOf(alexTest[0].target));
   }
+  
 };
 //Les options de l'observer
 const intersectionOptions = {
@@ -69,6 +65,44 @@ const intersectionObserver = new IntersectionObserver(intersectionCallback,inter
 for (let i = 0; i < sections.length; i++) {
   intersectionObserver.observe(sections[i]);
 }
+
+
+
+
+/*utilisation de Observer pour la disparition de la fleches de droite*/
+const sectionsArrow = document.querySelectorAll(".page");
+const gMain = document.getElementById("left_arrow-main");
+ const dMain = document.getElementById("right_arrow-main");
+ const sectionsTableau = Array.from(sectionsArrow);
+
+const intersectionCallbackArrow = (x) => {
+  
+  if(x[0].isIntersecting === true){
+ gMain.style.visibility='hidden'
+  }else{console.log(x);
+    gMain.style.visibility='visible'
+  } }
+    
+;
+const intersectionOptionsArrow = {
+  threshold: [0.9],
+};
+const intersectionObserverArrow = new IntersectionObserver(intersectionCallbackArrow,intersectionOptionsArrow);
+
+
+for (let i = 0; i < sections.length; i++) {
+  intersectionObserverArrow.observe(sectionsArrow[0]);
+  
+}
+
+
+
+
+
+
+
+
+
 
 // carrousel----------------------------------------------
 nbr = 5;
@@ -119,6 +153,7 @@ function afficherMasquer() {
   }
 }
 //--------------------------------------------------------------
+
 // carrousel Responsive----------------------------------------------
 nbrR = 4;
 pR = 0;
@@ -169,30 +204,30 @@ function afficherMasquerR() {
 }
 //--------------------------------------------------------------
 //-----------fleche du main--------------------------------------
-nbrMain = 7;
-pMain = 0;
+// nbrMain = 6;
+// pMain = 0;
 
-const gMain = document.getElementById("left_arrow-main");
-const dMain = document.getElementById("right_arrow-main");
+//  const gMain = document.getElementById("left_arrow-main");
+//  const dMain = document.getElementById("right_arrow-main");
 
-dMain.addEventListener("click", () => {
+// dMain.addEventListener("click", () => {
+  
+// cont.scrollLeft += scrollSize;
+// });
 
-cont.scrollLeft += scrollSize;
-});
 
-
-gMain.addEventListener("click", () => {
-
-cont.scrollLeft -= scrollSize;
- }
-);
+// gMain.addEventListener("click", () => {
+  
+// cont.scrollLeft -= scrollSize;
+//  }
+// );
 
 
 // afficherMasquer()
 
 //   dMain.addEventListener("click", () => {
     
-//      if(pMain<7);
+//      if(pMain<-nbrMain+1);
 //     pMain++;
 //   cont.scrollLeft += scrollSize;
 //   afficherMasquerMain()
@@ -202,7 +237,7 @@ cont.scrollLeft -= scrollSize;
 
 //   gMain.addEventListener("click", () => {
 //     if(pMain>0) {
-//     pMain--;
+//     pMain++;
 //   cont.scrollLeft -= scrollSize;
 //   afficherMasquerMain()
 //     }
@@ -214,89 +249,85 @@ cont.scrollLeft -= scrollSize;
 //     }else {
 //         gMain.style.visibility="visible"
 //     }
-//     if(pMain<nbrMain-1){
+//     if(pMain<-nbrMain-1){
 //         dMain.style.visibility="visible"
 //     }else{
 //         dMain.style.visibility="hidden"
 //     }
 // }
 
-const createObserver = function () {
-  let options = {
-    root: null,
-    rootMargin: "100px",
-    threshold: 0.5
-  };
+// const createObserver = function () {
+//   let options = {
+//     root: null,
+//     rootMargin: "100px",
+//     threshold: 0.5
+//   };
 
-let observer = new IntersectionObserver(
-  function (entries, observer) {
-      handleIntersect(entries, observer); 
-    }, 
-  options);
-  targetElements.forEach((targetElement) => {
-    observer.observe(targetElement);
-  });
-};
+// let observer = new IntersectionObserver(
+//   function (entries, observer) {
+//       handleIntersect(entries, observer); 
+//     }, 
+//   options);
+//   targetElements.forEach((targetElement) => {
+//     observer.observe(targetElement);
+//   });
+// };
 
-const handleIntersect = function (entries, observer) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.children[0].classList.add("bounce-me");
-      observer.unobserve(entry.target);
-    }
-  });
-};
-afficherMasquerMain();
+// const handleIntersect = function (entries, observer) {
+//   entries.forEach((entry) => {
+//     if (entry.isIntersecting) {
+//       entry.target.children[0].classList.add("bounce-me");
+//       observer.unobserve(entry.target);
+//     }
+//   });
+// };
+// afficherMasquerMain();
+
 /* scroll*/
 
-afficherMasquer();
+// afficherMasquer();
 
-dMain.addEventListener("click", () => {
-  if (pMain < 7);
-  pMain++;
-  cont.scrollLeft += scrollSize;
-  afficherMasquerMain();
-  
-});
-
-gMain.addEventListener("click", () => {
-  if (pMain > 0) {
-    pMain--;
-    cont.scrollLeft -= scrollSize;
-    afficherMasquerMain();
-  }
-});
-
-cont.addEventListener("wheel", (y) => {
-  // evt.preventDefault();
- 
-  if (y.wheelDelta <= 0) {
-    cont.scrollLeft += y.deltaY * 10;
-    pMain++;
-    afficherMasquerMain();
-  } else if (y.wheelDelta >= 0) {
-    cont.scrollLeft += y.deltaY * 10;
-    pMain--;
-    afficherMasquerMain();
-  }
-});
-
-function afficherMasquerMain() {
-  if (pMain <= 0) {
-    gMain.style.visibility = "hidden";
-  } else {
-    gMain.style.visibility = "visible";
-  }
-  if (pMain < nbrMain - 1) {
-    dMain.style.visibility = "visible";
-  } else {
-    dMain.style.visibility = "hidden";
-  }
-}
-
-// cont.addEventListener("wheel", (x) => {
-//   // evt.preventDefault();
-//   cont.scrollLeft += x.deltaY * 10;
+// dMain.addEventListener("click", () => {
+//   if (pMain < 7);
 //   pMain++;
-//   afficherMasquerMain()
+//   cont.scrollLeft += scrollSize;
+//   afficherMasquerMain();
+  
 // });
+
+// gMain.addEventListener("click", () => {
+//   if (pMain > 0) {
+//     pMain--;
+//     cont.scrollLeft -= scrollSize;
+//     afficherMasquerMain();
+//   }
+// });
+// cont.addEventListener("wheel", (y) => {
+//   // evt.preventDefault();
+ 
+//   if (y.wheelDelta <= 0) {
+//     cont.scrollLeft += y.deltaY * 10;
+//     pMain++;
+//     afficherMasquerMain();
+//   } else if (y.wheelDelta >= 0) {
+//     cont.scrollLeft += y.deltaY * 10;
+//     pMain--;
+//     afficherMasquerMain();
+//   }
+// });
+
+
+// function afficherMasquerMain() {
+//   if (pMain <= 0) {
+//     gMain.style.visibility = "hidden";
+//   } else {
+//     gMain.style.visibility = "visible";
+//   }
+//   if (pMain < nbrMain - 1) {
+//     dMain.style.visibility = "visible";
+//   } else {
+//     dMain.style.visibility = "hidden";
+//   }
+// }
+
+
