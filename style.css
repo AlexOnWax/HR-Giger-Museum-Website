@@ -231,6 +231,7 @@ header a {
   justify-items: center;
   align-items: center;
   gap: 3.125rem;
+  margin-bottom: 15px;
 }
 #title-museum_landing-page {
 margin-left: 12.5rem;
@@ -262,7 +263,7 @@ margin-left: 12.5rem;
 .grid-main-img {
   display: flex;
   gap: 2rem;
-  margin-right: 3.125rem;
+  margin-right: 10rem;
 }
 
 /*firstpage Landing Page--------------*/
@@ -279,6 +280,7 @@ margin-left: 12.5rem;
   align-items: center;
   height: 90vh;
   width: 100%;
+  
 }
 #grid-access {
   display: grid;
@@ -289,7 +291,9 @@ margin-left: 12.5rem;
   gap:2rem;
   padding: 0 5rem 16.875rem 3.125rem;
   font-size: 2.5rem;
+  margin-bottom:20px ;
 }
+
 .page-access .title-page {
   align-self: flex-start;
   margin-top: 8rem;
@@ -323,7 +327,7 @@ max-width:600px ;
   border-bottom: solid;
 }
 .paragraphe-news {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 #title-article-news > span {
   font-size: 1rem;
@@ -341,6 +345,7 @@ max-width:600px ;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  
 }
 .main-exhibition {
   display: flex;
@@ -349,6 +354,7 @@ max-width:600px ;
   align-items: center;
   height: 100vh;
   width: 100%;
+  margin-bottom:120px ;
 }
 .main-exhibition > h3 {
   font-family: var(--font-text);
@@ -474,6 +480,8 @@ max-width:600px ;
   align-items: center;
   height: 90vh;
   width: 100%;
+  
+
 }
 .page-video .title-page {
   align-self: flex-start;
@@ -497,8 +505,10 @@ max-width:600px ;
   align-items: center;
   justify-content: center;
   gap: 3.125rem;
-  height: 85vh;
+  height: 65vh;
   width: 100%;
+ 
+  
 }
 .page-bio .title-page {
   margin-top: 8rem;
