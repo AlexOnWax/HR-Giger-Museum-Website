@@ -12,6 +12,7 @@ let i = 0;
 
 
 /*Menu Burger*/
+
 const btn = document.querySelector(".btn1");
 
 btn.addEventListener('click', presentation)
@@ -34,8 +35,8 @@ cont.addEventListener("wheel", (x) => {
 
 });
 
-
 /*NavBar reactive --------------------------------------------*/
+
 const sections = document.querySelectorAll(".page");
 const sectionsArr = Array.from(sections);
 const navItems = document.querySelectorAll(".list-nav a");
@@ -72,6 +73,7 @@ for (let i = 0; i < sections.length; i++) {
 
 
 /*utilisation de Observer pour la disparition de la fleches de droite*/
+
 const sectionsArrow = document.querySelectorAll(".page");
 const gMain = document.getElementById("left_arrow-main");
  const dMain = document.getElementById("right_arrow-main");
@@ -96,6 +98,7 @@ for (let i = 0; i < sections.length; i++) {
   intersectionObserverArrow.observe(sectionsArrow[0]);
   
 }
+
 /*utilisation de Observer pour la disparition de la fleches de gauche*/
 
 const intersectionCallbackArrow2 = (x) => {
@@ -119,9 +122,16 @@ for (let i = 0; i < sections.length; i++) {
 }
 
 
+/*Activation des fleches de déplacements du site Desktop*/
 
+dMain.addEventListener("click", () => {
+  cont.scrollLeft += scrollSize;
+});
+gMain.addEventListener("click", () => {
+ cont.scrollLeft -= scrollSize;
+});
 
-// carrousel----------------------------------------------
+// carrousel version Desktop
 nbr = 5;
 p = 0;
 const container = document.getElementById("container");
@@ -132,7 +142,7 @@ container.style.width = 800 * nbr + "px";
 for (i = 1; i <= nbr; i++) {
   div = document.createElement("div");
   div.className = "photo";
-  div.style.backgroundImage = "url('img/carrousel/carr" + i + ".jpg')";
+  div.style.backgroundImage = "url('img/carrousel/carr" + i + ".webp')";
   container.appendChild(div);
 }
 afficherMasquer()
@@ -171,7 +181,8 @@ function afficherMasquer() {
 }
 
 
-// carrousel Responsive----------------------------------------------
+// carrousel du responsive mobile
+
 nbrR = 4;
 pR = 0;
 const containerResponsvive = document.getElementById("container-responsive");
@@ -182,7 +193,7 @@ containerResponsvive.style.width = 300 * nbrR + "px";
 for (i = 1; i <= nbr; i++) {
   divR = document.createElement("div");
   divR.className = "photo-responsive";
-  divR.style.backgroundImage = "url('img/carrouselR/carr" + i + ".jpg')";
+  divR.style.backgroundImage = "url('img/carrouselR/carr" + i + ".webp')";
   containerResponsvive.appendChild(divR);
 }
 afficherMasquerR()
@@ -219,6 +230,8 @@ function afficherMasquerR() {
     dR.style.visibility = "visible";
   }
 }
+
+
 
 
 

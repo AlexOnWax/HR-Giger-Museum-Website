@@ -10,8 +10,8 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: black;
-  background-image: url(/img/fond_giger.png);
+  background-color: rgb(36, 36, 31);
+  background-image: url(/img/fond_giger.webp)  ;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
@@ -34,8 +34,13 @@ body {
   
 }
 .active-card {
-  border-bottom: solid rgb(199, 155, 155);
-  transition: 0.2s;
+  border: solid 1px rgb(255, 255, 255);
+  border-radius: 50px;
+  color: rgb(12, 12, 12);
+  background-color: #fff;
+  font-weight: bold;
+  padding: 9px;
+ 
  
 }
 .card {
@@ -51,12 +56,14 @@ body {
   position: absolute;
   left: 0;
   bottom: 50vh;
+  cursor: pointer;
 
 }
 #right_arrow-main {
   position: absolute;
 right:0;
 bottom: 50vh;
+cursor: pointer;
 }
 /*general-----------------*/
 
@@ -83,6 +90,8 @@ header {
   align-items: center;
   justify-content: space-between;
   z-index: 2;
+  background-color: rgba(185, 211, 180, 0.089);
+  
 }
 .logo-title-header {
   display: flex;
@@ -227,7 +236,7 @@ header a {
 margin-left: 12.5rem;
 }
 .img-menu1 {
-  background-image: url(/img/triptic_1.png);
+  background-image: url(/img/triptic_1.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -235,7 +244,7 @@ margin-left: 12.5rem;
   height: 80vh;
 }
 .img-menu2 {
-  background-image: url(/img/triptic_2.png);
+  background-image: url(/img/triptic_2.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -243,7 +252,7 @@ margin-left: 12.5rem;
   height: 80vh;
 }
 .img-menu3 {
-  background-image: url(/img/triptic_3.png);
+  background-image: url(/img/triptic_3.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -564,6 +573,7 @@ footer {
   align-items: center;
   justify-content: center;
   font-size: 2rem;
+  background-color: rgba(185, 211, 180, 0.089);
 }
 /*footer-----------------------*/
 
@@ -583,7 +593,7 @@ footer {
   
   body {
     box-sizing: border-box;
-    margin: 0px;
+    margin: 0;
     padding: 0;
     background-color: black;
     background-image: url(/img/fond_giger.png);
@@ -894,6 +904,10 @@ max-width:auto ;
   gap: 0.5rem;
   height: 85vh;
   width: 100%;
+}
+.main-bio img {
+  width: 60%;
+  height: 50%;
 }
 .page-bio .title-page {
   align-self: flex-start;
