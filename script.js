@@ -354,7 +354,7 @@ function traduction() {
   frenchTitreGalleryElement.appendChild(frenchTitreGalleryContent);
   titreGallery.replaceChildren(frenchTitreGalleryElement);
 
-  const frenchTitreVideoContent = document.createTextNode("COURT METRAGE");
+  const frenchTitreVideoContent = document.createTextNode("COURT MÉTRAGE");
   const frenchTitreVideoElement = document.createElement(
     "H2"[("class", "title-page")]
   );
@@ -380,7 +380,7 @@ function traduction() {
   followUsElement.appendChild(followUsContent);
   followUs.replaceChildren(followUsElement);
 
-  const findUsContent = document.createTextNode("Suivez-nous");
+  const findUsContent = document.createTextNode("Trouvez-nous");
   const findUsElement = document.createElement("H3");
   findUsElement.appendChild(findUsContent);
   findUs.replaceChildren(findUsElement);
