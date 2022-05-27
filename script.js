@@ -83,7 +83,7 @@ const intersectionCallbackArrow = (x) => {
   
   if(x[0].isIntersecting === true){
  gMain.style.visibility='hidden'
-  }else{console.log(x);
+  }else{
     gMain.style.visibility='visible'
   } }
     
@@ -105,7 +105,7 @@ const intersectionCallbackArrow2 = (x) => {
   
   if(x[0].isIntersecting === true){
  dMain.style.visibility='hidden'
-  }else{console.log(x);
+  }else{
     dMain.style.visibility='visible'
   } }
     
@@ -193,7 +193,7 @@ containerResponsvive.style.width = 300 * nbrR + "px";
 for (i = 1; i <= nbr; i++) {
   divR = document.createElement("div");
   divR.className = "photo-responsive";
-  divR.style.backgroundImage = "url('img/carrouselR/carr" + i + ".webp')";
+  divR.style.backgroundImage = "url('img/carrouselR/carrR" + i + ".webp')";
   containerResponsvive.appendChild(divR);
 }
 afficherMasquerR()
@@ -232,6 +232,125 @@ function afficherMasquerR() {
 }
 
 
+/*Bouton switch langue*/
+
+const switchLangue =document.querySelector('.ball')
+const titreHours =document.querySelector('#opening-hours h2')
+const pHours =document.querySelector('#opening-hours p')
+const titreNewsSpan =document.querySelector('#title-article-news span')
+const paragrapheNews=document.querySelector(".paragraphe-news")
+const titrePhotoGallery =document.querySelector(".main-exhibition h3")
+const bio = document.querySelector(".text-bio-link")
+const navList = document.querySelectorAll(".list-nav  a")
+const titreAccess = document.querySelector("#page-access .title-page")
+const titreGallery = document.querySelector("#page-exhibition .title-page")
+const titreVideo = document.querySelector("#page-video .title-page")
+const titreBio = document.querySelector("#page-bio .title-page")
+const subscribeNewsletter = document.querySelector(".main-sub h2")
+const followUs = document.querySelector(".information h3")
+const findUs = document.querySelector(".information h4")
+const switchLangueResponsive = document.querySelector('.ball-responsive')
+function traduction () {
+  const TitreHeureOuverture_content = document.createTextNode("Horraires d'ouverture")
+  const TitreHeureOuvertureElement = document.createElement('H2');
+  TitreHeureOuvertureElement.appendChild(TitreHeureOuverture_content);
+  titreHours.replaceChildren(TitreHeureOuvertureElement)
+  
+  
+  const HeureOuverture_content = document.createTextNode(`Fermé le Lundi Du mardi au Vendredi ouvert de 13h à 15h Le samedi et le dimanche ouvert de 10h00 à 18h00`)
+  const HeureOuvertureElement = document.createElement('P');
+  HeureOuvertureElement.appendChild(HeureOuverture_content);
+  pHours.replaceChildren(HeureOuvertureElement)
+  
+  const SpanContent =document.createTextNode('De mai à Novembre 2022 ')
+  const spanElement = document.createElement('SPAN');
+  spanElement.appendChild(SpanContent)
+  titreNewsSpan.replaceChildren(SpanContent)
+  
+  
+  const paragrapheNewsContent =document.createTextNode("Une exposition collective de Stanisky Grof Organisée par Nadia Honarchian et Claude Steiner, en collaboration avec Carmen Giger-Scheifele, l'exposition est une suite de l'exposition collective Psychonauten l en 2008, qui était en l'honneur d'Albert Hofmann, le découvreur du LSD. ")
+  const paragrapheNewsElement = document.createElement('P');
+  paragrapheNewsElement.appendChild(paragrapheNewsContent)
+  paragrapheNews.replaceChildren(paragrapheNewsContent)
+  
+  
+  const titrePhotosContent =document.createTextNode("Galerie photos des dernières expositions")
+  const titrePhotosElement = document.createElement('P');
+  titrePhotosElement.appendChild(titrePhotosContent)
+  titrePhotoGallery.replaceChildren(titrePhotosContent)
+  
+  
+  const bioContent =document.createTextNode("H.R. Giger est né à Coire, en Suisse, en 1940. Enfant, il a développé une forte passion pour tout ce qui est surréaliste et macabre. Son besoin de s'exprimer et de partager les aspects uniques de son imagination puissante l'a attiré vers les arts visuels. Les propres rêves de Giger et les brillantes images de génies fantastiques tels que Gustav Meyrink, Jean Cocteau, Alfred Kubin et H.P. Lovecraft s'est combiné pour former un sol riche à partir duquel les images étonnantes de l'art de Giger sont venues germer. Il s'est depuis transformé en une vaste richesse de femmes exotiques, de paysages merveilleusement bizarres et de créatures effrayantes qui ont captivé la fascination de millions de fans dans le monde entier.")
+  const bioElement = document.createElement('P');
+  bioElement.appendChild(bioContent)
+  bio.replaceChildren(bioContent)
+  
+   i=-1
+  navList.forEach(nav => {
+   
+    i++
+   const tab =["ACCUEIL","MUSEE","GALLERIE","FILM","BIOGRAPHIE","CONTACT"]
+    const navContent =document.createTextNode(`${tab[i]}`)
+    const navElement = document.createElement('A'["class","hover_menu active-card"]);
+    navElement.appendChild(navContent)
+    nav.replaceChildren(navElement)
+  });
+  
+  const frenchTitreAccessContent =document.createTextNode("MUSEE")
+  const frenchTitreElement = document.createElement('H2'["class","title-page"] );
+  frenchTitreElement.appendChild(frenchTitreAccessContent)
+  titreAccess.replaceChildren(frenchTitreElement)
+  
+  const frenchTitreGalleryContent =document.createTextNode("GALLERIE DE PHOTOS")
+  const frenchTitreGalleryElement = document.createElement('H2'["class","title-page"] );
+  frenchTitreGalleryElement.appendChild(frenchTitreGalleryContent)
+  titreGallery.replaceChildren(frenchTitreGalleryElement)
+  
+  const frenchTitreVideoContent =document.createTextNode("COURT METRAGE")
+  const frenchTitreVideoElement = document.createElement('H2'["class","title-page"] );
+  frenchTitreVideoElement.appendChild(frenchTitreVideoContent)
+  titreVideo.replaceChildren(frenchTitreVideoElement)
+  
+  const frenchTitreBioContent =document.createTextNode("BIOGRAPHIE")
+  const frenchTitreBioElement = document.createElement('H2'["class","title-page"] );
+  frenchTitreBioElement.appendChild(frenchTitreBioContent)
+  titreBio.replaceChildren(frenchTitreBioElement)
+  
+  const frenchTitreSubContent =document.createTextNode("Inscrivez-vous à la news-letter")
+  const frenchTitreSubElement = document.createElement('H2');
+  frenchTitreSubElement.appendChild(frenchTitreSubContent)
+  subscribeNewsletter.replaceChildren(frenchTitreSubElement)
+  
+  const followUsContent =document.createTextNode("Suivez-nous")
+  const followUsElement = document.createElement('H3');
+  followUsElement.appendChild(followUsContent)
+  followUs.replaceChildren(followUsElement)
+  
+  const findUsContent =document.createTextNode("Suivez-nous")
+  const findUsElement = document.createElement('H3');
+  findUsElement.appendChild(findUsContent)
+  findUs.replaceChildren(findUsElement)
+  }
+
+//fonction toogle traduction
+j=1
+switchLangue.addEventListener('click', ()=> {
+  console.log(j);
+  j++
+  if (j%2==0){
+  traduction()}else{
+  location.reload()}
+});
+//fonction toogle traduction responsive
+j=1
+switchLangueResponsive.addEventListener('click', ()=> {
+  console.log(j);
+  j++
+  if (j%2==0){
+  traduction()}else{
+  location.reload()}
+});
+  
 
 
 
