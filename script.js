@@ -188,7 +188,7 @@ pR = 0;
 const containerResponsvive = document.getElementById("container-responsive");
 const gR = document.getElementById("g-responsive");
 const dR = document.getElementById("d-responsive");
-containerResponsvive.style.width = 300 * nbrR + "px";
+containerResponsvive.style.width = 370 * nbrR + "px";
 
 for (i = 1; i <= nbr; i++) {
   divR = document.createElement("div");
@@ -203,7 +203,7 @@ gR.onclick=function() {
       
       
             pR--;
-    containerResponsvive.style.transform="translate("+pR*300+"px)";
+    containerResponsvive.style.transform="translate("+pR*370+"px)";
     containerResponsvive.style.transition="all 0.5s ease"
     afficherMasquerR()
     }
@@ -212,7 +212,7 @@ dR.onclick=function() {
     if(pR<0) {
       
             pR++;
-    containerResponsvive.style.transform="translate("+pR*300+"px)";
+    containerResponsvive.style.transform="translate("+pR*370+"px)";
     containerResponsvive.style.transition="all 0.5s ease"
     afficherMasquerR()
     }

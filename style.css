@@ -434,18 +434,21 @@ margin-left: 12.5rem;
 
 #carrousel-responsive {/*carrousel*/
   display: none;
-  width: 300px;
-  height: 400px;
+  width: 370px;
+  height: 390px;
   border: solid .25rem #fff;
   box-shadow: 0 0 .875rem rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
   margin-bottom: 9.375rem;
+   
 }
 #container-responsive {/*carrousel*/
- 
-  width: 300px;
-  height: 400px;
+
+
+
+  width: 370px;
+  height: 390px;
   
 }
 .bouton-responsive {/*carrousel*/
@@ -473,8 +476,9 @@ margin-left: 12.5rem;
   opacity: 1;
 }
 .photo-responsive {/*carrousel*/
-  width: 300px;
-  height: 400px;
+  width: 370px;
+  height:390px;
+  background-position: center;
   margin: 0;
   display: inline-block;
   background-size: cover;
