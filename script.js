@@ -256,12 +256,19 @@ function traduction () {
   TitreHeureOuvertureElement.appendChild(TitreHeureOuverture_content);
   titreHours.replaceChildren(TitreHeureOuvertureElement)
   
-  
-  const HeureOuverture_content = document.createTextNode(`Fermé le Lundi Du mardi au Vendredi ouvert de 13h à 15h Le samedi et le dimanche ouvert de 10h00 à 18h00`)
-  const HeureOuvertureElement = document.createElement('P');
-  HeureOuvertureElement.appendChild(HeureOuverture_content);
-  pHours.replaceChildren(HeureOuvertureElement)
-  
+ 
+  const HeureOuverture_content = document.createTextNode("Fermé le Lundi")
+  const HeureOuverture_content2 = document.createTextNode("Du mardi au Vendredi ouvert de 13h à 15h")
+  const HeureOuverture_content3 = document.createTextNode("Le samedi et le dimanche ouvert de 10h00 à 18h00")
+
+  const HeureOuvertureElement1 = document.createElement('P');
+  const HeureOuvertureElement2 = document.createElement('P');
+  const HeureOuvertureElement3 = document.createElement('P');
+  HeureOuvertureElement1.appendChild(HeureOuverture_content);
+  HeureOuvertureElement2.appendChild(HeureOuverture_content2);
+  HeureOuvertureElement3.appendChild(HeureOuverture_content3);
+   pHours.replaceChildren(HeureOuvertureElement1,HeureOuvertureElement2,HeureOuvertureElement3)
+
   const SpanContent =document.createTextNode('De mai à Novembre 2022 ')
   const spanElement = document.createElement('SPAN');
   spanElement.appendChild(SpanContent)
@@ -289,14 +296,14 @@ function traduction () {
   navList.forEach(nav => {
    
     i++
-   const tab =["ACCUEIL","MUSEE","GALLERIE","FILM","BIOGRAPHIE","CONTACT"]
+   const tab =["ACCUEIL","MUSÉE","GALLERIE","FILM","BIOGRAPHIE","CONTACT"]
     const navContent =document.createTextNode(`${tab[i]}`)
     const navElement = document.createElement('A'["class","hover_menu active-card"]);
     navElement.appendChild(navContent)
     nav.replaceChildren(navElement)
   });
   
-  const frenchTitreAccessContent =document.createTextNode("MUSEE")
+  const frenchTitreAccessContent =document.createTextNode("MUSÉE")
   const frenchTitreElement = document.createElement('H2'["class","title-page"] );
   frenchTitreElement.appendChild(frenchTitreAccessContent)
   titreAccess.replaceChildren(frenchTitreElement)
