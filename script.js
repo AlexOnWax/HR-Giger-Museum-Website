@@ -11,6 +11,23 @@ let scrollSize = body.clientWidth;
 let i = 0;
 
 
+//animation au démarage
+
+window.addEventListener('load', () => {
+  const titleAnim = document.querySelector("#title-museum_landing-page")
+  const animImg =document.querySelectorAll('.card')
+
+  const titletime = gsap.timeline({paused: true});//on creer les parametres de la timeline (containair à animation)avec de bases l'option de pause
+  titletime
+  //from pour un seul element
+  .from(titleAnim, 2, {xPercent: -100, opacity:0, ease: Elastic.easeOut.config(1, 0.75)})
+  //staggerFrom pour plusieur elements '-=1' permet d'avancer l'activation avant la fin de l'animation precedente
+  .staggerFrom(animImg, 1, {yPercent: -100, opacity:0, ease: Elastic.easeOut.config(1, 0.75)},0.2,'-=1')
+
+  titletime.play();
+})
+
+
 /*Menu Burger*/
 
 const btn = document.querySelector(".btn1");
@@ -132,7 +149,7 @@ gMain.addEventListener("click", () => {
 });
 
 // carrousel version Desktop
-nbr = 5;
+nbr = 2;
 p = 0;
 const container = document.getElementById("container");
 const g = document.getElementById("g");
@@ -183,7 +200,7 @@ function afficherMasquer() {
 
 // carrousel du responsive mobile
 
-nbrR = 4;
+nbrR = 2;
 pR = 0;
 const containerResponsvive = document.getElementById("container-responsive");
 const gR = document.getElementById("g-responsive");
@@ -358,6 +375,5 @@ switchLangueResponsive.addEventListener('click', ()=> {
   location.reload()}
 });
   
-
 
 

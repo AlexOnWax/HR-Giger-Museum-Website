@@ -802,10 +802,13 @@ display: none;
   align-items: center;
   gap: 0.5rem;
   height: auto;
+  
 }
 #title-museum_landing-page {
 margin-left: 0rem;
 margin-top: 5rem;
+position: relative;
+
 
 }
 .img-menu1 {
@@ -887,7 +890,7 @@ margin-top: 5rem;
 #img-museum {
   grid-area: 1/1/2/2;
   align-self: center;
-  width: 90vw;
+  width: 100vw;
 }
 
 .news-text-flex {
