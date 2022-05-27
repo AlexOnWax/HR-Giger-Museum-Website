@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: rgb(36, 36, 31);
-  background-image: url(/img/fond_giger.webp);
+  background-image: url(/img/photo-musée_exterieur.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
@@ -262,8 +262,10 @@ header a {
 
 .page-landing h1 {
   font-family: var(--font-title);
-  font-size: 12.5rem;
+  font-size: 18.5rem;
   font-weight: lighter;
+  color: rgba(122, 109, 52, 0.973);
+  
 }
 #main-title {
   display: grid;
@@ -295,7 +297,7 @@ header a {
   height: 80vh;
 }
 .img-menu3 {
-  background-image: url(/img/simon-berger-rydQVdwcgUQ-unsplash.jpg);
+  background-image: url(/img/fond-foret.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -643,8 +645,7 @@ footer {
     margin: 0;
     padding: 0;
     background-color: black;
-    background-image: url(/img/fond_giger.webp);
-
+    background-image: url(/img/xin-qPFkHjuJDRw-unsplash.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
@@ -747,8 +748,10 @@ footer {
 
   .page-landing h1 {
     font-family: var(--font-title);
-    font-size: 6rem;
+    font-size: 8rem;
     font-weight: lighter;
+    color: rgb(51, 10, 10);
+    
   }
   #main-title {
     display: grid;
@@ -847,7 +850,7 @@ footer {
   #img-psy {
     align-self: center;
     grid-area: 3/1/4/2;
-    width: 90vw;
+    width: 100vw;
   }
   #title-article-news {
     font-size: 2.25rem;

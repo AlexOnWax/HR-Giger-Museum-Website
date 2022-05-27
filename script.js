@@ -100,10 +100,16 @@ const sectionsTableau = Array.from(sectionsArrow);
 const intersectionCallbackArrow = (x) => {
   if (x[0].isIntersecting === true) {
     gMain.style.visibility = "hidden";
+    
   } else {
     gMain.style.visibility = "visible";
+     
   }
 };
+
+  
+
+  
 
 const intersectionOptionsArrow = {
   threshold: [0.9],
@@ -138,6 +144,9 @@ const intersectionObserverArrow2 = new IntersectionObserver(
 for (let i = 0; i < sections.length; i++) {
   intersectionObserverArrow2.observe(sectionsArrow[5]);
 }
+
+
+
 
 /*Activation des fleches de déplacements du site Desktop*/
 
@@ -195,7 +204,7 @@ function afficherMasquer() {
 
 // carrousel du responsive mobile
 
-nbrR = 2;
+nbrR = 5;
 pR = 0;
 const containerResponsvive = document.getElementById("container-responsive");
 const gR = document.getElementById("g-responsive");
@@ -205,7 +214,7 @@ containerResponsvive.style.width = 370 * nbrR + "px";
 for (i = 1; i <= nbr; i++) {
   divR = document.createElement("div");
   divR.className = "photo-responsive";
-  divR.style.backgroundImage = "url('img/carrouselR/carrR" + i + ".webp')";
+  divR.style.backgroundImage = "url('img/carrouselR/carrR" + i + ".jpg')";
   containerResponsvive.appendChild(divR);
 }
 afficherMasquerR();
