@@ -387,6 +387,7 @@ header a {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  position: relative;
 }
 .main-exhibition {
   display: flex;
@@ -395,11 +396,12 @@ header a {
   align-items: center;
   height: 100vh;
   width: 100%;
-  margin-bottom: 120px;
+  
 }
 .main-exhibition > h3 {
   font-family: var(--font-text);
   font-size: 4rem;
+  margin-bottom: 0;
 }
 
 #carrousel-responsive {
@@ -511,8 +513,11 @@ header a {
   background-size: cover;
 }
 .page-exhibition .title-page {
+  position: absolute;
   align-self: flex-start;
-  margin-top: 8rem;
+  /* margin-top: 8rem; */
+  top: 8rem;
+  margin-left: 0.5rem;
 }
 
 /*3rd page  GALLERY---------------*/
@@ -561,6 +566,9 @@ header a {
 .text-bio-link {
   width: 90rem;
   font-size: 3rem;
+}
+.main-bio img{
+ margin-bottom: 75px;
 }
 
 /*5th page Bio---------------*/
@@ -616,6 +624,15 @@ button {
 }
 button:hover {
   cursor: pointer;
+}
+ .main-sub h2 {
+  margin: 0;
+} 
+.information h3 {
+  margin: 0;
+}
+.information h4 {
+  margin: 0;
 }
 /*6th page Subscribe---------------*/
 
