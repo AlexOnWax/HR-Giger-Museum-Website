@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: rgb(36, 36, 31);
-  background-image: url(/img/photo-musée_exterieur.jpg);
+  background-image: url(/img/photo-musée_exterieur.webp);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
@@ -280,7 +280,7 @@ header a {
   margin-left: 12.5rem;
 }
 .img-menu1 {
-  background-image: url(/img/jon-butterworth-rXjSnBx8Kuc-unsplash.jpg);
+  background-image: url(/img/jon-butterworth-rXjSnBx8Kuc-unsplash.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -289,7 +289,7 @@ header a {
   height: 80vh;
 }
 .img-menu2 {
-  background-image: url(/img/raouf-nouari-d3JhFXzn_nQ-unsplash.jpg);
+  background-image: url(/img/raouf-nouari-d3JhFXzn_nQ-unsplash.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -297,7 +297,7 @@ header a {
   height: 80vh;
 }
 .img-menu3 {
-  background-image: url(/img/fond-foret.jpg);
+  background-image: url(/img/fond-foret.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -645,7 +645,7 @@ footer {
     margin: 0;
     padding: 0;
     background-color: black;
-    background-image: url(/img/xin-qPFkHjuJDRw-unsplash.jpg);
+    background-image: url(/img/xin-qPFkHjuJDRw-unsplash.webp);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
@@ -768,7 +768,7 @@ footer {
     position: relative;
   }
   .img-menu1 {
-    background-image: url(/img/img-mobile.jpg);
+    background-image: url(/img/img-mobile.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
