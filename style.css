@@ -278,7 +278,7 @@ header a {
   background-position: center;
   background-size: cover;
 
-  width: 15vw;
+  width: 12vw;
   height: 80vh;
 }
 .img-menu2 {
@@ -286,7 +286,7 @@ header a {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  width: 15vw;
+  width: 12vw;
   height: 80vh;
 }
 .img-menu3 {
@@ -294,7 +294,7 @@ header a {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  width: 15vw;
+  width: 12vw;
   height: 80vh;
 }
 .grid-main-img {
@@ -315,7 +315,7 @@ header a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 100vh;
   width: 100%;
 }
 #grid-access {
@@ -324,7 +324,7 @@ header a {
   grid-template-rows: 1fr 1fr;
   justify-items: center;
   align-items: center;
-  gap: 2rem;
+  gap: 0rem;
   padding: 0 5rem 16.875rem 3.125rem;
   font-size: 2.5rem;
   margin-bottom: 20px;
@@ -332,7 +332,7 @@ header a {
 
 .page-access .title-page {
   align-self: flex-start;
-  margin-top: 8rem;
+  margin-top: 7rem;
 }
 #opening-hours {
   grid-area: 2/1/3/2;
