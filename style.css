@@ -39,15 +39,8 @@ body {
   font-weight: bold;
   padding: 9px;
 }
-.card {
-  transition: border-radius cubic-bezier(0.075, 0.82, 0.165, 1) 1s,
-    transform cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
-}
-.card:hover {
-  border-bottom-right-radius: 3.125rem;
-  border-top-left-radius: 3.125rem;
-  transform: scale(1.01);
-}
+
+
 #left_arrow-main {
   position: absolute;
   left: 0;
@@ -280,7 +273,7 @@ header a {
   margin-left: 12.5rem;
 }
 .img-menu1 {
-  background-image: url(/img/jon-butterworth-rXjSnBx8Kuc-unsplash.webp);
+  background-image: url(/img/skull.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -289,7 +282,7 @@ header a {
   height: 80vh;
 }
 .img-menu2 {
-  background-image: url(/img/raouf-nouari-d3JhFXzn_nQ-unsplash.webp);
+  background-image: url(/img/forest-alone.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -502,12 +495,12 @@ header a {
 #g:hover {
   /*carrousel*/
   transform: scale(1.1);
-  opacity: 1;
+ 
 }
 #d:hover {
   /*carrousel*/
   transform: scale(1.1);
-  opacity: 1;
+  
 }
 .photo {
   /*carrousel*/
@@ -645,7 +638,7 @@ footer {
     margin: 0;
     padding: 0;
     background-color: black;
-    background-image: url(/img/xin-qPFkHjuJDRw-unsplash.webp);
+    background-image: url(/img/fond-resp.webp);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;

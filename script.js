@@ -168,7 +168,7 @@ container.style.width = 800 * nbr + "px";
 for (i = 1; i <= nbr; i++) {
   div = document.createElement("div");
   div.className = "photo";
-  div.style.backgroundImage = "url('img/carrousel/carr" + i + ".jpg')";
+  div.style.backgroundImage = "url('img/carrousel/carr" + i + ".webp')";
   container.appendChild(div);
 }
 afficherMasquer();
@@ -214,7 +214,7 @@ containerResponsvive.style.width = 370 * nbrR + "px";
 for (i = 1; i <= nbr; i++) {
   divR = document.createElement("div");
   divR.className = "photo-responsive";
-  divR.style.backgroundImage = "url('img/carrouselR/carrR" + i + ".jpg')";
+  divR.style.backgroundImage = "url('img/carrouselR/carrR" + i + ".webp')";
   containerResponsvive.appendChild(divR);
 }
 afficherMasquerR();
