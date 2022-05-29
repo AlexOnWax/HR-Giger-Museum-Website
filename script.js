@@ -50,8 +50,8 @@ burgerMenu.addEventListener("click", () => {
 });
 
 /* scroll*/
-cont.addEventListener("wheel", (x) => {
-  // evt.preventDefault();
+cont.addEventListener("wheel",(x) => {
+  //  x.preventDefault();
   cont.scrollLeft += x.deltaY * 20;
 });
 

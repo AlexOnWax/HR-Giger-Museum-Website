@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: rgb(36, 36, 31);
-  background-image: url(/img/photo-musée_exterieur.webp);
+  background-image: url(/img/photo-musée_exterieur_background.webp);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
@@ -85,7 +85,8 @@ header {
   gap: 2rem;
   align-items: center;
   margin-left: 3rem;
-  padding-top: 1rem;
+  
+ 
 }
 
 .list-nav {
@@ -644,7 +645,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.2rem;
   background-color: rgba(189, 190, 189, 0.089);
 }
 /*footer-----------------------*/
@@ -760,7 +761,7 @@ footer {
     font-family: var(--font-title);
     font-size: 8rem;
     font-weight: lighter;
-    color: rgb(51, 10, 10);
+    color: rgb(59, 14, 5);
     
   }
   #main-title {
@@ -908,8 +909,9 @@ footer {
   }
 
   .page-exhibition .title-page {
+    position: relative;
     align-self: flex-start;
-    margin: 0px 20px 80px 20px;
+    top: 20px;
     font-size: 3rem;
     text-align: center;
   }
@@ -918,7 +920,7 @@ footer {
 
   /*4th page Video---------------*/
   .page-video {
-    height: 400px;
+    height: 500px;
     width: 100vw;
   }
   .main-video {
@@ -946,8 +948,10 @@ footer {
 
   /*5th page Bio---------------*/
   .page-bio {
-    height: 850px;
+    height: auto;
     width: 100vw;
+    display: flex;
+    flex-direction: column;
   }
 
   .main-bio {
@@ -956,18 +960,13 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    height: 85vh;
+    height: auto;
     width: 100%;
   }
-  .main-bio img {
-    width: 60%;
-    height: 50%;
-  }
+  
   .page-bio .title-page {
-    align-self: flex-start;
-    margin: 80px 20px 30px 20px;
+    position: relative;
     font-size: 3rem;
-
     text-align: center;
   }
   .text-bio-link {
