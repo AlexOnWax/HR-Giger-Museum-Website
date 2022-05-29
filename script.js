@@ -107,9 +107,6 @@ const intersectionCallbackArrow = (x) => {
   }
 };
 
-  
-
-  
 
 const intersectionOptionsArrow = {
   threshold: [0.9],
