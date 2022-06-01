@@ -160,8 +160,8 @@ header a {
 }
 .toggler-responsive {
   display: block;
-  width: 4.1rem;
-  height: 2.5rem;
+  width: 5.4375rem;
+  height: 2.875rem;
   border: 0.125rem solid #fff;
   border-radius: 1.875rem;
   position: relative;
@@ -177,8 +177,8 @@ header a {
 }
 .ball-responsive {
   display: inline-block;
-  width: 1.5625rem;
-  height: 1.5625rem;
+  width: 2rem;
+  height: 2rem;
   border: solid #fff;
   left: 1px;
   background-color: rgb(255, 255, 255);
@@ -187,15 +187,16 @@ header a {
   transition: transform 0.5s ease-in-out;
 }
 .fr-responsive {
-  left: 0px;
-  font-size: 14px;
+  right: 0.3125rem;
+  font-size: 17px;
 }
 .en-responsive {
-  right: 0px;
-  font-size: 14px;
+  padding: 28px;
+  right: 0.3125rem;
+  font-size: 17px;
 }
 #checkbox-responsive:checked + .ball-responsive {
-  transform: translate(1.8125rem, -50%);
+  transform: translate(2.8125rem, -50%);
 }
 
 /* .bouton-langue {
@@ -257,8 +258,14 @@ header a {
   font-family: var(--font-title);
   font-size: 18.5rem;
   font-weight: lighter;
-  color: rgba(122, 109, 52, 0.973);
-  
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+  background-image: url(/gold2.jpg);
+  background-size: 100%;
+
 }
 #main-title {
   display: grid;
@@ -333,7 +340,7 @@ header a {
 
 .page-access .title-page {
   align-self: flex-start;
-  margin-top: 7rem;
+  margin-top: 8rem;
 }
 #opening-hours {
   grid-area: 2/1/3/2;
@@ -656,7 +663,7 @@ footer {
     margin: 0;
     padding: 0;
     background-color: black;
-    background-image: url(/img/fond-resp.webp);
+    background-image: url(/corridor.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
@@ -760,8 +767,9 @@ footer {
   .page-landing h1 {
     font-family: var(--font-title);
     font-size: 8rem;
-    font-weight: lighter;
-    color: rgb(59, 14, 5);
+    font-weight: normal;
+    background-image: url(/gold2.jpg);
+  
     
   }
   #main-title {
