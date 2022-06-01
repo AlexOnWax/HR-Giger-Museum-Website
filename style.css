@@ -74,6 +74,7 @@ header {
   position: fixed;
   top: 0rem;
   width: 100%;
+  
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -84,9 +85,7 @@ header {
   display: flex;
   gap: 2rem;
   align-items: center;
-  margin-left: 3rem;
-  
- 
+  margin: 10px 0 10px 20px;
 }
 
 .list-nav {
@@ -199,18 +198,16 @@ header a {
   transform: translate(1.8125rem, -50%);
 }
 
-.bouton-langue {
-  position: absolute;
-  right: 2.25rem;
-  top: 0.5rem;
-}
+/* .bouton-langue {
+
+} */
 #checkbox {
   display: none;
 }
 .toggler {
   display: block;
-  width: 3.4375rem;
-  height: 1.875rem;
+  width: 5.4375rem;
+  height: 2.875rem;
   border: 0.125rem solid #fff;
   border-radius: 1.875rem;
   position: relative;
@@ -225,8 +222,8 @@ header a {
 }
 .ball {
   display: inline-block;
-  width: 1.5625rem;
-  height: 1.5625rem;
+  width: 2rem;
+  height: 2rem;
   border: solid #fff;
   background-color: rgb(255, 255, 255);
   border-radius: 50%;
@@ -235,12 +232,14 @@ header a {
 }
 .fr {
   left: 0.3125rem;
+  font-size: 17px;
 }
 .en {
   right: 0.3125rem;
+  font-size: 17px;
 }
 #checkbox:checked + .ball {
-  transform: translate(1.8125rem, -50%);
+  transform: translate(2.8125rem, -50%);
 }
 /*switch Langue -----------------------*/
 
@@ -301,6 +300,7 @@ header a {
 .grid-main-img {
   display: flex;
   gap: 2rem;
+  margin-top: 3.125rem;
   margin-right: 10rem;
 }
 

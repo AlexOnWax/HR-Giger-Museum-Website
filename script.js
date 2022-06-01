@@ -62,19 +62,29 @@ const sectionsArr = Array.from(sections);
 const navItems = document.querySelectorAll(".list-nav a");
 let i = 0;
 function activateNavByIndex(index) {
-  const currentActive = document.querySelectorAll("nav .active-card");
-  for (let i = currentActive.length - 1; i >= 0; i--) {
+  const currentActive = document.querySelectorAll(".active-card");
+  
+  for (let i = currentActive.length -1; i >= 0; i--) {
     currentActive[i].classList.remove("active-card");
+    
   }
-
+  
   navItems[index].classList.add("active-card");
+
+ 
+
 }
 
-const intersectionCallback = (alexTest) => {
-  if (alexTest[0].intersectionRatio > 0.25) {
-    activateNavByIndex(sectionsArr.indexOf(alexTest[0].target));
+const intersectionCallback = (x) => {
+console.log(x[0].intersectionRatio);
+  if (x[0].intersectionRatio > 0.25) {
+    activateNavByIndex(sectionsArr.indexOf(x[0].target));
+    
   }
 };
+
+
+
 //Les options de l'observer
 const intersectionOptions = {
   threshold: [0.9],
@@ -137,7 +147,7 @@ const intersectionObserverArrow2 = new IntersectionObserver(
   intersectionCallbackArrow2,
   intersectionOptionsArrow2
 );
-
+;
 for (let i = 0; i < sections.length; i++) {
   intersectionObserverArrow2.observe(sectionsArrow[5]);
 }
