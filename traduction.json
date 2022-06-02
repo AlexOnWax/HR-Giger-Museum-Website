@@ -1,0 +1,77 @@
+[
+    
+   {"traduction" :  "french",
+      "nav": {
+          "1": "ACCUEIL",
+          "2": "MUSÉE",
+          "3": "GALLERIE",
+          "4": "FILM",
+          "5": "BIOGRAPHIE",
+          "6": "CONTACT"
+      },
+       "PageMuseum":{
+          "titrePage": "MUSEE",
+          "TitreHoraire": "Horraires d'ouverture",
+          "horaire1":"Fermé le Lundi",
+          "horaire2": "Du mardi au Vendredi ouvert de 13h à 15h",
+          "horaire3":  "Le samedi et le dimanche ouvert de 10h00 à 18h00",
+          "spanTitre":  "Du 14 Mai au 30 Novembre 2022",
+          "expo":  "Une exposition collective de Stanisky Grof Organisée par Nadia Honarchian et Claude Steiner, en collaboration avec Carmen Giger-Scheifele, l'exposition est une suite de l'exposition collective Psychonauten l en 2008, qui était en l'honneur d'Albert Hofmann, le découvreur du LSD." 
+    },
+       "PageGallery":{
+          "titrePage": "GALLERIE DE PHOTOS",
+          "titre":"Galerie photos des dernières expositions"
+    },
+       "PageMovie":{
+          "titre Page": "COURT MÉTRAGE"
+    },
+       "PageBiographie":{
+          "titrePage": "BIOGRAPHIE",
+          "biographie": "H.R. Giger est né à Coire, en Suisse, en 1940. Enfant, il a développé une forte passion pour tout ce qui est surréaliste et macabre. Son besoin de s'exprimer et de partager les aspects uniques de son imagination puissante l'a attiré vers les arts visuels. Les propres rêves de Giger et les brillantes images de génies fantastiques tels que Gustav Meyrink, Jean Cocteau, Alfred Kubin et H.P. Lovecraft s'est combiné pour former un sol riche à partir duquel les images étonnantes de l'art de Giger sont venues germer. Il s'est depuis transformé en une vaste richesse de femmes exotiques, de paysages merveilleusement bizarres et de créatures effrayantes qui ont captivé la fascination de millions de fans dans le monde entier."
+    },
+       "PageSub":{
+          "newsLetter": "Inscrivez-vous à la news-letter",
+          "FollowUs": "Suivez-nous",     
+          "Trouvez-nous":" Trouvez-nous"
+    }   
+},
+   {"traduction" :  "English",
+      "nav": {
+          "1": "HOMEPAGE",
+          "2": "MUSEUM",
+          "3": "GALLERY",
+          "4": "MOVIE",
+          "5": "BIOGRAPHIE",
+          "6": "CONTACT"
+    },
+       "PageMuseum":{
+          "titrePage": "MUSEUM",
+          "TitreHoraire": "OPENING HOURS",
+          "horaire1":"Monday Closed",
+          "horaire2": "Tuesday to Friday 1pm to 5pm",
+          "horaire3":  "Saturday and Sunday 10am to 6pm",
+          "spanTitre":"finFrom May 14 to November 2022",
+          "expo":  "A group exhibition of Stanisky Grof Curated by Nadia Honarchian and Claude Steiner, in cooperation with Carmen Giger-Scheifele, the exhibition is a sequel of the Psychonauten l group exhibition in 2008, which was in honour of Albert Hofmann, the discoverer of LSD" 
+    },
+       "PageGallery":{   
+          "titrePage": "MUSEUM'S GALLERY",
+          "titre":"Photos Gallery from the last exhibitions"
+    },
+       "PageMovie":{
+          "titrePage": "SHORT MOVIES"
+    },
+       "PageBiographie":{
+          "titrePage": "BIOGRAPHY",
+          "biographie": "H.R. Giger was born in Chur, Switzerland, in 1940. As a child he developed a strong passion for all things surreal and macabre. His need to express himself and share the unique aspects of his powerful imagination drew him to the visual arts. Giger’s own dreams and the brilliant imagery of such fantastic geniuses as Gustav Meyrink, Jean Cocteau, Alfred Kubin and H.P. Lovecraft combined to form a rich soil from which the amzing imagery of Giger’s own art has come to sprout. It has since bloomed into the vast wealth of exotic women, wondrously bizarre landscapes, and frightening creatures that have captured the fascination of millions of fans worldwide."
+    },
+       "PageSub":{
+          "newsLetter": "Subscribe to the newsletter",
+          "Follow Us": "Follow Us",
+          "Trouvez-nous":" Find-Us"
+    }   
+}
+  ]
+
+
+
+  
