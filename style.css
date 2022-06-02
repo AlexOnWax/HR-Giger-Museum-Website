@@ -838,7 +838,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: auto;
+    height: 100%;
     width: 100vw;
   }
   #grid-access {
@@ -907,7 +907,7 @@ footer {
     height: auto;
     width: 100vw;
     display: block;
-    margin-top: 100px;
+   
   }
   .main-exhibition {
     display: flex;
@@ -993,7 +993,7 @@ footer {
   }
   .text-bio-link {
     width: 80%;
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     text-align: center;
     padding: 5px;
   }
@@ -1008,15 +1008,14 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: auto;
+    height: 100%;
     width: 100%;
   
   }
   .fond {
     background-image: url();
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 80%;
+    
+    height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -1026,16 +1025,21 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    background-color: rgba(0, 0, 0, 0.879);
-    border: solid black;
+    background-color: rgba(0, 0, 0, 0.055);
+    border: none;
     color: rgb(255, 255, 255);
     border-radius: 20px;
-    height: 60vh;
+    height: 100%;
     width: 100%;
     font-size: 2vw;
     padding: 10px;
     margin-right: 0px;
     
+  }
+  .info-sub h2  {
+font-size: 4rem;
+text-align: center;
+margin: 0;
   }
   fieldset {
     border-radius: 1.5625rem;
