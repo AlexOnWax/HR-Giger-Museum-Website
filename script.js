@@ -8,7 +8,6 @@ let isDown = false;
 let startX;
 let scrollLeft;
 let scrollSize = body.clientWidth;
-
 //animation au démarage
 
 window.addEventListener("load", () => {
@@ -273,15 +272,15 @@ const subscribeNewsletter = document.querySelector(".main-sub h2");
 const followUs = document.querySelector(".information h3");
 const findUs = document.querySelector(".information h4");
 const switchLangueResponsive = document.querySelector(".ball-responsive");
-const navs = document.querySelectorAll(".list-nav li");
+const navs = document.querySelectorAll(".hover_menu");
 
 
 fetch("/traduction.json").then((response) =>
   response.json().then((data) => {
 
 
-j = 0;
-t=0
+let j = 0;
+let t = 0;
 switchLangue.addEventListener("click", () => {
 
 j++
@@ -290,18 +289,24 @@ if (j % 2 == 0) {
 } else {
   t=0;
 }
-//a revoir ne fonctione pas//
-// navs.forEach(navig => {
-//   navig.replaceChildren(`${data[t].nav[1]}`);
-// });
+  k=0
+navs.forEach(navig => {
+ 
+  k++
+   console.log(k);
+  navig.replaceChildren(`${data[t].nav[k]}`);
+  
+});
+
+
   titreNewsSpan.replaceChildren(`${data[t].PageMuseum.spanTitre}`);
   titreHours.replaceChildren(`${data[t].PageMuseum.TitreHoraire}`)
   pHours.replaceChildren(`${data[t].PageMuseum.horaire1}${data[t].PageMuseum.horaire2}${data[t].PageMuseum.horaire3}`)//todo//
   paragrapheNews.replaceChildren(`${data[t].PageMuseum.expo}`);
   titreAccess.replaceChildren(`${data[t].PageMuseum.titrePage}`);
-  titrePhotoGallery.replaceChildren(`${data[t].PageGallery.titrePage}`);
-  titreGallery.replaceChildren(`${data[t].PageGallery.titre}`);
-  titreVideo.replaceChildren(`${data[t].PageMuseum.titrePage}`);
+  titrePhotoGallery.replaceChildren(`${data[t].PageGallery.titre}`);
+  titreGallery.replaceChildren(`${data[t].PageGallery.titrePage}`);
+  titreVideo.replaceChildren(`${data[t].PageMovie.titrePage}`);
   titreBio.replaceChildren(`${data[t].PageBiographie.titrePage}`);
   bio.replaceChildren(`${data[t].PageBiographie.biographie}`);
   subscribeNewsletter.replaceChildren(`${data[t].PageSub.newsLetter}`);

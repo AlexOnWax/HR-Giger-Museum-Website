@@ -10,7 +10,7 @@
           "6": "CONTACT"
       },
        "PageMuseum":{
-          "titrePage": "MUSEE",
+          "titrePage": "MUSÉE",
           "TitreHoraire": "Horraires d'ouverture",
           "horaire1":"Fermé le Lundi",
           "horaire2": "Du mardi au Vendredi ouvert de 13h à 15h",
@@ -23,7 +23,7 @@
           "titre":"Galerie photos des dernières expositions"
     },
        "PageMovie":{
-          "titre Page": "COURT MÉTRAGE"
+          "titrePage": "COURT MÉTRAGE"
     },
        "PageBiographie":{
           "titrePage": "BIOGRAPHIE",
@@ -41,7 +41,7 @@
           "2": "MUSEUM",
           "3": "GALLERY",
           "4": "MOVIE",
-          "5": "BIOGRAPHIE",
+          "5": "BIOGRAPHY",
           "6": "CONTACT"
     },
        "PageMuseum":{

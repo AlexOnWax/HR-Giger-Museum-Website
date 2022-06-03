@@ -391,6 +391,7 @@ header a {
   width: 100%;
   display: flex;
   flex-direction: column;
+  
   justify-content: space-around;
   align-items: center;
   position: relative;
@@ -398,7 +399,7 @@ header a {
 .main-exhibition {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+ justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100%;
@@ -406,10 +407,16 @@ header a {
 }
 .main-exhibition > h3 {
   font-family: var(--font-text);
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 0;
 }
-
+.page-exhibition .title-page {
+  position: absolute;
+  align-self: flex-start;
+  /* margin-top: 8rem; */
+  top: 8rem;
+  margin-left: 0.5rem;
+}
 #carrousel-responsive {
   /*carrousel*/
   display: none;
@@ -474,7 +481,7 @@ header a {
   box-shadow: 0 0 0.875rem rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
-  margin-bottom: 9.375rem;
+   margin-bottom: 1rem; 
 }
 #container {
   /*carrousel*/
@@ -518,13 +525,7 @@ header a {
   display: inline-block;
   background-size: cover;
 }
-.page-exhibition .title-page {
-  position: absolute;
-  align-self: flex-start;
-  /* margin-top: 8rem; */
-  top: 8rem;
-  margin-left: 0.5rem;
-}
+
 
 /*3rd page  GALLERY---------------*/
 
