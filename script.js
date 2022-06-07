@@ -49,7 +49,7 @@ burgerMenu.addEventListener("click", () => {
 });
 
 /* scroll*/
-cont.addEventListener("wheel",(x) => {
+cont.addEventListener("wheel", (x) => {
   //  x.preventDefault();
   cont.scrollLeft += x.deltaY * 20;
 });
@@ -62,27 +62,19 @@ const navItems = document.querySelectorAll(".list-nav a");
 let i = 0;
 function activateNavByIndex(index) {
   const currentActive = document.querySelectorAll(".active-card");
-  
-  for (let i = currentActive.length -1; i >= 0; i--) {
+
+  for (let i = currentActive.length - 1; i >= 0; i--) {
     currentActive[i].classList.remove("active-card");
-    
   }
-  
+
   navItems[index].classList.add("active-card");
-
- 
-
 }
 
 const intersectionCallback = (x) => {
-
   if (x[0].intersectionRatio > 0.25) {
     activateNavByIndex(sectionsArr.indexOf(x[0].target));
-    
   }
 };
-
-
 
 //Les options de l'observer
 const intersectionOptions = {
@@ -109,13 +101,10 @@ const sectionsTableau = Array.from(sectionsArrow);
 const intersectionCallbackArrow = (x) => {
   if (x[0].isIntersecting === true) {
     gMain.style.visibility = "hidden";
-    
   } else {
     gMain.style.visibility = "visible";
-     
   }
 };
-
 
 const intersectionOptionsArrow = {
   threshold: [0.9],
@@ -146,13 +135,9 @@ const intersectionObserverArrow2 = new IntersectionObserver(
   intersectionCallbackArrow2,
   intersectionOptionsArrow2
 );
-;
 for (let i = 0; i < sections.length; i++) {
   intersectionObserverArrow2.observe(sectionsArrow[5]);
 }
-
-
-
 
 /*Activation des fleches de déplacements du site Desktop*/
 
@@ -274,66 +259,75 @@ const findUs = document.querySelector(".information h4");
 const switchLangueResponsive = document.querySelector(".ball-responsive");
 const navs = document.querySelectorAll(".hover_menu");
 
-
 fetch("/traduction.json").then((response) =>
   response.json().then((data) => {
+    let j = 0;
+    let t = 0;
+    switchLangue.addEventListener("click", () => {
+      j++;
+      if (j % 2 == 0) {
+        t = 1;
+      } else {
+        t = 0;
+      }
+      k = 0;
+      console.log(j);
+      navs.forEach((navig) => {
+        k++;
 
+        navig.replaceChildren(`${data[t].nav[k]}`);
+      });
 
-let j = 0;
-let t = 0;
-switchLangue.addEventListener("click", () => {
+      titreNewsSpan.replaceChildren(`${data[t].PageMuseum.spanTitre}`);
+      titreHours.replaceChildren(`${data[t].PageMuseum.TitreHoraire}`);
+      pHours.replaceChildren(
+        `${data[t].PageMuseum.horaire1}${data[t].PageMuseum.horaire2}${data[t].PageMuseum.horaire3}`
+      ); //todo//
+      paragrapheNews.replaceChildren(`${data[t].PageMuseum.expo}`);
+      titreAccess.replaceChildren(`${data[t].PageMuseum.titrePage}`);
+      titrePhotoGallery.replaceChildren(`${data[t].PageGallery.titre}`);
+      titreGallery.replaceChildren(`${data[t].PageGallery.titrePage}`);
+      titreVideo.replaceChildren(`${data[t].PageMovie.titrePage}`);
+      titreBio.replaceChildren(`${data[t].PageBiographie.titrePage}`);
+      bio.replaceChildren(`${data[t].PageBiographie.biographie}`);
+      subscribeNewsletter.replaceChildren(`${data[t].PageSub.newsLetter}`);
+      followUs.replaceChildren(`${data[t].PageSub.FollowUs}`);
+      findUs.replaceChildren(`${data[t].PageSub.Trouvez - nous}`); //pas encore réutilisé//
+    });
 
-j++
-if (j % 2 == 0) {
-  t=1;
-} else {
-  t=0;
-}
-  k=0
-navs.forEach(navig => {
- 
-  k++
-   console.log(k);
-  navig.replaceChildren(`${data[t].nav[k]}`);
-  
-});
+    //fonction toogle traduction responsive
+    // j = 1;
+    // switchLangueResponsive.addEventListener("click", () => {
 
+    //   j++
+    //   if (j % 2 == 0) {
+    //     t=1;
+    //   } else {
+    //     t=0;
+    //   }
+    //     k=0
+    //   navs.forEach(navig => {
 
-  titreNewsSpan.replaceChildren(`${data[t].PageMuseum.spanTitre}`);
-  titreHours.replaceChildren(`${data[t].PageMuseum.TitreHoraire}`)
-  pHours.replaceChildren(`${data[t].PageMuseum.horaire1}${data[t].PageMuseum.horaire2}${data[t].PageMuseum.horaire3}`)//todo//
-  paragrapheNews.replaceChildren(`${data[t].PageMuseum.expo}`);
-  titreAccess.replaceChildren(`${data[t].PageMuseum.titrePage}`);
-  titrePhotoGallery.replaceChildren(`${data[t].PageGallery.titre}`);
-  titreGallery.replaceChildren(`${data[t].PageGallery.titrePage}`);
-  titreVideo.replaceChildren(`${data[t].PageMovie.titrePage}`);
-  titreBio.replaceChildren(`${data[t].PageBiographie.titrePage}`);
-  bio.replaceChildren(`${data[t].PageBiographie.biographie}`);
-  subscribeNewsletter.replaceChildren(`${data[t].PageSub.newsLetter}`);
-  followUs.replaceChildren(`${data[t].PageSub.FollowUs}`);
-  findUs.replaceChildren(`${data[t].PageSub.Trouvez-nous}`);//pas encore réutilisé//
-});
+    //     k++
+    //      console.log(k);
+    //     navig.replaceChildren(`${data[t].nav[k]}`);
 
+    //   });
 
-   
-    
-   
+    //     titreNewsSpan.replaceChildren(`${data[t].PageMuseum.spanTitre}`);
+    //     titreHours.replaceChildren(`${data[t].PageMuseum.TitreHoraire}`)
+    //     pHours.replaceChildren(`${data[t].PageMuseum.horaire1}${data[t].PageMuseum.horaire2}${data[t].PageMuseum.horaire3}`)//todo//
+    //     paragrapheNews.replaceChildren(`${data[t].PageMuseum.expo}`);
+    //     titreAccess.replaceChildren(`${data[t].PageMuseum.titrePage}`);
+    //     titrePhotoGallery.replaceChildren(`${data[t].PageGallery.titre}`);
+    //     titreGallery.replaceChildren(`${data[t].PageGallery.titrePage}`);
+    //     titreVideo.replaceChildren(`${data[t].PageMovie.titrePage}`);
+    //     titreBio.replaceChildren(`${data[t].PageBiographie.titrePage}`);
+    //     bio.replaceChildren(`${data[t].PageBiographie.biographie}`);
+    //     subscribeNewsletter.replaceChildren(`${data[t].PageSub.newsLetter}`);
+    //     followUs.replaceChildren(`${data[t].PageSub.FollowUs}`);
+    //     findUs.replaceChildren(`${data[t].PageSub.Trouvez-nous}`);//pas encore réutilisé//
 
-//fonction toogle traduction responsive
-// j = 1;
-// switchLangueResponsive.addEventListener("click", () => {
-  
-//   j++;
-//   if (j % 2 == 0) {
-//     traduction();
-//   } else {
-//     location.reload();
-//   }
-// });
-
-  }))
-
-
-
-
-  
+    // });
+  })
+);
