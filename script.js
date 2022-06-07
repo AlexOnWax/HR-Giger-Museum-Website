@@ -34,7 +34,7 @@ window.addEventListener("load", () => {
   titletime.play(); //on actionne car on a mis pause precedement
 });
 
-/*Menu Burger*/
+//Menu Burger
 
 const btn = document.querySelector(".btn1");
 
@@ -48,7 +48,7 @@ burgerMenu.addEventListener("click", () => {
   listHeader.classList.toggle("active-burger");
 });
 
-/* scroll*/
+//scroll
 cont.addEventListener("wheel", (x) => {
   //  x.preventDefault();
   cont.scrollLeft += x.deltaY * 20;
@@ -91,7 +91,7 @@ for (let i = 0; i < sections.length; i++) {
   intersectionObserver.observe(sections[i]);
 }
 
-/*utilisation de Observer pour la disparition de la fleches de droite*/
+//utilisation de Observer pour la disparition de la fleches de droite
 
 const sectionsArrow = document.querySelectorAll(".page");
 const gMain = document.getElementById("left_arrow-main");
@@ -118,7 +118,7 @@ for (let i = 0; i < sections.length; i++) {
   intersectionObserverArrow.observe(sectionsArrow[0]);
 }
 
-/*utilisation de Observer pour la disparition de la fleches de gauche*/
+//utilisation de Observer pour la disparition de la fleches de gauche
 
 const intersectionCallbackArrow2 = (x) => {
   if (x[0].isIntersecting === true) {
@@ -139,7 +139,7 @@ for (let i = 0; i < sections.length; i++) {
   intersectionObserverArrow2.observe(sectionsArrow[5]);
 }
 
-/*Activation des fleches de déplacements du site Desktop*/
+//Activation des fleches de déplacements du site Desktop
 
 dMain.addEventListener("click", () => {
   cont.scrollLeft += scrollSize;
@@ -149,6 +149,7 @@ gMain.addEventListener("click", () => {
 });
 
 // carrousel version Desktop
+
 nbr = 5;
 p = 0;
 const container = document.getElementById("container");
@@ -239,9 +240,8 @@ function afficherMasquerR() {
   }
 }
 
-/*Bouton switch langue*/
+//Bouton switch langue
 
-const switchLangue = document.querySelector(".ball");
 const titreHours = document.querySelector("#opening-hours h2");
 const pHours = document.querySelector("#opening-hours p");
 const titreNewsSpan = document.querySelector("#title-article-news span");
@@ -256,14 +256,28 @@ const titreBio = document.querySelector("#page-bio .title-page");
 const subscribeNewsletter = document.querySelector(".main-sub h2");
 const followUs = document.querySelector(".information h3");
 const findUs = document.querySelector(".information h4");
-const switchLangueResponsive = document.querySelector(".ball-responsive");
 const navs = document.querySelectorAll(".hover_menu");
+const Langue = document.querySelector("#button-text");
+const boutonLangue = document.querySelector(".button-langue");
+const buttonText = document.querySelector(".button-langue >  button");
+
+
+w = 0;
+boutonLangue.addEventListener("click", () => {
+  w++;
+
+  if (w % 2 !== 0) {
+    buttonText.replaceChildren("FRANÇAIS");
+  } else {
+    buttonText.replaceChildren("ENGLISH");
+  }
+});
 
 fetch("/traduction.json").then((response) =>
   response.json().then((data) => {
     let j = 0;
     let t = 0;
-    switchLangue.addEventListener("click", () => {
+    boutonLangue.addEventListener("click", () => {
       j++;
       if (j % 2 == 0) {
         t = 1;
@@ -292,42 +306,7 @@ fetch("/traduction.json").then((response) =>
       bio.replaceChildren(`${data[t].PageBiographie.biographie}`);
       subscribeNewsletter.replaceChildren(`${data[t].PageSub.newsLetter}`);
       followUs.replaceChildren(`${data[t].PageSub.FollowUs}`);
-      findUs.replaceChildren(`${data[t].PageSub.Trouvez - nous}`); //pas encore réutilisé//
+      
     });
-
-    //fonction toogle traduction responsive
-    // j = 1;
-    // switchLangueResponsive.addEventListener("click", () => {
-
-    //   j++
-    //   if (j % 2 == 0) {
-    //     t=1;
-    //   } else {
-    //     t=0;
-    //   }
-    //     k=0
-    //   navs.forEach(navig => {
-
-    //     k++
-    //      console.log(k);
-    //     navig.replaceChildren(`${data[t].nav[k]}`);
-
-    //   });
-
-    //     titreNewsSpan.replaceChildren(`${data[t].PageMuseum.spanTitre}`);
-    //     titreHours.replaceChildren(`${data[t].PageMuseum.TitreHoraire}`)
-    //     pHours.replaceChildren(`${data[t].PageMuseum.horaire1}${data[t].PageMuseum.horaire2}${data[t].PageMuseum.horaire3}`)//todo//
-    //     paragrapheNews.replaceChildren(`${data[t].PageMuseum.expo}`);
-    //     titreAccess.replaceChildren(`${data[t].PageMuseum.titrePage}`);
-    //     titrePhotoGallery.replaceChildren(`${data[t].PageGallery.titre}`);
-    //     titreGallery.replaceChildren(`${data[t].PageGallery.titrePage}`);
-    //     titreVideo.replaceChildren(`${data[t].PageMovie.titrePage}`);
-    //     titreBio.replaceChildren(`${data[t].PageBiographie.titrePage}`);
-    //     bio.replaceChildren(`${data[t].PageBiographie.biographie}`);
-    //     subscribeNewsletter.replaceChildren(`${data[t].PageSub.newsLetter}`);
-    //     followUs.replaceChildren(`${data[t].PageSub.FollowUs}`);
-    //     findUs.replaceChildren(`${data[t].PageSub.Trouvez-nous}`);//pas encore réutilisé//
-
-    // });
   })
 );
