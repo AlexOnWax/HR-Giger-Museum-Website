@@ -267,9 +267,9 @@ boutonLangue.addEventListener("click", () => {
   w++;
 
   if (w % 2 !== 0) {
-    buttonText.replaceChildren("FRANÇAIS");
+    buttonText.replaceChildren("FR");
   } else {
-    buttonText.replaceChildren("ENGLISH");
+    buttonText.replaceChildren("EN");
   }
 });
 
