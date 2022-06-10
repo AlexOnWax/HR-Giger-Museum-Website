@@ -4,6 +4,10 @@ const targetElements = document.querySelectorAll(".page");
 const burgerMenu = document.querySelector(".box");
 const listHeader = document.querySelector(".list-nav");
 
+
+
+
+
 let isDown = false;
 let startX;
 let scrollLeft;
@@ -37,6 +41,7 @@ window.addEventListener("load", () => {
 //Menu Burger
 
 const btn = document.querySelector(".btn1");
+const responsiveNav= document.querySelector(".responsive-nav");
 
 btn.addEventListener("click", presentation);
 
@@ -44,8 +49,25 @@ function presentation() {
   btn.classList.toggle("active");
 }
 
+
+q=0
+
 burgerMenu.addEventListener("click", () => {
+  q++
   listHeader.classList.toggle("active-burger");
+ 
+console.log(q%2);
+
+  if (q % 2 == 0) {
+   responsiveNav.classList.remove("active-responsive-nav");
+   responsiveNav.classList.add("desactive-responsive-nav");
+  } else {
+   responsiveNav.classList.add("active-responsive-nav");
+   responsiveNav.classList.remove("desactive-responsive-nav");
+
+  }
+  
+
 });
 
 //scroll
@@ -150,7 +172,7 @@ gMain.addEventListener("click", () => {
 
 // carrousel version Desktop
 
-nbr = 5;
+nbr = 10;
 p = 0;
 const container = document.getElementById("container");
 const g = document.getElementById("g");
@@ -180,6 +202,7 @@ g.onclick = function () {
       afficherMasquer();
     }
   };
+
 };
 function afficherMasquer() {
   if (p == -nbr + 1) {
@@ -243,7 +266,6 @@ function afficherMasquerR() {
 //Bouton switch langue
 
 const titreHours = document.querySelector("#opening-hours h2");
-const pHours = document.querySelector("#opening-hours p");
 const titreNewsSpan = document.querySelector("#title-article-news span");
 const paragrapheNews = document.querySelector(".paragraphe-news");
 const titrePhotoGallery = document.querySelector(".main-exhibition h3");
@@ -258,18 +280,19 @@ const followUs = document.querySelector(".information h3");
 const findUs = document.querySelector(".information h4");
 const navs = document.querySelectorAll(".hover_menu");
 const Langue = document.querySelector("#button-text");
-const boutonLangue = document.querySelector(".button-langue");
-const buttonText = document.querySelector(".button-langue >  button");
-
-
+const boutonLangue = document.querySelector(".button-languev2");
+const buttonText = document.querySelector(".button-languev2 > span");
+const hours1 =document.querySelector('#hours-1')
+const hours2 =document.querySelector('#hours-2')
+const hours3 =document.querySelector('#hours-3')
 w = 0;
 boutonLangue.addEventListener("click", () => {
   w++;
 
   if (w % 2 !== 0) {
-    buttonText.replaceChildren("FR");
+    buttonText.replaceChildren("FRANÇAIS");
   } else {
-    buttonText.replaceChildren("EN");
+    buttonText.replaceChildren("ENGLISH");
   }
 });
 
@@ -294,9 +317,9 @@ fetch("/traduction.json").then((response) =>
 
       titreNewsSpan.replaceChildren(`${data[t].PageMuseum.spanTitre}`);
       titreHours.replaceChildren(`${data[t].PageMuseum.TitreHoraire}`);
-      pHours.replaceChildren(
-        `${data[t].PageMuseum.horaire1}${data[t].PageMuseum.horaire2}${data[t].PageMuseum.horaire3}`
-      ); //todo//
+      hours1.replaceChildren(`${data[t].PageMuseum.horaire1}`);
+      hours2.replaceChildren(`${data[t].PageMuseum.horaire2}`)
+      hours3.replaceChildren(`${data[t].PageMuseum.horaire3}`);
       paragrapheNews.replaceChildren(`${data[t].PageMuseum.expo}`);
       titreAccess.replaceChildren(`${data[t].PageMuseum.titrePage}`);
       titrePhotoGallery.replaceChildren(`${data[t].PageGallery.titre}`);

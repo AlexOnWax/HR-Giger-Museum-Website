@@ -31,13 +31,20 @@ body {
 .page {
   scroll-snap-align: center;
 }
+
 .active-card {
-  border: solid 1px rgb(255, 255, 255);
-  border-radius: 50px;
-  color: rgb(12, 12, 12);
-  background-color: #fff;
-  font-weight: bold;
-  padding: 9px;
+  display: block;
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  color: rgb(0, 0, 0);
+  background-image: url(/img/gold2.jpg);
+  letter-spacing: 2px;
+  text-align: center;
+  transition: all .35s;
+  border-radius: 4px;
 }
 
 #left_arrow-main {
@@ -64,7 +71,7 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   /* height: 80vh; */
-  display: grid; 
+  display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(6, 100vw);
   gap: 100em;
@@ -91,8 +98,40 @@ header {
   display: flex;
   gap: 1rem;
   align-items: center;
-  /* margin: 1.06vh 0 1.06vh 1.04vw; */
   margin: 0 0 15px 15px;
+}
+.responsive-nav {
+  backdrop-filter: blur(20px);
+  position: absolute;
+  width: 100%;
+  top: 95px;
+  left: 0px;
+  height: 0vh;
+  transition: all 2s ease ;
+  display: none;
+ justify-content: center;
+ align-items: center;
+ text-decoration: none;
+ background-color: rgba(0, 0, 0, 0.87);
+}
+
+.responsive-nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  list-style-type: none;
+  padding: 0px;
+  width: 5rem;
+  width: 100%;
+}
+.responsive-nav > ul > li > a{
+  font-size: 16px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  
+  
 }
   .logo-title-header img {
     width: 1.56vw;
@@ -103,12 +142,18 @@ header {
   list-style-type: none;
   display: flex;
   gap: 2.5rem;
-  font-size: 2rem;
+  font-size: 1.25rem;
   padding-right: 9.375rem;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+
 }
 header a {
   text-decoration: none;
   color: #fff;
+}
+ul li {
+  line-height: 34px;
 }
 
 /*Menu burger responsive*/
@@ -162,19 +207,52 @@ header a {
 /*Header----------------*/
 
 /*switch Langue -----------------------*/
+.button-languev2-responsive{
+  display: none;
+}
+.button-languev2{
+  display: block;
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: rgb(189, 176, 176);
+  border: 1px solid rgb(202, 187, 187);
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+  border-radius: 4px;
+}
+.button-languev2 span{
+  position: relative;
+  z-index: 2;
+}
+.button-languev2:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-image: url(/img/gold2.jpg);
 
-
-
-#button-text {
-  border-radius: 5px;
-  cursor: pointer;
-  border: solid 1px #d8d8e6;
-  font-size: 2rem;
+  transition: all .35s;
 }
 
-#button-text:hover {
-  color: #b6aeae;
+.button-languev2:hover{
+  color: rgb(0, 0, 0);
+
+
 }
+
+.button-languev2:hover:after{
+  width: 100%;
+}
+
+
 
 /*switch Langue -----------------------*/
 
@@ -280,6 +358,7 @@ header a {
 #opening-hours p {
   text-align: center;
   font-size: 2rem;
+  margin: 5px;
 }
 #opening-hours h2 {
   text-align: center;
@@ -306,6 +385,7 @@ header a {
 #title-article-news {
   font-size: 2.25rem;
   text-align: center;
+  margin: 5px;
 }
 .paragraphe-news {
   font-size: 2rem;
@@ -511,15 +591,15 @@ header a {
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
-  height: 100vh; 
+  height: 100vh;
   margin: 0 15px 0 15px;
- 
+
 }
 .main-sub iframe{
   border-radius: 10px;
   width: 100%;
   height: 38vh;
-} 
+}
 /* .main-sub > img {
   width: 540px;
   border-radius: 10px;
@@ -538,14 +618,16 @@ header a {
   font-size: 30px;
   border-radius: 10px;
 }
-
+.info-sub h2{
+  font-size: 2vw;
+}
 form {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 5px;
-  
+
 }
 form > input {
   padding: 1rem;
@@ -659,22 +741,67 @@ footer {
   .box {
     display: block;
   }
+
+
+    
+  .responsive-nav.active-responsive-nav{
+  display: flex;
+    animation: nav_anim1 0.8s ease forwards;
+  
+  
+    } 
+  
+    @keyframes nav_anim1 {
+      from{
+       height: 0vh ;
+       opacity: 0;
+      }
+      to {
+      height: 38vh; 
+      opacity: 1;
+      }
+    }
+
+
+
+  .responsive-nav.desactive-responsive-nav{
+  display: flex;
+    animation: nav_anim2 0.8s ease forwards;
+  
+  
+    } 
+  
+    @keyframes nav_anim2 {
+      from{
+       height: 38vh ;
+       opacity: 1;
+      }
+      to {
+      height: 0vh; 
+      opacity: 0;
+      }
+    }
+
+  
+
+
+
+/* 
   .list-nav.active-burger {
-    visibility: visible;
+    visibility: visible; 
     display: flex;
     flex-direction: column;
     text-align: center;
     padding-left: 10px;
-  }
-  .active-card {
-    border: none;
-    border-bottom: solid;
-    border-radius: 0;
+  } */
+
+   .active-card {
+
     color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0);
-    font-weight: normal;
-    padding: 9px;
+    background-image: url();
+
   }
+
   /*Header----------------*/
   footer {
     display: none;
@@ -786,6 +913,7 @@ footer {
     grid-area: 2/1/3/2;
     width: auto;
     align-self: center;
+
   }
   #opening-hours > h2 {
     font-size: 1.7rem;
@@ -793,6 +921,7 @@ footer {
   #opening-hours > p {
     font-size: 1.5rem;
     text-align: center;
+
   }
   #img-museum {
     grid-area: 1/1/2/2;
@@ -861,7 +990,7 @@ footer {
     font-size: 3rem;
     text-align: center;
     margin: 0 20px 0 20px;
-   
+
   }
   /*3rd page  GALLERY---------------*/
 
@@ -925,8 +1054,8 @@ footer {
   /*5th page Bio---------------*/
 
   /*6th page Subscribe---------------*/
-  
- 
+
+
   .main-sub {
     display: flex;
     flex-direction: column;
@@ -967,6 +1096,7 @@ footer {
     background-color: rgba(85, 63, 63, 0.61);
     border-radius: 25px;
     color: rgb(180, 30, 30);
+    background-image: url(/img/gold2.jpg);
     padding: 20px;
     border: none;
     width: 200px;
@@ -986,19 +1116,6 @@ footer {
 
   /*6th page Subscribe---------------*/
   /*switch Langue -----------------------*/
-
-
-
-#button-text {
-  border-radius: 5px;
-  cursor: pointer;
-  border: solid 1px #d8d8e6;
-  font-size: 2rem;
-}
-
-#button-text:hover {
-  color: #b6aeae;
-}
 
 /*switch Langue -----------------------*/
 }
