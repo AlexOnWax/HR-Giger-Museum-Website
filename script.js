@@ -3,15 +3,11 @@ const body = document.querySelector("body");
 const targetElements = document.querySelectorAll(".page");
 const burgerMenu = document.querySelector(".box");
 const listHeader = document.querySelector(".list-nav");
-
-
-
-
-
 let isDown = false;
 let startX;
 let scrollLeft;
 let scrollSize = body.clientWidth;
+
 //animation au démarage
 
 window.addEventListener("load", () => {
@@ -172,7 +168,7 @@ gMain.addEventListener("click", () => {
 
 // carrousel version Desktop
 
-nbr = 10;
+nbr = 5;
 p = 0;
 const container = document.getElementById("container");
 const g = document.getElementById("g");

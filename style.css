@@ -43,7 +43,7 @@ body {
   background-image: url(/img/gold2.jpg);
   letter-spacing: 2px;
   text-align: center;
-  transition: all .35s;
+  transition: all 0.35s;
   border-radius: 4px;
 }
 
@@ -70,7 +70,6 @@ body {
   overflow-y: hidden;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  /* height: 80vh; */
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(6, 100vw);
@@ -84,15 +83,13 @@ header {
   position: fixed;
   top: 0rem;
   width: 100vw; /**/
-  height: 8vh;/**/
+  height: 8vh; /**/
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 2;
-  /* background-color: rgba(0, 0, 0, 0.459); */
   background-color: rgba(189, 190, 189, 0.089);
-
-    backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }
 .logo-title-header {
   display: flex;
@@ -107,12 +104,12 @@ header {
   top: 95px;
   left: 0px;
   height: 0vh;
-  transition: all 2s ease ;
+  transition: all 2s ease;
   display: none;
- justify-content: center;
- align-items: center;
- text-decoration: none;
- background-color: rgba(0, 0, 0, 0.87);
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.87);
 }
 
 .responsive-nav ul {
@@ -126,18 +123,16 @@ header {
   width: 5rem;
   width: 100%;
 }
-.responsive-nav > ul > li > a{
+.responsive-nav > ul > li > a {
   font-size: 16px;
   text-decoration: none;
   color: rgb(255, 255, 255);
-  
-  
 }
-  .logo-title-header img {
-    width: 1.56vw;
-    height: 6.40vh;
-    margin-top: 13px;
-  }
+.logo-title-header img {
+  width: 1.56vw;
+  height: 6.4vh;
+  margin-top: 13px;
+}
 .list-nav {
   list-style-type: none;
   display: flex;
@@ -146,7 +141,6 @@ header {
   padding-right: 9.375rem;
   font-family: sans-serif;
   letter-spacing: 2px;
-
 }
 header a {
   text-decoration: none;
@@ -207,10 +201,10 @@ ul li {
 /*Header----------------*/
 
 /*switch Langue -----------------------*/
-.button-languev2-responsive{
+.button-languev2-responsive {
   display: none;
 }
-.button-languev2{
+.button-languev2 {
   display: block;
   width: 120px;
   height: 30px;
@@ -223,14 +217,14 @@ ul li {
   letter-spacing: 2px;
   text-align: center;
   position: relative;
-  transition: all .35s;
+  transition: all 0.35s;
   border-radius: 4px;
 }
-.button-languev2 span{
+.button-languev2 span {
   position: relative;
   z-index: 2;
 }
-.button-languev2:after{
+.button-languev2:after {
   position: absolute;
   content: "";
   top: 0;
@@ -238,21 +232,16 @@ ul li {
   width: 0;
   height: 100%;
   background-image: url(/img/gold2.jpg);
-
-  transition: all .35s;
+  transition: all 0.35s;
 }
 
-.button-languev2:hover{
+.button-languev2:hover {
   color: rgb(0, 0, 0);
-
-
 }
 
-.button-languev2:hover:after{
+.button-languev2:hover:after {
   width: 100%;
 }
-
-
 
 /*switch Langue -----------------------*/
 
@@ -268,7 +257,7 @@ ul li {
 
 .page-landing h1 {
   font-family: var(--font-title);
-  font-size: 18.5rem;
+  font-size: 20vh;
   font-weight: lighter;
   background-clip: text;
   -webkit-background-clip: text;
@@ -284,11 +273,11 @@ ul li {
   grid-template-rows: 1fr;
   justify-items: center;
   align-items: center;
-  gap: 3.125rem;
-  margin-bottom: 15px;
+  gap: 1vw;
+  margin-bottom: 1vh;
 }
 #title-museum_landing-page {
-  margin-left: 12.5rem;
+  margin-left: 20vh;
 }
 .img-menu1 {
   background-image: url(/img/skull.webp);
@@ -316,9 +305,8 @@ ul li {
 }
 .grid-main-img {
   display: flex;
-  gap: 2rem;
-  margin-top: 3.125rem;
-  margin-right: 10rem;
+  gap: 1rem;
+  margin: 10vh 10vw 10vh 1vw;
 }
 
 /*firstpage Landing Page--------------*/
@@ -348,7 +336,7 @@ ul li {
 }
 .page-access .title-page {
   align-self: flex-start;
-  margin-top: 8rem;
+  margin-top: 10vh;
 }
 #opening-hours {
   grid-area: 2/1/3/2;
@@ -401,18 +389,13 @@ ul li {
 .page-exhibition {
   height: 100vh;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  position: relative;
 }
 .main-exhibition {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
+  gap: 5vh;
+  height: 70vh;
   width: 100%;
 }
 .main-exhibition > h3 {
@@ -421,10 +404,8 @@ ul li {
   margin-bottom: 0;
 }
 .page-exhibition .title-page {
-  position: absolute;
   align-self: flex-start;
-  top: 8rem;
-  margin-left: 0.5rem;
+  margin-top: 10vh;
 }
 #carrousel-responsive {
   /*carrousel*/
@@ -548,7 +529,7 @@ ul li {
 }
 .page-video .title-page {
   align-self: flex-start;
-  margin-top: 8rem;
+  margin-top: 10vh;
 }
 .main-video iframe {
   margin: 0 0 150px 0;
@@ -571,11 +552,11 @@ ul li {
   width: 100%;
 }
 .page-bio .title-page {
-  margin-top: 8rem;
+  margin-top: 10vh;
 }
 .text-bio-link {
   width: 90rem;
-  font-size: 3rem;
+  font-size: 2.5vh;
 }
 .main-bio img {
   margin-bottom: 40px;
@@ -593,17 +574,12 @@ ul li {
   justify-content: center;
   height: 100vh;
   margin: 0 15px 0 15px;
-
 }
-.main-sub iframe{
+.main-sub iframe {
   border-radius: 10px;
   width: 100%;
   height: 38vh;
 }
-/* .main-sub > img {
-  width: 540px;
-  border-radius: 10px;
-} */
 .info-sub {
   display: flex;
   flex-direction: row;
@@ -618,7 +594,7 @@ ul li {
   font-size: 30px;
   border-radius: 10px;
 }
-.info-sub h2{
+.info-sub h2 {
   font-size: 2vw;
 }
 form {
@@ -627,7 +603,6 @@ form {
   justify-content: center;
   align-items: center;
   gap: 5px;
-
 }
 form > input {
   padding: 1rem;
@@ -637,7 +612,7 @@ form > input {
 }
 #btn {
   background-color: rgb(255, 255, 255);
- border-radius: 5px;
+  border-radius: 5px;
   color: rgb(0, 0, 0);
   padding: 10px;
   border: none;
@@ -678,7 +653,6 @@ footer {
   justify-content: center;
   font-size: 1.2rem;
   background-color: rgba(189, 190, 189, 0.089);
-  /* background-color: rgba(0, 0, 0, 0.459); */
   backdrop-filter: blur(20px);
 }
 /*footer-----------------------*/
@@ -710,6 +684,7 @@ footer {
   .page {
     width: 100%;
   }
+
   /*Header----------------*/
   header {
     position: fixed;
@@ -742,64 +717,40 @@ footer {
     display: block;
   }
 
-
-    
-  .responsive-nav.active-responsive-nav{
-  display: flex;
-    animation: nav_anim1 0.8s ease forwards;
-  
-  
-    } 
-  
-    @keyframes nav_anim1 {
-      from{
-       height: 0vh ;
-       opacity: 0;
-      }
-      to {
-      height: 38vh; 
-      opacity: 1;
-      }
-    }
-
-
-
-  .responsive-nav.desactive-responsive-nav{
-  display: flex;
-    animation: nav_anim2 0.8s ease forwards;
-  
-  
-    } 
-  
-    @keyframes nav_anim2 {
-      from{
-       height: 38vh ;
-       opacity: 1;
-      }
-      to {
-      height: 0vh; 
-      opacity: 0;
-      }
-    }
-
-  
-
-
-
-/* 
-  .list-nav.active-burger {
-    visibility: visible; 
+  .responsive-nav.active-responsive-nav {
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding-left: 10px;
-  } */
+    animation: nav_anim1 0.8s ease forwards;
+  }
 
-   .active-card {
+  @keyframes nav_anim1 {
+    from {
+      height: 0vh;
+      opacity: 0;
+    }
+    to {
+      height: 38vh;
+      opacity: 1;
+    }
+  }
 
+  .responsive-nav.desactive-responsive-nav {
+    display: flex;
+    animation: nav_anim2 0.8s ease forwards;
+  }
+
+  @keyframes nav_anim2 {
+    from {
+      height: 38vh;
+      opacity: 1;
+    }
+    to {
+      height: 0vh;
+      opacity: 0;
+    }
+  }
+  .active-card {
     color: rgb(255, 255, 255);
     background-image: url();
-
   }
 
   /*Header----------------*/
@@ -885,7 +836,6 @@ footer {
     grid-template-rows: auto auto;
     gap: 0;
   }
-
   .main-access {
     display: flex;
     flex-direction: column;
@@ -913,7 +863,6 @@ footer {
     grid-area: 2/1/3/2;
     width: auto;
     align-self: center;
-
   }
   #opening-hours > h2 {
     font-size: 1.7rem;
@@ -921,14 +870,12 @@ footer {
   #opening-hours > p {
     font-size: 1.5rem;
     text-align: center;
-
   }
   #img-museum {
     grid-area: 1/1/2/2;
     align-self: center;
     width: 100vw;
   }
-
   .news-text-flex {
     display: flex;
     flex-direction: column;
@@ -990,7 +937,6 @@ footer {
     font-size: 3rem;
     text-align: center;
     margin: 0 20px 0 20px;
-
   }
   /*3rd page  GALLERY---------------*/
 
@@ -1028,7 +974,6 @@ footer {
     display: flex;
     flex-direction: column;
   }
-
   .main-bio {
     display: flex;
     flex-direction: column;
@@ -1050,11 +995,9 @@ footer {
     text-align: center;
     padding: 5px;
   }
-
   /*5th page Bio---------------*/
 
   /*6th page Subscribe---------------*/
-
 
   .main-sub {
     display: flex;
@@ -1092,7 +1035,7 @@ footer {
     width: 200px;
     height: 10px;
   }
-  #btn{
+  #btn {
     background-color: rgba(85, 63, 63, 0.61);
     border-radius: 25px;
     color: rgb(180, 30, 30);
@@ -1113,10 +1056,4 @@ footer {
     justify-content: center;
     gap: 5rem;
   }
-
-  /*6th page Subscribe---------------*/
-  /*switch Langue -----------------------*/
-
-/*switch Langue -----------------------*/
 }
-
