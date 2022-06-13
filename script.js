@@ -37,7 +37,7 @@ window.addEventListener("load", () => {
 //Menu Burger
 
 const btn = document.querySelector(".btn1");
-const responsiveNav= document.querySelector(".responsive-nav");
+// const responsiveNav= document.querySelector(".responsive-nav");
 
 btn.addEventListener("click", presentation);
 
@@ -55,11 +55,11 @@ burgerMenu.addEventListener("click", () => {
 console.log(q%2);
 
   if (q % 2 == 0) {
-   responsiveNav.classList.remove("active-responsive-nav");
-   responsiveNav.classList.add("desactive-responsive-nav");
+    listHeader.classList.remove("active-responsive-nav");
+    listHeader.classList.add("desactive-responsive-nav");
   } else {
-   responsiveNav.classList.add("active-responsive-nav");
-   responsiveNav.classList.remove("desactive-responsive-nav");
+    listHeader.classList.add("active-responsive-nav");
+    listHeader.classList.remove("desactive-responsive-nav");
 
   }
   
@@ -281,17 +281,19 @@ const buttonText = document.querySelector(".button-languev2 > span");
 const hours1 =document.querySelector('#hours-1')
 const hours2 =document.querySelector('#hours-2')
 const hours3 =document.querySelector('#hours-3')
+
+
 w = 0;
 boutonLangue.addEventListener("click", () => {
   w++;
 
   if (w % 2 !== 0) {
-    buttonText.replaceChildren("FRANÇAIS");
-  } else {
     buttonText.replaceChildren("ENGLISH");
+  } else {
+    buttonText.replaceChildren("FRANÇAIS");
   }
 });
-
+console.log(w);
 fetch("/traduction.json").then((response) =>
   response.json().then((data) => {
     let j = 0;
@@ -304,7 +306,7 @@ fetch("/traduction.json").then((response) =>
         t = 0;
       }
       k = 0;
-      console.log(j);
+     
       navs.forEach((navig) => {
         k++;
 
