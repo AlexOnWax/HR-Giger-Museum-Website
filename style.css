@@ -404,7 +404,6 @@ ul li {
 }
 #title-article-news {
   font-size: 2.25rem;
-  text-align: center;
   margin: 5px;
 }
 .paragraphe-news {
@@ -794,7 +793,7 @@ footer {
     width: 100%;
   }
   .list-nav > ul > li > a {
-    font-size: 16px;
+    font-size: 10px;
     text-decoration: none;
     color: rgb(255, 255, 255);
   }
@@ -977,7 +976,6 @@ footer {
   }
   #title-article-news {
     font-size: 2.25rem;
-    border-bottom: solid;
     text-align: center;
   }
   .paragraphe-news {
@@ -986,7 +984,7 @@ footer {
     text-align: center;
   }
   #title-article-news > span {
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: lighter;
   }
 
@@ -1115,6 +1113,7 @@ footer {
     padding: 10px;
     margin-right: 0px;
   }
+
   .info-sub h2 {
     font-size: 4rem;
     text-align: center;
@@ -1128,7 +1127,7 @@ footer {
     gap: 0.9375rem;
   }
   form > input {
-    width: 200px;
+    width: 80vw;
     height: 10px;
   }
   #btn {
@@ -1137,7 +1136,7 @@ footer {
     color: rgb(0, 0, 0);
     padding: 10px;
     border: none;
-    width: 70px;
+    width: 60vw;
     height: 34px;
     cursor: pointer;
   }
@@ -1436,7 +1435,7 @@ footer {
     }
     #title-article-news {
       font-size: 2.25rem;
-      border-bottom: solid;
+    
       text-align: center;
     }
     .paragraphe-news {
@@ -1445,7 +1444,7 @@ footer {
       text-align: center;
     }
     #title-article-news > span {
-      font-size: 1rem;
+      font-size: 2rem;
       font-weight: lighter;
     }
   
@@ -1567,7 +1566,7 @@ footer {
     .info-sub {
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 80px;
       background-color: rgba(0, 0, 0, 0.055);
       color: rgb(255, 255, 255);
       height: 100%;
@@ -1586,10 +1585,14 @@ footer {
       justify-content: center;
       align-items: center;
       gap: 0.9375rem;
+      
     }
     form > input {
-      width: 200px;
+      width: 80vw;
       height: 10px;
+    }
+    #form-sub {
+      gap: 50px;
     }
     #btn {
       background-color: rgb(255, 255, 255);
@@ -1597,7 +1600,7 @@ footer {
       color: rgb(0, 0, 0);
       padding: 10px;
       border: none;
-      width: 70px;
+      width: 60vw;
       height: 34px;
       cursor: pointer;
     }
@@ -1898,7 +1901,7 @@ footer {
   }
   #title-article-news {
     font-size: 2.25rem;
-    border-bottom: solid;
+    
     text-align: center;
   }
   .paragraphe-news {
@@ -1907,7 +1910,7 @@ footer {
     text-align: center;
   }
   #title-article-news > span {
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: lighter;
   }
 
@@ -2051,8 +2054,11 @@ footer {
     gap: 0.9375rem;
   }
   form > input {
-    width: 200px;
+    width: 60vw;
     height: 10px;
+  }
+  #form-sub {
+    gap: 50px;
   }
   #btn {
     background-color: rgb(255, 255, 255);
@@ -2060,7 +2066,7 @@ footer {
     color: rgb(0, 0, 0);
     padding: 10px;
     border: none;
-    width: 70px;
+    width:60vw;
     height: 34px;
     cursor: pointer;
   }
@@ -2361,7 +2367,6 @@ footer {
   }
   #title-article-news {
     font-size: 2.25rem;
-    border-bottom: solid;
     text-align: center;
   }
   .paragraphe-news {
@@ -2370,7 +2375,7 @@ footer {
     text-align: center;
   }
   #title-article-news > span {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: lighter;
   }
 
@@ -2515,8 +2520,11 @@ footer {
     gap: 0.9375rem;
   }
   form > input {
-    width: 200px;
+    width: 60vw;
     height: 10px;
+  }
+  #form-sub {
+    gap: 50px;
   }
   #btn {
     background-color: rgb(255, 255, 255);
@@ -2524,7 +2532,7 @@ footer {
     color: rgb(0, 0, 0);
     padding: 10px;
     border: none;
-    width: 70px;
+    width: 60vw;
     height: 34px;
     cursor: pointer;
   }
@@ -2566,26 +2574,29 @@ font-size: 100px;
   .card {
     width:15vw;
   }
+  #title-article-news > span {
+font-size: 1.7rem;
+  }
 }
 @media (min-width: 1400px) { 
   #title-museum_landing-page h1 {
-    font-size: 100px;
-    
+   margin-left: 20px;
       }
       #title-museum_landing-page  {
         margin-left: 50px;
-    
       }
       .text-bio-link{
         width: 50vh;
-    
-    
       }
       .main-bio img{
        width: 40vh;
       }
       .card {
-        width:15vw;
+        width:12vw;
       }
-}
+    
+    #title-article-news > span {
+  font-size: 1.7rem;
+    }}
+
  
