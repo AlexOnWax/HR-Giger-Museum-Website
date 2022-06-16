@@ -3,11 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300&display=swap');
 
 
-header h2 {
-  font-size: $fontTaille *1.5;
-  margin: 0 0 0 25px;
-  padding-top:20px ;
-}
+
 body {
   background-color: $colorPrimaire;
   color: #fff;
@@ -25,6 +21,7 @@ height: 90%;
 display: flex;
 align-items: center;
 justify-content: center;
+
 }
 
 
@@ -35,14 +32,37 @@ justify-content: center;
   align-items: center;
   justify-content: center;
   gap: 50px;
+  @media screen and (max-width:575.98px) {
+  flex-direction: column;
+  }
+  @media screen and (min-width:576px) {
+    flex-direction: column;
+   
+      
+    }
+  @media screen and (min-width:768px) {
+    flex-direction: row;
+    gap: 50px;
+   margin: 0 20px 0 20px;
+      
+    }
+  @media screen and (min-width:992px) {
+    gap: 100px;
+    }
 
             .partie_droite_login {
             font-size: $fontTaille*2;
-            border: solid 1px #fff;
-            padding: 50px;
-            border-radius: 5px;
+            // border: solid 1px rgba(111, 122, 118, 0.726);
+            padding: 70px;
+            border-radius: 10px;
             width: 300px;
             height: 300px;
+            color: rgb(255, 255, 255);
+            background-color: rgba(27, 37, 63, 0.973);
+            @media screen and (max-width:575.98px) {
+              width: 250px;
+              }
+           
 
                         form {
                         display: flex;
@@ -51,12 +71,27 @@ justify-content: center;
                         flex-direction: column;
                         justify-content: space-around;
                         
+                         h2 {
+                          font-size: $fontTaille *2;
+                          margin: 0px;
+                          @media screen and (min-width:0px) {
+                            
+                            font-size: $fontTaille *1.4;
+                            text-align: center;
+
+                               }
+                      
+                        }
+
+
+
                         .flex_item_top {
                         display: flex;
                         flex-direction: column;
                         }
                             p {
-                            margin: 0px;
+                            margin-bottom:15px;
+                            font-size: $fontTaille *1.2;
                            
                             }
                             input {
@@ -65,18 +100,24 @@ justify-content: center;
                             background-color: $colorSecondaire;
                             border: none;
                             border-radius: 5px;
-                            height: 30px;
+                            height: 40px;
                             }
                             button {
                             justify-self: flex-end;
                             border: none;
                             border-radius: 5px;
-                            background-color: $colorButton;
+                            background-color: $colorPrimaire;
                             align-self: flex-end;
                             padding: 7px 20px;
+                            color: #fff;
+                            @media screen and (min-width:0px) {
+                           align-self: center;
+                                
+                              }
 
                             &:hover {
-                                color: #fff;
+                                color:$colorPrimaire;
+                                background-color: #fff ;
                             }
                             }
                             }

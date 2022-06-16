@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #101729;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+
+header {
+  border: solid 0.5px #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  margin-top: 0px;
+  background-color: #161D2F;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  color: #fff;
+}
+button:hover {
+  color: #101729;
+  background-color: #fff;
+}
+
+.element_principal {
+  display: flex;
+}
+.element_principal aside {
+  border: solid 0.5px #fff;
+  height: 100%;
+  width: 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+}
+.element_principal .list {
+  border: solid 0.5px #fff;
+  width: 100%;
+  position: relative;
+}
+.element_principal .list button {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+.element_principal .list input {
+  width: 100px;
+  height: 20px;
+  border-radius: 5px;
+  border: none;
+}
+.element_principal .tableau {
+  width: 100%;
+  height: 500px;
+  background-color: rgb(43, 53, 53);
+}
+.element_principal .tableau table {
+  border: solid 1px #fff;
+}/*# sourceMappingURL=dashboard_mailing_list.css.map */

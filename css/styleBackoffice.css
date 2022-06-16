@@ -1,10 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300&display=swap");
-header h2 {
-  font-size: 24px;
-  margin: 0 0 0 25px;
-  padding-top: 20px;
-}
-
 body {
   background-color: #101729;
   color: #fff;
@@ -30,13 +24,41 @@ body {
   justify-content: center;
   gap: 50px;
 }
+@media screen and (max-width: 575.98px) {
+  .main_container {
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 576px) {
+  .main_container {
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 768px) {
+  .main_container {
+    flex-direction: row;
+    gap: 50px;
+    margin: 0 20px 0 20px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .main_container {
+    gap: 100px;
+  }
+}
 .main_container .partie_droite_login {
   font-size: 32px;
-  border: solid 1px #fff;
-  padding: 50px;
-  border-radius: 5px;
+  padding: 70px;
+  border-radius: 10px;
   width: 300px;
   height: 300px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(27, 37, 63, 0.973);
+}
+@media screen and (max-width: 575.98px) {
+  .main_container .partie_droite_login {
+    width: 250px;
+  }
 }
 .main_container .partie_droite_login form {
   display: flex;
@@ -45,12 +67,23 @@ body {
   flex-direction: column;
   justify-content: space-around;
 }
+.main_container .partie_droite_login form h2 {
+  font-size: 32px;
+  margin: 0px;
+}
+@media screen and (min-width: 0px) {
+  .main_container .partie_droite_login form h2 {
+    font-size: 22.4px;
+    text-align: center;
+  }
+}
 .main_container .partie_droite_login form .flex_item_top {
   display: flex;
   flex-direction: column;
 }
 .main_container .partie_droite_login form p {
-  margin: 0px;
+  margin-bottom: 15px;
+  font-size: 19.2px;
 }
 .main_container .partie_droite_login form input {
   margin-top: 0px;
@@ -58,18 +91,25 @@ body {
   background-color: #161D2F;
   border: none;
   border-radius: 5px;
-  height: 30px;
+  height: 40px;
 }
 .main_container .partie_droite_login form button {
   justify-self: flex-end;
   border: none;
   border-radius: 5px;
-  background-color: #2869FF;
+  background-color: #101729;
   align-self: flex-end;
   padding: 7px 20px;
+  color: #fff;
+}
+@media screen and (min-width: 0px) {
+  .main_container .partie_droite_login form button {
+    align-self: center;
+  }
 }
 .main_container .partie_droite_login form button:hover {
-  color: #fff;
+  color: #101729;
+  background-color: #fff;
 }
 .main_container .partie_gauche_accueil {
   font-size: 32px;
