@@ -8,18 +8,25 @@ body {
   font-family: "Lato", sans-serif;
   width: 100vw;
   height: 100vh;
+  padding: 0.5vw;
 }
 
 header {
-  border: solid 0.5px #fff;
   display: flex;
+  height: 8vh;
   justify-content: space-between;
   align-items: center;
+  background-color: #161D2F;
+  padding: 20px;
+  border-radius: 10px 10px 10px 0;
+}
+header h3 {
+  font-size: 24px;
 }
 
 button {
   margin-top: 0px;
-  background-color: #161D2F;
+  background-color: rgb(64, 78, 95);
   border: none;
   border-radius: 5px;
   height: 40px;
@@ -34,36 +41,52 @@ button:hover {
   display: flex;
 }
 .element_principal aside {
-  border: solid 0.5px #fff;
-  height: 100%;
+  height: 80vh;
   width: 10vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: auto;
+  background-color: #161D2F;
+  border-radius: 0 0 10px 10px;
 }
-.element_principal .list {
-  border: solid 0.5px #fff;
-  width: 100%;
-  position: relative;
-}
-.element_principal .list button {
-  position: absolute;
-  right: 0px;
-  bottom: 0px;
-}
-.element_principal .list input {
-  width: 100px;
-  height: 20px;
-  border-radius: 5px;
+.element_principal aside input {
+  width: 80%;
+  border-radius: 3px;
+  padding: 4px;
   border: none;
+  background: url(/img/loupe.svg) rgb(255, 255, 255) no-repeat right 10px center;
+  border: solid 1px rgb(94, 85, 85);
 }
 .element_principal .tableau {
   width: 100%;
-  height: 500px;
-  background-color: rgb(43, 53, 53);
+  height: 80vh;
+}
+.element_principal .tableau button {
+  margin: 10px;
 }
 .element_principal .tableau table {
-  border: solid 1px #fff;
+  padding: 10px;
+  width: 100%;
+}
+.element_principal .tableau table thead {
+  background-color: #161D2F;
+  border-radius: 5px;
+  height: 5vh;
+}
+.element_principal .tableau table thead th {
+  text-align: start;
+}
+.element_principal .tableau table thead th svg {
+  padding-left: 5px;
+  cursor: pointer;
+}
+.element_principal .tableau table tbody tr {
+  height: 6vh;
+}
+.element_principal .tableau table tbody tr td {
+  border-bottom: solid 1px rgb(59, 56, 56);
+}
+.element_principal .tableau table tbody tr td img {
+  cursor: pointer;
 }/*# sourceMappingURL=dashboard_mailing_list.css.map */
