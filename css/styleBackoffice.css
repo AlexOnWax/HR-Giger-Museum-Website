@@ -87,7 +87,7 @@ body {
 }
 .main_container .partie_droite_login form input {
   margin-top: 0px;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   background-color: #161D2F;
   border: none;
   border-radius: 5px;
@@ -115,4 +115,19 @@ body {
   font-size: 32px;
   display: flex;
   flex-direction: column;
+}
+
+.invisible {
+  color: hsl(0deg, 100%, 74%);
+  visibility: hidden;
+}
+
+.help.invisible {
+  visibility: visible;
+  text-align: left;
+  font-size: 20px;
+}
+
+.error.input {
+  border: solid 3px red;
 }/*# sourceMappingURL=styleBackoffice.css.map */

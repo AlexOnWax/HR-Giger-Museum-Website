@@ -14,7 +14,7 @@
 <body>
   <header>
     <div class="logo-title-header">
-      <img src="/img/logo.webp" alt="Logo du site web" width="30" height="60" />
+      <img src="/img/logo.webp" alt="Logo du site web" width="60" height="120" />
       <h2>
         HR.GIGER<br />
         MUSEUM
@@ -46,9 +46,9 @@
   <div class="mooving-rod"></div>
   <div class="mooving-rod"></div>
 </div>
-  <div class="flex">
+ 
     <!-- Landing Page -->
-   
+    <div class="flex">
     <div id="page-landing"  class="page  page-landing">
 <div id="main-title">
   <div id="title-museum_landing-page">
@@ -75,7 +75,7 @@
           <p id="hours-2"> Tuesday to Friday 1pm to 5pm</p>
           <p id="hours-3">Saturday and Sunday 10am to 6pm </p>
       </div>
-      <img id="img-museum" src="/img/photo-musée_exterieur.webp" width="500" height="300" alt="">
+      <img id="img-museum" src="/img/photo-musée_exterieur.webp" width="500" height="300" alt="image of a door">
           <img id="img-psy" src="/img/psychonauten_actual_exhibition.webp" width="500" height="300" alt="Affiche de l'actuelle exposition">
       <div class="news-text-flex">
         <h3 id="title-article-news">PSYCHONAUTEN II <span>From May 14 to November 2022</span></h3>
@@ -136,28 +136,32 @@
     <!--Subscribe-->
     <div id="page-sub" class="page page-sub">
       <div class="main-sub">
-        <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=7.050175666809082%2C46.57216722020985%2C7.106823921203614%2C46.59818151347685&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small></small>
+        <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=7.050175666809082%2C46.57216722020985%2C7.106823921203614%2C46.59818151347685&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small></small>
         <div class="info-sub">
           <div id="form-sub">
             <h2>Subscribe to the newsletter</h2>
             
-        <form action="submit">
+        <form action="submit" novalidate >
             <label for="email"></label>
-            <input type="email" id="email" required pattern="[A-Za-z]+" placeholder="Youremail@mail.com">
+            <input type="email" id="email" class="input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email Address">
+
             <button id="btn" type="submit">Validate</button>
+                    
        </form>
+           <div class="invisible"></div>
    </div>
         <div class="information">
           <h3>Follow Us</h3>
           <div class="social_logo">
-            <a href="https://www.facebook.com/hrgigermuseum/"><img src="/img/facebook.webp" width="60" height="60" alt="Facebook"></a>
-            <a href="https://www.instagram.com/hr_giger_museum/?hl=fr"><img src="/img/insta.webp" width="60" height="60" alt="Instagram"></a>
-            <a href="https://twitter.com/gigerart?lang=fr"><img src="/img/twitter.webp" width="60" height="60" alt="Twitter"></a>
+            <a href="https://www.facebook.com/hrgigermuseum/"><img src="/img/facebook.webp" width="100" height="100" alt="Facebook"></a>
+            <a href="https://www.instagram.com/hr_giger_museum/?hl=fr"><img src="/img/insta.webp" width="100" height="100" alt="Instagram"></a>
+            <a href="https://twitter.com/gigerart?lang=fr"><img src="/img/twitter.webp" width="100" height="100" alt="Twitter"></a>
           </div>
           
         </div>
       </div>
           </div>
+        </div>
         </div>
   <footer>
 <img id="left_arrow-main" src="/img/Arrow_Left_Main.webp" alt="">

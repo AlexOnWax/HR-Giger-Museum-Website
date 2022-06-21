@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/styleBackoffice.css">
+    <script src="validation_formulaire_backoffice.js" defer></script>
 </head>
 <body>
     <header>
@@ -18,13 +19,15 @@
 
 </div>
 <div class="partie_droite_login">
-    <form action="submit">
+    <form action="submit" novalidate>
         <h2>HR.giger Museum</h2>
         <div class="flex_item_top">
             <p>Login</p>
-            <input type="text" required id="login" >
+            <input type="text" id="login" class="input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$"  placeholder="Login">
+            <div class="invisible"></div>
             <p>Password</p>
-            <input type="password" required id="password">
+            <input type="text" class="input" id="Password" required   placeholder="Password">
+            <div class="invisible"></div>
             </div>
             <button id="btn" type="submit" href="dashboard_mailing_list.html">Sign In</button>
     </form>
