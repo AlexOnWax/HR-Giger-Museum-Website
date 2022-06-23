@@ -293,8 +293,8 @@ boutonLangue.addEventListener("click", () => {
     buttonText.replaceChildren("FRANÇAIS");
   }
 });
-console.log(w);
-fetch("/traduction.json").then((response) =>
+
+fetch("traduction.json").then((response) =>
   response.json().then((data) => {
     let j = 0;
     let t = 0;
@@ -331,55 +331,4 @@ fetch("/traduction.json").then((response) =>
     });
   })
 );
-
-//---Validation formulaire---
-const formulaire = document.querySelector('form');
-const input = document.querySelector('.input');
-const formBtn =document.querySelector('form > button');
-const error = document.querySelector('.invisible');
-
-
-
-function formValidation() {
-input.addEventListener("input",() => {
-input.setCustomValidity("");
-input.checkValidity();
-  })
-
-  if (input.validity.valueMissing){
-  const message = document.createTextNode(`Email cannot be empty`);
-  error.replaceChildren(message);
-  error.classList.add("help");
-  input.classList.add("error");
-
-  }else if (input.validity.typeMismatch){
-    const message = document.createTextNode(`This is not a valid email`);
-    error.replaceChildren(message)
-    error.classList.add("help");
-    input.classList.add("error");
-  }else{
-    const message= document.createTextNode("");
-    error.replaceChildren(message);
-    error.classList.add("help");
-    input.classList.remove("error");
-
-  }
-}
-
-formulaire.addEventListener('submit', function (event){
-event.preventDefault();
-formValidation();
-
-const request = new XMLHttpRequest();
-request.onreadystatechange =function() {//verifier quand on a un changement d'etat de notre requete
-  console.log(this);
-};
-request.open("POST","formulaire_inscription-newletter.php", true);
-request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");//presision des types de paramettres
-request.send("pseudo=akex&elail");//envoyer la requete avec les parametre de cette methode
-
-})
-
-//Ajax pour formulaire php----
-
 

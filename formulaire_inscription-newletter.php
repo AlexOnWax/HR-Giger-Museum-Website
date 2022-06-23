@@ -1,2 +1,10 @@
 <?php
-print_r($_POST);
+
+$texte = $_POST['email'] ;
+echo $texte;
+
+
+
+
+
+?>
