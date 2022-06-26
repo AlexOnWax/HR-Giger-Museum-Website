@@ -1,71 +1,31 @@
 <?php
+	
+$email = $_POST['email'] ;
 
-$texte = $_POST['email'] ;
-echo $texte;
+$servername='';
+$dbName='';
+$user='';
+$pass='';
 
-
-		
-
-		$texte = $_POST['email'] ;
-		echo $texte;
-		$email = $_POST['email'] ;
-		
-
-		if (isset($_POST["email"])){
-		if (empty($email)){
-		    echo "Value missing";
-		}else if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-		    echo "ok";
-		
-		try{
-		$conn = new PDO("mysql:host=$servername;dbname=$dbName",$username,$password);
-		$conn->setAttribute(PDO::ATTR_ERMODE, PDO::ERRMODE_EXCEPTION);
-		
-
-		 $conn = $sql->prepare("INSERT INTO 
-		 Newsletter(Mail)
-		 VALUES($email)");
-		 $conn->execute();
-		
-
-		
-
-		
-
-		}
-		
-
-		
-
-		
-
-		
-
-		}else{
-		    echo "Pas le bon Format";
-		}}
-		
-
-		
-
-		
-
-		
-
-		
-
-		catch(PDOException $e){
-		    echo "Erreur :" . $e->getMessage();
+if(!empty($_POST['email']&& filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+	
+	try{
+		$dbnl = new PDO("mysql:host=$servername;dbname=$dbName",$username,$password);
+		$dbnl->setAttribute(PDO::ATTR_ERMODE, PDO::ERRMODE_EXCEPTION);
+		$sql=$dbnl->prepare("INSERT INTO Newsletter(Mail) VALUES(:email);";)
+		$sql->bindParam(':email', $_POST['email'],PDO::PARAM_STR);
+		$sql->execute();	
+	}
+catch(PDOException $e){
+	$dbnl->rollBack();
+echo "Erreur :" . $e->getMessage();
 		};
-		
-
-		
-
-		
-
-		
-
-
-
-
+}
 ?>
+
+
+
+<?php
+
+
+

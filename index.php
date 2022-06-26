@@ -1,4 +1,6 @@
+
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -13,6 +15,11 @@
 
 </head>
 <body>
+
+
+
+
+
   <header>
     <div class="logo-title-header">
       <img src="img/logo.webp" alt="Logo du site web" width="60" height="120" />
@@ -147,7 +154,12 @@
             <input type="email" id="email" class="input" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email Address">
 
             <button id="btn" type="submit">Validate</button>
-                    
+                    <?php 
+                    if(isset($msg))
+                    {
+                      echo $msg;
+                    }
+                    ?>
        </form>
            <div class="invisible"></div>
    </div>

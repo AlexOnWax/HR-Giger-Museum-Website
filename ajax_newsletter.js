@@ -8,10 +8,7 @@ const error = document.querySelector('.invisible');
 //---Validation formulaire---
 
 function formValidation() {
-input.addEventListener("input",() => {
-input.setCustomValidity("");
-input.checkValidity();
-  })
+
 
   if (input.validity.valueMissing){
   const message = document.createTextNode(`Email cannot be empty`);
@@ -29,13 +26,14 @@ input.checkValidity();
     error.replaceChildren(message);
     error.classList.add("help");
     input.classList.remove("error");
- 
-    const formData = new FormData(formulaireNewsletter);
-   
+ const formData = new FormData(formulaireNewsletter);
 fetch('formulaire_inscription-newletter.php', {
     method: 'POST',
     body: formData,
 }).then((response)=>response.text());
+    
+   
+
 
   }
 }
@@ -54,19 +52,4 @@ formValidation();
 
 
 
-
-
-//---Ajax pour les mails de la newsletter---
-
-
-// button.addEventListener('click',(e) =>{
-//     e.preventDefault();
-//     const formData = new FormData(formulaireNewsletter);
-   
-// fetch('formulaire_inscription-newletter.php', {
-//     method: 'POST',
-//     body: formData,
-// }).then((response)=>response.text());
-
-// })
 
