@@ -19,14 +19,14 @@
 
 </div>
 <div class="partie_droite_login">
-    <form action="submit" novalidate>
+    <form method="post" action="verification_connexion_dashboard.php" novalidate>
         <h2>HR.giger Museum</h2>
         <div class="flex_item_top">
             <p>Login</p>
-            <input type="text" id="login" class="input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$"  placeholder="Login">
+            <input name="login" type="text" id="login" class="input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$"  placeholder="Login">
             <div class="invisible"></div>
             <p>Password</p>
-            <input type="text" class="input" id="Password" required  placeholder="Password">
+            <input name="mdp" type="text" class="input" id="Password" required  placeholder="Password">
             <div class="invisible"></div>
             </div>
             <button id="btn" type="submit" href="dashboard_mailing_list.html">Sign In</button>
