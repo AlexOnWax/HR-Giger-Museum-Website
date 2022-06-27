@@ -6,7 +6,7 @@ email VARCHAR(255) NOT NULL UNIQUE,
 date DATE DEFAULT NOW());
 
 
-CREATE USER 'Giger'@'localhost' IDENTIFIED BY '2570';
-GRANT ALL PRIVILEGES ON DbGiger.* TO 'Giger'@'localhost';
+CREATE USER '####'@'localhost' IDENTIFIED BY '####';
+GRANT ALL PRIVILEGES ON DbGiger.* TO '####'@'localhost';
 FLUSH PRIVILEGES;
 
