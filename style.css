@@ -2515,11 +2515,26 @@ footer {
   color: hsl(0, 100%, 74%);
   visibility: hidden;
 }
+.invisible_good {
+  color: hsl(134, 77%, 38%);
+  visibility: hidden;
+}
+
 .help.invisible {
   visibility: visible;
   text-align: left;
   font-size: 20px;
 }
+.help.invisible_good {
+  visibility: visible;
+  text-align: left;
+  font-size: 20px;
+}
+
 .error.input {
   border: solid 3px red;
 }
+.good.input{
+  border: solid 3px green;
+}
+
