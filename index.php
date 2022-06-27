@@ -162,6 +162,7 @@
                     ?>
        </form>
            <div class="invisible"></div>
+           <div class="invisible_good"></div>
    </div>
         <div class="information">
           <h3>Follow Us</h3>
