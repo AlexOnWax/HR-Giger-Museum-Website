@@ -22,10 +22,10 @@ function formValidation() {
     error.classList.add("help");
     input.classList.add("error");
   }else{
-    const message= document.createTextNode("");
+    const message= document.createTextNode("Thanks you for the subscription");
     error.replaceChildren(message);
     error.classList.add("help");
-    input.classList.remove("error");
+    input.classList.add("error");
  const formData = new FormData(formulaireNewsletter);
 fetch('formulaire_inscription-newletter.php', {
     method: 'POST',
