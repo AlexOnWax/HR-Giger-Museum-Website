@@ -136,19 +136,22 @@ justify-content: center;
 
 }
 
+/*validation du formulaire*/
 .invisible {
-  color:hsl(0, 100%, 74%);
+  color: hsl(0, 100%, 74%);
   visibility: hidden;
-
 }
+
+
 .help.invisible {
-visibility: visible;
-text-align: left;
-font-size: 20px;
-
-
+  visibility: visible;
+  text-align: left;
+  font-size: 20px;
 }
+
 .error.input {
-border: solid 3px red;
+  border: solid 3px red;
 }
+
+
 

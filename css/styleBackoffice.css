@@ -117,6 +117,7 @@ body {
   flex-direction: column;
 }
 
+/*validation du formulaire*/
 .invisible {
   color: hsl(0deg, 100%, 74%);
   visibility: hidden;

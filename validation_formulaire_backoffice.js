@@ -11,8 +11,8 @@ function formValidation() {
 inputs.forEach((input) => {
     i++;
 input.addEventListener("input",() => {
-input.setCustomValidity("");
-input.checkValidity();
+
+  
   });
 
   if (input.validity.valueMissing){
@@ -32,6 +32,16 @@ input.checkValidity();
     errors[i].classList.add("help");
     input.classList.remove("error");
 
+    const loginData = new FormData(formulaire);
+    fetch('verification_connexion_dashboard.php', {
+        method: 'POST',
+        body: loginData,})
+  //  }).then((response)=>response.text());
+    .then(res => res.json()) 
+        .then(json => {
+           console.log(json)
+           window.location.href = data.redirect;
+          });
   }
 })
 }

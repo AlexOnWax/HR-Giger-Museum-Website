@@ -1,0 +1,7 @@
+
+CREATE TABLE Users(
+Id INT PRIMARY KEY AUTO_INCREMENT, 
+Login VARCHAR (255) UNIQUE NOT NULL , 
+Password VARCHAR(255) NOT NULL);
+
+INSERT INTO Users (Login,Password) VALUES("###","###");
