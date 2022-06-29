@@ -1,6 +1,6 @@
 <?php
 session_start();
-var_dump($_POST);
+// var_dump($_POST);
 require __DIR__ .'/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -10,38 +10,44 @@ $dbName=$_ENV['dbName'];
 $user=$_ENV['username'];
 $pass=$_ENV['password'];
 
-if (isset($_POST['login']) && isset($_POST['mdp'])){
+if (isset($_POST['login']) && isset($_POST['mdp']) && !empty($_POST['login']) && !empty($_POST['mdp'])){
 $login=$_POST['login'];
 $passAdmin=$_POST['mdp'];
-
-$pdo = new PDO('mysql:host='.$servername.';dbname='.$dbName, $user, $pass);
-try{
-$result = $pdo->prepare('SELECT * FROM Users WHERE Login= :login ');
-$result->bindParam(':login', $login);
-$result->execute();
-
-}catch(Exception $e){
-	echo "<p>Erreur : " . $e->getMessage() . "</p>";
-	exit();
-  }
-$then = $result->fetch(PDO::FETCH_ASSOC);
-
-if(count($then) > 0 ){
-	$_SESSION['login'] = $then['login'];
-	echo 'ok';
-	exit();
+	try{
+	$pdo = new PDO('mysql:host='.$servername.';dbname='.$dbName, $user, $pass);
+	$result = $pdo->prepare('SELECT * FROM Users WHERE Login= :login AND Password= :password');
+	$result->bindParam(':login', $login);
+	$result->bindParam(':password', $passAdmin);
+	$result->execute();
+		if($result->rowCount() == 1 ){
+			$_SESSION['login'] = $login;
+			//$then = $result->fetch(PDO::FETCH_ASSOC);
+			$response=array("response"=>"connecte",$bool=true);
+			echo json_encode($response);
+		}else{
+			$response=array("response"=>"Non connecte",$bool=false);
+			echo json_encode($response);
+		}
+	}
+		catch(Exception $e){
+			echo "<p>Erreur : " . $e->getMessage() . "</p>";
+			exit();
+  		}
 }else{
-echo 'Vérifiez vos identifiants de connexion<br>';
+	$response=array("response"=>"Vide",$bool=false);
+	echo json_encode($response);
 }
 
-}
 
 
-require 'fonctions_PHP/auth.php';
-if (is_connected()){
+
+
+
+// require 'fonctions_PHP/auth.php';
+// if (is_connected()){
 	
-	exit();
-}
+// 	exit();
+// }
 
 
 ?>

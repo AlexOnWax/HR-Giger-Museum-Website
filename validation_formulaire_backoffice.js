@@ -36,12 +36,22 @@ input.addEventListener("input",() => {
     fetch('verification_connexion_dashboard.php', {
         method: 'POST',
         body: loginData,})
-  //  }).then((response)=>response.text());
-    .then(res => res.json()) 
-        .then(json => {
-           console.log(json)
-           window.location.href = data.redirect;
-          });
+   .then(response=>response.json())
+   .then(response=>{
+    
+    if(response[0]==false){
+      console.log("ERROR");
+    }else{
+      console.log("CORRECTE");
+      
+     fetch('fonctions_PHP/auth.php'),{
+      method:'POST',
+      data:{'content':responseData}
+    }
+      
+    }
+   })
+  
   }
 })
 }

@@ -1,6 +1,7 @@
-<?php session_start();
-require 'fonctions_PHP/auth.php';
-force_user_connected();
+<?php 
+// session_start();
+// require 'fonctions_PHP/auth.php';
+// force_user_connected();
 ?>
 
 <!DOCTYPE html>
