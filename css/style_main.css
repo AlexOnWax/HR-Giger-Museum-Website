@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: rgb(36, 36, 31);
-  background-image: url(img/photo-musée_exterieur.webp);
+  background-image: url(../img/photo-musée_exterieur.webp);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
@@ -238,7 +238,7 @@ ul li {
   left: 0;
   width: 0;
   height: 100%;
-  background-image: url(img/gold2.webp);
+  background-image: url(../img/gold2.webp);
   transition: all 0.35s;
 }
 
@@ -271,7 +271,7 @@ ul li {
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
-  background-image: url(img/gold2.webp);
+  background-image: url(../img/gold2.webp);
   background-size: 100%;
 }
 #main-title {
@@ -287,7 +287,7 @@ ul li {
   margin-left: 20vh;
 }
 .img-menu1 {
-  background-image: url(img/skull.webp);
+  background-image: url(../img/skull.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -295,7 +295,7 @@ ul li {
   height: 80vh;
 }
 .img-menu2 {
-  background-image: url(img/forest-alone.webp);
+  background-image: url(../img/forest-alone.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -303,7 +303,7 @@ ul li {
   height: 80vh;
 }
 .img-menu3 {
-  background-image: url(img/fond-foret.webp);
+  background-image: url(../img/fond-foret.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -678,7 +678,7 @@ footer {
     margin: 0;
     padding: 0;
     background-color: black;
-    background-image: url(img/corridor.webp);
+    background-image: url(../img/corridor.webp);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
@@ -828,7 +828,7 @@ footer {
     font-family: var(--font-title);
     font-size: 8rem;
     font-weight: normal;
-    background-image: url(img/gold2.webp);
+    background-image: url(../img/gold2.webp);
   }
   #main-title {
     display: grid;
@@ -845,7 +845,7 @@ footer {
     position: relative;
   }
   .img-menu1 {
-    background-image: url(img/img-mobile.webp);
+    background-image: url(../img/img-mobile.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -1270,7 +1270,7 @@ footer {
     font-family: var(--font-title);
     font-size: 8rem;
     font-weight: normal;
-    background-image: url(img/gold2.webp);
+    background-image: url(../img/gold2.webp);
   }
   #main-title {
     display: grid;
@@ -1287,7 +1287,7 @@ footer {
     position: relative;
   }
   .img-menu1 {
-    background-image: url(img/img-mobile.webp);
+    background-image: url(../img/img-mobile.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -1721,7 +1721,7 @@ footer {
     font-family: var(--font-title);
     font-size: 8rem;
     font-weight: normal;
-    background-image: url(img/gold2.webp);
+    background-image: url(../img/gold2.webp);
   }
   #main-title {
     display: grid;
@@ -1738,7 +1738,7 @@ footer {
     position: relative;
   }
   .img-menu1 {
-    background-image: url(img/img-mobile.webp);
+    background-image: url(../img/img-mobile.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -2175,7 +2175,7 @@ footer {
     font-family: var(--font-title);
     font-size: 8rem;
     font-weight: normal;
-    background-image: url(img/gold2.webp);
+    background-image: url(../img/gold2.webp);
   }
   #main-title {
     display: grid;
@@ -2192,7 +2192,7 @@ footer {
     position: relative;
   }
   .img-menu1 {
-    background-image: url(img/img-mobile.webp);
+    background-image: url(../img/img-mobile.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

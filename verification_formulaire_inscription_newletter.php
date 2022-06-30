@@ -27,6 +27,9 @@ catch(PDOException $e){
 echo "Erreur :" . $e;
 		}
 $dbnl=null;
+}else{
+	header("Location: index.html"); // permet la redirection si on accede directement a la page depuis la bare d'adresse
+
 }
 ?>
 

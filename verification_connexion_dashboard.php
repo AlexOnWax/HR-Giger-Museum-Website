@@ -1,7 +1,7 @@
 <?php
 session_start();
 // var_dump($_POST);
-require __DIR__ .'/vendor/autoload.php';
+require __DIR__.'/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
@@ -36,18 +36,7 @@ $passAdmin=$_POST['mdp'];
 }else{
 	$response=array("response"=>"Vide",$bool=false);
 	echo json_encode($response);
+	 header("Location: page_connection_backoffice.php"); // permet la redirection si on accede directement a la page depuis la bare d'adresse
 }
-
-
-
-
-
-
-// require 'fonctions_PHP/auth.php';
-// if (is_connected()){
-	
-// 	exit();
-// }
-
 
 ?>

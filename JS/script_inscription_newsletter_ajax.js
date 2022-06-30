@@ -4,10 +4,7 @@ const button = document.querySelector('form > button');
 const input = document.querySelector('.input');
 const error = document.querySelector('.invisible');
 const goodMessage = document.querySelector('.invisible_good');
-
-
 //---Validation formulaire---
-
 function formValidation() {
   goodMessage.classList.remove("help");
   error.classList.remove("help");
@@ -37,21 +34,12 @@ fetch('verification_formulaire_inscription_newletter.php', {
     method: 'POST',
     body: formData,
 }).then((response)=>response.text());
-    
-   
-
-
   }
 }
-
 formulaireNewsletter.addEventListener('submit', function (e){
 e.preventDefault();
 formValidation();
 input.value="";
-
-
-
-
 });
 
 

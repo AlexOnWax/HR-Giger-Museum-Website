@@ -1,18 +1,15 @@
 //---Validation formulaire---
+
 const formulaire = document.querySelector('form');
 const inputs = document.querySelectorAll('.input');
 const formBtn =document.querySelector('form > button');
 const errors = document.querySelectorAll('.invisible');
 
-
-
 function formValidation() {
-    let i=-1;
+let i=-1;
 inputs.forEach((input) => {
-    i++;
+i++;
 input.addEventListener("input",() => {
-
-  
   });
 
   if (input.validity.valueMissing){
@@ -50,7 +47,6 @@ input.addEventListener("input",() => {
   }
 })
 }
-
 formulaire.addEventListener('submit', function (event){
 event.preventDefault();
 formValidation();

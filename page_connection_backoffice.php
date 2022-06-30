@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style_connection_backoffice.css">
-    <script src="script_connection_dashboard_ajax.js" defer></script>
+    <script src="JS/script_connection_dashboard_ajax.js" defer></script>
 </head>
 <body>
     <header>
@@ -20,7 +20,7 @@
 
 </div>
 <div class="partie_droite_login">
-    <form method="post" action="verification_connexion_dashboard.php" novalidate>
+    <form method="post" action="fonctions_PHP/verification_connexion_dashboard.php" novalidate>
         <h2>HR.giger Museum</h2>
         <div class="flex_item_top">
             <p>Login</p>
