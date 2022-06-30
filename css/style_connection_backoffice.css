@@ -11,8 +11,8 @@ body {
 }
 
 .flex_principal {
-  width: 100vw;
-  height: 90%;
+  width: 90vw;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,4 +131,4 @@ body {
 
 .error.input {
   border: solid 3px red;
-}/*# sourceMappingURL=styleBackoffice.css.map */
+}/*# sourceMappingURL=style_connection_backoffice.css.map */

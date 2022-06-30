@@ -1,7 +1,9 @@
 <?php 
-// session_start();
-// require 'fonctions_PHP/auth.php';
-// force_user_connected();
+session_start();
+if(!isset($_SESSION['login'])){
+    header('Location:page_connection_backoffice.php');
+}
+ //session_destroy();
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/dashboard_mailing_list.css">
+    <link rel="stylesheet" href="css/style_dashboard_mailing_list.css">
 </head>
 <body>
     <header>

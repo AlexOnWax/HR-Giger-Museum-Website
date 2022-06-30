@@ -1,5 +1,4 @@
-<?php session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/styleBackoffice.css">
-    <script src="validation_formulaire_backoffice.js" defer></script>
+    <link rel="stylesheet" href="css/style_connection_backoffice.css">
+    <script src="script_connection_dashboard_ajax.js" defer></script>
 </head>
 <body>
     <header>

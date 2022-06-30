@@ -41,16 +41,11 @@ input.addEventListener("input",() => {
     
     if(response[0]==false){
       console.log("ERROR");
-    }else{
-      console.log("CORRECTE");
-      
-     fetch('fonctions_PHP/auth.php'),{
-      method:'POST',
-      data:{'content':responseData}
+    }else {
+      window.location.assign("page_dashboard_mailing_list.php");
     }
-      
-    }
-   })
+   
+  })
   
   }
 })

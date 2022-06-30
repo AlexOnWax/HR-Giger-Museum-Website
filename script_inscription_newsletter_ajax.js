@@ -33,7 +33,7 @@ function formValidation() {
     input.classList.add("good");
    
  const formData = new FormData(formulaireNewsletter);
-fetch('formulaire_inscription-newletter.php', {
+fetch('verification_formulaire_inscription_newletter.php', {
     method: 'POST',
     body: formData,
 }).then((response)=>response.text());
