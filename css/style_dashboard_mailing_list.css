@@ -90,6 +90,10 @@ button:hover {
   padding: 10px;
   width: 100%;
 }
+.element_principal .tableau table svg {
+  padding-left: 5px;
+  cursor: pointer;
+}
 .element_principal .tableau table thead {
   background-color: #161D2F;
   border-radius: 5px;
@@ -97,10 +101,6 @@ button:hover {
 }
 .element_principal .tableau table thead th {
   text-align: start;
-}
-.element_principal .tableau table thead th svg {
-  padding-left: 5px;
-  cursor: pointer;
 }
 .element_principal .tableau table tbody tr {
   height: 6vh;
