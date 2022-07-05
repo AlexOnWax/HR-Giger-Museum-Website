@@ -8,7 +8,7 @@
                     $pass=$_ENV['password'];
 
             $pdo = new PDO('mysql:host='.$servername.';dbname='.$dbName, $user, $pass);
-            $result = $pdo->prepare("SELECT email, date_sub FROM Mail");
+            $result = $pdo->prepare("SELECT * FROM Mail LIMIT 10");
             $result->execute();
             $fetch = $result->fetchAll((PDO::FETCH_ASSOC));
             print json_encode($fetch);
