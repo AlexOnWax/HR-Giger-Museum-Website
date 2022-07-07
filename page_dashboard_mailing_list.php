@@ -23,7 +23,7 @@ if(!isset($_SESSION['login'])){
     <header>
 <h3>Hr.GIGER<br>MUSEUM</h2>
 <h2>Newletter Mailing list</h3>
-<button>Export SVG</button>
+<button>Export CSV</button>
 
     </header>
     <div class="element_principal">

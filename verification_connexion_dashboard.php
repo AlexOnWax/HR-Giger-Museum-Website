@@ -38,5 +38,4 @@ $passAdmin=$_POST['mdp'];
 	echo json_encode($response);
 	 header("Location: page_connection_backoffice.php"); // permet la redirection si on accede directement a la page depuis la bare d'adresse
 }
-
 ?>
