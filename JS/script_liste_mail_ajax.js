@@ -15,6 +15,7 @@ window.addEventListener("DOMContentLoaded", () => {
         td[0].textContent = `${data[i].email}`;
         td[0].setAttribute("data-value", `${data[i].email}`);
         td[1].textContent = `${data[i].date_sub}`;
+        td[1].setAttribute("data-value", `${data[i].date_sub}`);
         td[2].setAttribute("data-value", `${data[i].idNewsletter}`);
         tbody.appendChild(clone);
 
@@ -34,41 +35,49 @@ window.addEventListener("DOMContentLoaded", () => {
       }
       const btnOrderMail= document.querySelector("#order_mail");
       btnOrderMail.addEventListener('click', () => {
-   trieAlpha();
+   trieAlpha(0);
         
       })
      
     });
 });
 
-const btnOrderDate = document.querySelector("#order_date");
+const btnOrderDate = document.getElementById("order_date");
 btnOrderDate.addEventListener('click', function() {
-trieAlpha();
+trieAlpha(1);
   
 })
 
 
-//fonction trie à bulle 
-function trieAlpha() {
+
+
+
+
+function trieAlpha(a) {
   let lignes = document.querySelectorAll(".lignes");
   const tBody= document.querySelector('tbody');
   for (let i = 0; i < lignes.length; i++) {
    
-    let email = lignes[i].querySelector(".td0").dataset.value;
+    let email = lignes[i].querySelector(`.td${a}`).dataset.value;
+    
     for (let k = i + 1; k < lignes.length ; k++) {
-      let emailK = lignes[k].querySelector(".td0").dataset.value;
+      let emailK = lignes[k].querySelector(`.td${a}`).dataset.value;
       if (email > emailK) {
         
         tBody.insertBefore(lignes[k],lignes[i]);
         lignes = document.querySelectorAll(".lignes");
-        email = lignes[i].querySelector('.td0').dataset.value;
+        email = lignes[i].querySelector(`.td${a}`).dataset.value;
        
       }
     }
   }
 }
 
-const btnOrderMail= document.querySelector("#order_mail");
+
+
+
+
+
 
 
 
