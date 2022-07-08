@@ -42,7 +42,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 const btnOrderDate = document.querySelector("#order_date");
-btnOrderDate.addEventListener('click', () => {
+btnOrderDate.addEventListener('click', function() {
 trieAlpha();
   
 })
@@ -51,13 +51,18 @@ trieAlpha();
 //fonction trie à bulle 
 function trieAlpha() {
   let lignes = document.querySelectorAll(".lignes");
+  const tBody= document.querySelector('tbody');
   for (let i = 0; i < lignes.length; i++) {
-    lignes = document.querySelectorAll(".lignes");
+   
     let email = lignes[i].querySelector(".td0").dataset.value;
     for (let k = i + 1; k < lignes.length ; k++) {
       let emailK = lignes[k].querySelector(".td0").dataset.value;
       if (email > emailK) {
-        lignes[i].before(lignes[k]);
+        
+        tBody.insertBefore(lignes[k],lignes[i]);
+        lignes = document.querySelectorAll(".lignes");
+        email = lignes[i].querySelector('.td0').dataset.value;
+       
       }
     }
   }
@@ -75,20 +80,28 @@ const btnOrderMail= document.querySelector("#order_mail");
 
 
 
-
-
-
-//copie -----------------------------------------------------------
 // function trieAlpha() {
 //   let lignes = document.querySelectorAll(".lignes");
+//   const tBody= document.querySelector('tbody');
 //   for (let i = 0; i < lignes.length; i++) {
-//     lignes = document.querySelectorAll(".lignes");
+   
 //     let email = lignes[i].querySelector(".td0").dataset.value;
-//     for (let k = i + 1; k < lignes.length; k++) {
+//     for (let k = i + 1; k < lignes.length ; k++) {
 //       let emailK = lignes[k].querySelector(".td0").dataset.value;
 //       if (email > emailK) {
-//         lignes[i].before(lignes[k]);
+        
+//         tBody.insertBefore(lignes[k],lignes[i]);
+//         lignes = document.querySelectorAll(".lignes");
+//         email = lignes[i].querySelector('.td0').dataset.value;
+       
 //       }
 //     }
 //   }
 // }
+
+
+
+
+
+
+
