@@ -10,7 +10,7 @@ let scrollSize = body.clientWidth;
 
 //animation au démarage
 
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {// permet de lancer l'animation des le demmarage du site
   const titleAnim = document.querySelector("#title-museum_landing-page");
   const animImg = document.querySelectorAll(".card");
   //on creer les parametres de la timeline (containair à animation)avec de bases l'option de pause
