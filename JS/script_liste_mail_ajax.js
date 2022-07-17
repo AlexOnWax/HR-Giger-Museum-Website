@@ -1,41 +1,68 @@
+
+
+function listMail(a){
+  fetch(a), {
+    method: "GET",// ici le block " ,{ method: "GET",}  "   fait bugger mon travail
+  }
+  
+  .then((response) => {
+    return response.json();
+  },)
+  .then((data) => {
+    
+    
+    const arrayTab = [];
+
+    for (i = 0; i < data.length; i++) {
+      //Creations du template afin de creer le tableau
+      let template = document.querySelector("#mailList");
+      let tbody = document.querySelector("tbody");
+      let clone = document.importNode(template.content, true);
+      let td = clone.querySelectorAll("td");
+      td[0].textContent = `${data[i].email}`;
+      td[0].setAttribute("data-value", `${data[i].email}`);
+      td[1].textContent = `${data[i].date_sub}`;
+      td[1].setAttribute("data-value", `${data[i].date_sub}`);
+      td[2].setAttribute("data-value", `${data[i].idNewsletter}`);
+      tbody.appendChild(clone);
+
+      
+    }
+  });
+}
+
 window.addEventListener("DOMContentLoaded", () => {
-  fetch("list_mail.php")
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      const arrayTab = [];
-
-      for (i = 0; i < data.length; i++) {
-        //Creations du template afin de creer le tableau
-        let template = document.querySelector("#mailList");
-        let tbody = document.querySelector("tbody");
-        let clone = document.importNode(template.content, true);
-        let td = clone.querySelectorAll("td");
-        td[0].textContent = `${data[i].email}`;
-        td[0].setAttribute("data-value", `${data[i].email}`);
-        td[1].textContent = `${data[i].date_sub}`;
-        td[1].setAttribute("data-value", `${data[i].date_sub}`);
-        td[2].setAttribute("data-value", `${data[i].idNewsletter}`);
-        tbody.appendChild(clone);
-
-        //boutons supprimer
-        const tdSuppr = document.querySelectorAll(".btn_suppr");
-        tdSuppr.forEach((elem) => {
-          elem.addEventListener("click", (e) => {
-            const elementClicked = e.currentTarget;
-            elem.parentNode.remove();
-            const valueToDelete = elementClicked.dataset.value;
-            //fetch de la requete pour la suppression en sql
-            fetch(`delete_mail-list.php?idToSuppr=${valueToDelete}`, {
-              method: "GET",
-            });
-          });
-        });
-      }
-    });
+let nbrShowMore=10;
+listMail(`list_mail.php?value=${nbrShowMore}`);
 });
 
+
+
+
+const btnShowMore = document.querySelector('.tableau > button');
+  btnShowMore.addEventListener('click', () => {
+   let nbrShowMore=20;
+  
+  listMail(`list_mail.php?value=${nbrShowMore}`);
+   
+
+  });
+
+
+  
+  //boutons supprimer
+const tdSuppr = document.querySelectorAll(".btn_suppr");
+tdSuppr.forEach((elem) => {
+  elem.addEventListener("click", (e) => {
+    const elementClicked = e.currentTarget;
+    elem.parentNode.remove();
+    const valueToDelete = elementClicked.dataset.value;
+    //fetch de la requete pour la suppression en sql
+    fetch(`delete_mail-list.php?idToSuppr=${valueToDelete}`, {
+      method: "GET",
+    });
+  });
+});
 const btnOrderMail = document.querySelector("#order_mail");
 let moduloMail = 0;
 btnOrderMail.addEventListener("click", () => {
@@ -50,11 +77,7 @@ btnOrderDate.addEventListener("click", function () {
 
   trieAlpha(1);
 });
- const btnShowMore = document.querySelector('.tableau > button');
- btnShowMore.addEventListener('click', () => {
-  // ici creer la fonction ou le moyen de changer la limit de l'affichage du nombre de lignes du tableau
-  //changer $result = $pdo->prepare("SELECT * FROM Mail LIMIT 10 ") en $result = $pdo->prepare("SELECT * FROM Mail LIMIT 20 ") etc..????
- });
+ 
 
  const btnExportCsv = document.getElementById('csv');
  btnExportCsv.addEventListener('click', () => {
