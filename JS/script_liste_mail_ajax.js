@@ -35,56 +35,68 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
 });
+
 const btnOrderMail = document.querySelector("#order_mail");
 let moduloMail = 0;
-
 btnOrderMail.addEventListener("click", () => {
   moduloMail++;
-                                            // a faire !!!! ajouter modulo pour switcher!!
+   // a faire !!!! ajouter modulo pour switcher!!
     trieAlpha(0);
-  
-  const btnOrderDate = document.getElementById("order_date");
-  btnOrderDate.addEventListener("click", function () {
 
-    trieAlpha(1);
-  });
-
-  function trieAlpha(a) {
-    let lignes = document.querySelectorAll(".lignes");
-    const tBody = document.querySelector("tbody");
-    for (let i = 0; i < lignes.length; i++) {
-      let email = lignes[i].querySelector(`.td${a}`).dataset.value;
-
-      for (let k = i + 1; k < lignes.length; k++) {
-        let emailK = lignes[k].querySelector(`.td${a}`).dataset.value;
-        
-          if (email > emailK) {
-            tBody.insertBefore(lignes[k], lignes[i]);
-            lignes = document.querySelectorAll(".lignes");
-            email = lignes[i].querySelector(`.td${a}`).dataset.value;
-          }
-        
-      }
-    }
-  }
-  function trieAlpha2(a) {
-    let lignes = document.querySelectorAll(".lignes");
-    const tBody = document.querySelector("tbody");
-    for (let i = 0; i < lignes.length; i++) {
-      let email = lignes[i].querySelector(`.td${a}`).dataset.value;
-
-      for (let k = i + 1; k < lignes.length; k++) {
-        let emailK = lignes[k].querySelector(`.td${a}`).dataset.value;
-        
-          if (email < emailK) {
-            tBody.insertBefore(lignes[k], lignes[i]);
-            lignes = document.querySelectorAll(".lignes");
-            email = lignes[i].querySelector(`.td${a}`).dataset.value;
-          }
-        
-      }
-    }
-  }
-
-  
 });
+
+const btnOrderDate = document.getElementById("order_date");
+btnOrderDate.addEventListener("click", function () {
+
+  trieAlpha(1);
+});
+ const btnShowMore = document.querySelector('.tableau > button');
+ btnShowMore.addEventListener('click', () => {
+  // ici creer la fonction ou le moyen de changer la limit de l'affichage du nombre de lignes du tableau
+  //changer $result = $pdo->prepare("SELECT * FROM Mail LIMIT 10 ") en $result = $pdo->prepare("SELECT * FROM Mail LIMIT 20 ") etc..????
+ });
+
+ const btnExportCsv = document.getElementById('csv');
+ btnExportCsv.addEventListener('click', () => {
+  fetch(`export_csv.php`,{//a faire fonctionner via export_csv.php
+    method: "GET",
+  });
+ })
+
+
+function trieAlpha(a) {
+  let lignes = document.querySelectorAll(".lignes");
+  const tBody = document.querySelector("tbody");
+  for (let i = 0; i < lignes.length; i++) {
+    let email = lignes[i].querySelector(`.td${a}`).dataset.value;
+
+    for (let k = i + 1; k < lignes.length; k++) {
+      let emailK = lignes[k].querySelector(`.td${a}`).dataset.value;
+      
+        if (email > emailK) {
+          tBody.insertBefore(lignes[k], lignes[i]);
+          lignes = document.querySelectorAll(".lignes");
+          email = lignes[i].querySelector(`.td${a}`).dataset.value;
+        }
+      
+    }
+  }
+}
+function trieAlpha2(a) {
+  let lignes = document.querySelectorAll(".lignes");
+  const tBody = document.querySelector("tbody");
+  for (let i = 0; i < lignes.length; i++) {
+    let email = lignes[i].querySelector(`.td${a}`).dataset.value;
+
+    for (let k = i + 1; k < lignes.length; k++) {
+      let emailK = lignes[k].querySelector(`.td${a}`).dataset.value;
+      
+        if (email < emailK) {
+          tBody.insertBefore(lignes[k], lignes[i]);
+          lignes = document.querySelectorAll(".lignes");
+          email = lignes[i].querySelector(`.td${a}`).dataset.value;
+        }
+      
+    }
+  }
+}
