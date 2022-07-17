@@ -10,7 +10,8 @@ let scrollSize = body.clientWidth;
 
 //animation au démarage
 
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
+  // permet de lancer l'animation des le demmarage du site
   const titleAnim = document.querySelector("#title-museum_landing-page");
   const animImg = document.querySelectorAll(".card");
   //on creer les parametres de la timeline (containair à animation)avec de bases l'option de pause
@@ -45,14 +46,13 @@ function presentation() {
   btn.classList.toggle("active");
 }
 
-
-q=0
+q = 0;
 
 burgerMenu.addEventListener("click", () => {
-  q++
+  q++;
   listHeader.classList.toggle("active-burger");
- 
-console.log(q%2);
+
+  console.log(q % 2);
 
   if (q % 2 == 0) {
     listHeader.classList.remove("active-responsive-nav");
@@ -60,10 +60,7 @@ console.log(q%2);
   } else {
     listHeader.classList.add("active-responsive-nav");
     listHeader.classList.remove("desactive-responsive-nav");
-
   }
-  
-
 });
 
 //scroll
@@ -198,7 +195,6 @@ g.onclick = function () {
       afficherMasquer();
     }
   };
-
 };
 function afficherMasquer() {
   if (p == -nbr + 1) {
@@ -278,10 +274,9 @@ const navs = document.querySelectorAll(".hover_menu");
 const Langue = document.querySelector("#button-text");
 const boutonLangue = document.querySelector(".button-languev2");
 const buttonText = document.querySelector(".button-languev2 > span");
-const hours1 =document.querySelector('#hours-1')
-const hours2 =document.querySelector('#hours-2')
-const hours3 =document.querySelector('#hours-3')
-
+const hours1 = document.querySelector("#hours-1");
+const hours2 = document.querySelector("#hours-2");
+const hours3 = document.querySelector("#hours-3");
 
 w = 0;
 boutonLangue.addEventListener("click", () => {
@@ -306,7 +301,7 @@ fetch("traduction.json").then((response) =>
         t = 0;
       }
       k = 0;
-     
+
       navs.forEach((navig) => {
         k++;
 
@@ -316,7 +311,7 @@ fetch("traduction.json").then((response) =>
       titreNewsSpan.replaceChildren(`${data[t].PageMuseum.spanTitre}`);
       titreHours.replaceChildren(`${data[t].PageMuseum.TitreHoraire}`);
       hours1.replaceChildren(`${data[t].PageMuseum.horaire1}`);
-      hours2.replaceChildren(`${data[t].PageMuseum.horaire2}`)
+      hours2.replaceChildren(`${data[t].PageMuseum.horaire2}`);
       hours3.replaceChildren(`${data[t].PageMuseum.horaire3}`);
       paragrapheNews.replaceChildren(`${data[t].PageMuseum.expo}`);
       titreAccess.replaceChildren(`${data[t].PageMuseum.titrePage}`);
@@ -327,8 +322,6 @@ fetch("traduction.json").then((response) =>
       bio.replaceChildren(`${data[t].PageBiographie.biographie}`);
       subscribeNewsletter.replaceChildren(`${data[t].PageSub.newsLetter}`);
       followUs.replaceChildren(`${data[t].PageSub.FollowUs}`);
-      
     });
   })
 );
-
