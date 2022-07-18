@@ -83,12 +83,9 @@ button:hover {
   width: 100%;
   height: 80vh;
 }
-.element_principal .tableau button {
-  margin: 10px;
-}
 .element_principal .tableau table {
-  padding: 10px;
   width: 100%;
+  padding: 10px;
 }
 .element_principal .tableau table svg {
   padding-left: 5px;
@@ -101,6 +98,9 @@ button:hover {
 }
 .element_principal .tableau table thead th {
   text-align: start;
+}
+.element_principal .tableau table tbody {
+  margin-bottom: 50px;
 }
 .element_principal .tableau table tbody tr {
   height: 6vh;

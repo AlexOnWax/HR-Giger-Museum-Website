@@ -23,7 +23,7 @@ if(!isset($_SESSION['login'])){
     <header>
 <h3>Hr.GIGER<br>MUSEUM</h2>
 <h2>Newletter Mailing list</h3>
-<button id="csv">Export CSV</button>
+<button id="csv"><a href='export_csv.php'>Export CSV</a></button>
 
     </header>
     <div class="element_principal">
@@ -32,6 +32,7 @@ if(!isset($_SESSION['login'])){
         <div>
         <p>Research</p>
         <input type="research">
+        <button id="show_more">Show more</button>
     </div>
 
 <div class="log"><div><a href='logout.php'>Log Out </a><?php echo "<p>".$nom."</p>"; ?></div></div>
@@ -40,7 +41,7 @@ if(!isset($_SESSION['login'])){
 
 
             <div class="tableau">
-                <button>Show more</button>
+                
                 <table>
 
                     <thead>
@@ -68,6 +69,8 @@ if(!isset($_SESSION['login'])){
                     </tr>
 
                 </template>
+
+                
             </div>
 
         </div>

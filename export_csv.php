@@ -6,10 +6,35 @@ $servername=$_ENV['servername'];
 $dbName=$_ENV['dbName'];
 $user=$_ENV['username'];
 $pass=$_ENV['password'];
-$pdoExport = new PDO('mysql:host='.$servername.';dbname='.$dbName, $user, $pass);
-$selectExport = ("SELECT email, date_sub FROM Mail INTO OUTFILE 'Z:\var\www\html\Mail-list.csv'");
-// a faire fonctionner l'export csv **********************
+try{
+$pdoExport = new PDO("mysql:host=$servername;dbname=$dbName;charset=utf8", $user, $pass, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+
+
+}catch(PDOExeption $erreur){
+    echo $erreur->getMessage();
+
+}
+header("Content-Type: application/octet-stream");
+header("Content-Transfer-Encoding: Binary");
+header("Content-disposition: attachment; filename=\"Mail-list.csv\"");
+
+$selectExport = ("SELECT  idNewsletter, email, date_sub FROM Mail");
 $result = $pdoExport->prepare($selectExport);
 $result->execute();
+$fieldName =[
+    "idNewsletter",
+    "email",
+    "date_sub",
+    "\n",
+];
+echo implode(",",$fieldName);
+while ($row = $result->fetch(PDO::FETCH_NAMED)) {
+    echo implode(",", [
+        $row['idNewsletter'], $row['email'], $row['date_sub']
+    ]);
+    echo "\r\n";
+}
+
+
 
 ?>
