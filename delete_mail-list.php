@@ -13,7 +13,8 @@ $dbName=$_ENV['dbName'];
 $user=$_ENV['username'];
 $pass=$_ENV['password'];
 $idToSuppr = $_GET['idToSuppr'];
-// $orderBt =$_GET['orderBy'];
+
+//$orderBt =$_GET['orderBy'];
 
 $pdoMailSuppr = new PDO('mysql:host='.$servername.';dbname='.$dbName, $user, $pass);
 $result = $pdoMailSuppr->prepare('DELETE FROM Mail WHERE idNewsletter= :id');
