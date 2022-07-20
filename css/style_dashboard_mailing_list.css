@@ -11,6 +11,52 @@ body {
   padding: 0.5vw;
 }
 
+#container_confirmation_flex {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(59, 81, 81, 0.281);
+  z-index: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container_confirmation_flex .container_confirmation_flex.active {
+  display: flex;
+}
+
+.div_confirmation {
+  width: 400px;
+  height: 120px;
+  background-color: #fff;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.div_confirmation p {
+  color: black;
+  text-align: center;
+}
+.div_confirmation div {
+  display: flex;
+  justify-content: space-around;
+}
+.div_confirmation #button_yes {
+  width: 100px;
+}
+.div_confirmation #button_yes:hover {
+  background-color: grey;
+}
+.div_confirmation #button_no {
+  width: 100px;
+}
+.div_confirmation #button_no:hover {
+  background-color: grey;
+}
+
 header {
   display: flex;
   height: 8vh;

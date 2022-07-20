@@ -20,6 +20,7 @@ if(!isset($_SESSION['login'])){
     <script src="JS/script_liste_mail_ajax.js" defer></script>
 </head>
 <body>
+
     <header>
 <h3>Hr.GIGER<br>MUSEUM</h2>
 <h2>Newletter Mailing list</h3>
@@ -37,7 +38,6 @@ if(!isset($_SESSION['login'])){
 
 <div class="log"><div><a href='logout.php'>Log Out </a><?php echo "<p>".$nom."</p>"; ?></div></div>
     </aside>
-
 
 
             <div class="tableau">
