@@ -6,7 +6,7 @@ $servername=$_ENV['servername'];
 $dbName=$_ENV['dbName'];
 $user=$_ENV['username'];
 $pass=$_ENV['password'];
-$showMore = $_GET['value'];
+$showMore = $_POST['value'];
 
 $pdo = new PDO('mysql:host='.$servername.';dbname='.$dbName, $user, $pass);
 $result = $pdo->prepare('SELECT * FROM Mail LIMIT 10 OFFSET :nbr');

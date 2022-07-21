@@ -1,6 +1,7 @@
-function listMail(a) {
+function listMail(a, b) {
   fetch(a, {
-    method: "GET",
+    method: "POST",
+    body: b,
   })
     .then((response) => {
       return response.json();
@@ -23,7 +24,7 @@ function listMail(a) {
       }
       //boutons supprimer
       const tdSuppr = document.querySelectorAll(".btn_suppr");
-      
+
       tdSuppr.forEach((elem) => {
         elem.addEventListener("click", (e) => {
           //mon body
@@ -60,17 +61,19 @@ function listMail(a) {
 
           const elementClicked = e.currentTarget;
           buttonYes.addEventListener("click", () => {
+            divConfirmation.remove();
             divContainer.remove();
             elem.parentNode.remove();
             const valueToDelete = elementClicked.dataset.value;
+            
             //fetch de la requete pour la suppression en sql
             fetch(`delete_mail-list.php?idToSuppr=${valueToDelete}`, {
               method: "GET",
             });
           });
           buttonNo.addEventListener("click", () => {
+            divConfirmation.remove();
             divContainer.remove();
-            
           });
         });
       });
@@ -78,14 +81,19 @@ function listMail(a) {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  listMail(`list_mail.php?value=0`);
+  const load = new FormData();
+  load.append("value", 0);
+  listMail(`list_mail.php`, load);
 });
 
 let nbrShowMore = 0;
 const btnShowMore = document.getElementById("show_more");
 btnShowMore.addEventListener("click", () => {
+  const showMore = new FormData();
   nbrShowMore = nbrShowMore + 10;
-  listMail(`list_mail.php?value=${nbrShowMore}`);
+  showMore.append("value", nbrShowMore);
+
+  listMail(`list_mail.php`, showMore);
 });
 
 const btnOrderMail = document.querySelector("#order_mail");
@@ -146,43 +154,16 @@ function trieAlphaRevers(a) {
   }
 }
 
-const inputRecherche = document.querySelector('input');
-const buttonRechercher =document.querySelector('#rechercher');
-const form = document.querySelector('form');
+const inputRecherche = document.querySelector("input");
+const buttonRechercher = document.querySelector("#rechercher");
+const form = document.querySelector("form");
 
-
-form.addEventListener('submit', function(e)  {
-e.preventDefault();
-let lignes = document.querySelectorAll(".lignes");
-lignes.forEach(ligne => {
-ligne.remove();
-  
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  let lignes = document.querySelectorAll(".lignes");
+  lignes.forEach((ligne) => {
+    ligne.remove();
+  });
+  const search = new FormData(form);
+  listMail("recherche.php", search);
 });
-const search=new FormData(form);
-listMail('recherche.php');
-  // fetch('recherche.php', {
-  //   method: "POST",
-  //   body: search,
-    
-  // }).then((response) => {
-  //   return response.json();
-  // }).then((data) => {
-  //   for (i = 0; i < data.length; i++) {
-  //     //Creations du template afin de creer le tableau
-  //     let template = document.querySelector("#mailList");
-  //     let tbody = document.querySelector("tbody");
-  //     let clone = document.importNode(template.content, true);
-  //     let td = clone.querySelectorAll("td");
-  //     td[0].textContent = `${data[i].email}`;
-  //     td[0].setAttribute("data-value", `${data[i].email}`);
-  //     td[1].textContent = `${data[i].date_sub}`;
-  //     td[1].setAttribute("data-value", `${data[i].date_sub}`);
-  //     td[2].setAttribute("data-value", `${data[i].idNewsletter}`);
-  //     td[2].setAttribute("data-suppr", `${data[i].email}`);
-  //     tbody.appendChild(clone);
-  //   }
-    
-  // })
-})
-
-
