@@ -31,8 +31,12 @@ if(!isset($_SESSION['login'])){
 
     <aside>
         <div>
+<form novalidate>
         <p>Research</p>
-        <input type="research">
+        <input type="search" name="search">
+        <button id="rechercher">rechercher</button>
+        
+        </form>
         <button id="show_more">Show more</button>
     </div>
 
