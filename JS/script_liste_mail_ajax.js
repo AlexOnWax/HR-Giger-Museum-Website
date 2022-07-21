@@ -153,14 +153,36 @@ const form = document.querySelector('form');
 
 form.addEventListener('submit', function(e)  {
 e.preventDefault();
-const search=new FormData(form);
-console.log(search);
-  fetch('recherche.php', {
-    method: "POST",
-    body: search,
-    
-  }).then((response) => response.text());
+let lignes = document.querySelectorAll(".lignes");
+lignes.forEach(ligne => {
+ligne.remove();
   
+});
+const search=new FormData(form);
+listMail('recherche.php');
+  // fetch('recherche.php', {
+  //   method: "POST",
+  //   body: search,
+    
+  // }).then((response) => {
+  //   return response.json();
+  // }).then((data) => {
+  //   for (i = 0; i < data.length; i++) {
+  //     //Creations du template afin de creer le tableau
+  //     let template = document.querySelector("#mailList");
+  //     let tbody = document.querySelector("tbody");
+  //     let clone = document.importNode(template.content, true);
+  //     let td = clone.querySelectorAll("td");
+  //     td[0].textContent = `${data[i].email}`;
+  //     td[0].setAttribute("data-value", `${data[i].email}`);
+  //     td[1].textContent = `${data[i].date_sub}`;
+  //     td[1].setAttribute("data-value", `${data[i].date_sub}`);
+  //     td[2].setAttribute("data-value", `${data[i].idNewsletter}`);
+  //     td[2].setAttribute("data-suppr", `${data[i].email}`);
+  //     tbody.appendChild(clone);
+  //   }
+    
+  // })
 })
 
 
