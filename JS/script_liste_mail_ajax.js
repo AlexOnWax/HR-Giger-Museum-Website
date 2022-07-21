@@ -6,7 +6,6 @@ function listMail(a) {
       return response.json();
     })
     .then((data) => {
-      
       //const arrayTab = [];
       for (i = 0; i < data.length; i++) {
         //Creations du template afin de creer le tableau
@@ -22,54 +21,60 @@ function listMail(a) {
         td[2].setAttribute("data-suppr", `${data[i].email}`);
         tbody.appendChild(clone);
       }
-//boutons supprimer
-const tdSuppr = document.querySelectorAll(".btn_suppr");
- console.log(tdSuppr);
-tdSuppr.forEach(elem => {
+      //boutons supprimer
+      const tdSuppr = document.querySelectorAll(".btn_suppr");
+      console.log(tdSuppr);
+      tdSuppr.forEach((elem) => {
+        elem.addEventListener("click", (e) => {
+          //mon body
+          const elementToSuppr = e.currentTarget.dataset.suppr;
+          const body = document.querySelector("BODY");
+          //div container
+          const divContainer = document.createElement("DIV");
+          divContainer.setAttribute("id", "container_confirmation_flex");
+          // div confirmation
+          const divConfirmation = document.createElement("DIV");
+          divConfirmation.setAttribute("class", "div_confirmation");
+          const pConfirmation = document.createElement("P");
+          const TextConfirmation = document.createTextNode(
+            `Voulez-vous vraiment supprimer ${elementToSuppr}?`
+          );
+          pConfirmation.appendChild(TextConfirmation);
+          divContainer.appendChild(divConfirmation);
+          //button et div button
+          const divButton = document.createElement("DIV");
+          divButton.setAttribute("id", "div_button");
+          const buttonYes = document.createElement("BUTTON");
+          const buttonNo = document.createElement("BUTTON");
+          buttonNo.setAttribute("id", "button_yes");
+          buttonNo.setAttribute("class", "conf");
+          buttonYes.innerHTML = "OUI";
+          buttonNo.innerHTML = "NON";
+          buttonYes.setAttribute("id", "button_no");
+          buttonYes.setAttribute("class", "conf");
+          divButton.appendChild(buttonYes);
+          divButton.appendChild(buttonNo);
+          divConfirmation.appendChild(divButton);
+          divConfirmation.prepend(pConfirmation);
+          body.appendChild(divContainer);
 
- 
-  elem.addEventListener("click", (e) => {
-//mon body
-const elementToSuppr =e.currentTarget.dataset.suppr;
-    const body =document.querySelector('BODY');
-//div container
-    const divContainer = document.createElement('DIV');
-    divContainer.setAttribute('id','container_confirmation_flex');
-// div confirmation
-    const divConfirmation = document.createElement('DIV');
-    divConfirmation.setAttribute('class','div_confirmation')
-    const pConfirmation=  document.createElement('P');
-    const TextConfirmation = document.createTextNode(`Voulez-vous vraiment supprimer ${elementToSuppr}?`);
-    pConfirmation.appendChild(TextConfirmation);
-     divContainer.appendChild(divConfirmation);
-//button et div button
-    const divButton = document.createElement('DIV');
-    divButton.setAttribute('id','div_button');
-    const buttonYes = document.createElement('BUTTON');
-    const buttonNo = document.createElement('BUTTON');
-    buttonNo.setAttribute('id',"button_yes");
-    buttonYes.innerHTML='OUI';
-    buttonNo.innerHTML='NON';
-    buttonYes.setAttribute('id','button_no');
-    divButton.appendChild(buttonYes);
-    divButton.appendChild(buttonNo);
-    divConfirmation.appendChild(divButton);
-    divConfirmation.prepend(pConfirmation)
-    body.appendChild(divContainer);
-    
-   
-    
-    const elementClicked = e.currentTarget;
-    
-    elem.parentNode.remove();
-    const valueToDelete = elementClicked.dataset.value;
-    //fetch de la requete pour la suppression en sql
-    fetch(`delete_mail-list.php?idToSuppr=${valueToDelete}`, {
-      method: "GET",
-    });
-  });
-});
-
+          const elementClicked = e.currentTarget;
+          buttonYes.addEventListener("click", () => {
+            divContainer.remove();
+            divConfirmation.remove();
+            elem.parentNode.remove();
+            const valueToDelete = elementClicked.dataset.value;
+            //fetch de la requete pour la suppression en sql
+            fetch(`delete_mail-list.php?idToSuppr=${valueToDelete}`, {
+              method: "GET",
+            });
+          });
+          buttonNo.addEventListener("click", () => {
+            divContainer.remove();
+            divConfirmation.remove();
+          });
+        });
+      });
     });
 }
 
@@ -83,7 +88,6 @@ btnShowMore.addEventListener("click", () => {
   nbrShowMore = nbrShowMore + 10;
   listMail(`list_mail.php?value=${nbrShowMore}`);
 });
-
 
 const btnOrderMail = document.querySelector("#order_mail");
 let moduloMail = 0;
