@@ -23,7 +23,7 @@ function listMail(a) {
       }
       //boutons supprimer
       const tdSuppr = document.querySelectorAll(".btn_suppr");
-      console.log(tdSuppr);
+      
       tdSuppr.forEach((elem) => {
         elem.addEventListener("click", (e) => {
           //mon body
@@ -61,7 +61,6 @@ function listMail(a) {
           const elementClicked = e.currentTarget;
           buttonYes.addEventListener("click", () => {
             divContainer.remove();
-            divConfirmation.remove();
             elem.parentNode.remove();
             const valueToDelete = elementClicked.dataset.value;
             //fetch de la requete pour la suppression en sql
@@ -71,7 +70,7 @@ function listMail(a) {
           });
           buttonNo.addEventListener("click", () => {
             divContainer.remove();
-            divConfirmation.remove();
+            
           });
         });
       });
@@ -146,3 +145,22 @@ function trieAlphaRevers(a) {
     }
   }
 }
+
+const inputRecherche = document.querySelector('input');
+const buttonRechercher =document.querySelector('#rechercher');
+const form = document.querySelector('form');
+
+
+form.addEventListener('submit', function(e)  {
+e.preventDefault();
+const search=new FormData(form);
+console.log(search);
+  fetch('recherche.php', {
+    method: "POST",
+    body: search,
+    
+  }).then((response) => response.text());
+  
+})
+
+

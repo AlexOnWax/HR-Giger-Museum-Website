@@ -15,7 +15,7 @@ if(!empty($_POST['email']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)
 		$dbnl = new PDO('mysql:host='.$servername.';dbname='.$dbName, $user, $pass);
 		$dbnl->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$sql=$dbnl->prepare("INSERT INTO Mail(email) VALUES(:email)");
-		$sql->bindParam(':email', $_POST['email'],PDO::PARAM_STR);//Ajoute securité précise le type de donné attendu
+		$sql->bindParam(':email', $email,PDO::PARAM_STR);//Ajoute securité précise le type de donné attendu
 		$sql->execute();	
 	}
 catch(PDOException $e){
