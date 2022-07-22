@@ -45,10 +45,16 @@ a.addEventListener("click", (e) => {
   const divConfirmation = document.createElement("DIV");
   divConfirmation.setAttribute("class", "div_confirmation");
   const pConfirmation = document.createElement("P");
+  const span = document.createElement("SPAN");
   const TextConfirmation = document.createTextNode(
-    `Voulez-vous vraiment supprimer ${elementToSuppr}?`
+    `Voulez-vous vraiment supprimer `
   );
+  const spanText =document.createTextNode(`${elementToSuppr}?`)
+  span.appendChild(spanText);
+  
+  span.style.fontWeight ="bold";
   pConfirmation.appendChild(TextConfirmation);
+  pConfirmation.appendChild(span);
   divContainer.appendChild(divConfirmation);
   //button et div button
   const divButton = document.createElement("DIV");
@@ -73,6 +79,7 @@ a.addEventListener("click", (e) => {
     divContainer.remove();
     a.parentNode.remove();
     const valueToDelete = elementClicked.dataset.value;
+    console.log(valueToDelete);
     
     //fetch de la requete pour la suppression en sql
     fetch(`delete_mail-list.php?idToSuppr=${valueToDelete}`, {
