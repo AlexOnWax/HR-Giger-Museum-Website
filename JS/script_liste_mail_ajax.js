@@ -28,12 +28,14 @@ function listMail(a, b) {
     });
 }
 
-function suppr(a){
-  
-//boutons supprimer
-const tdSuppr = document.querySelectorAll(".btn_suppr");
 
-     
+function createdDiv(){
+
+
+  
+};
+
+function suppr(a){  
 a.addEventListener("click", (e) => {
   //mon body
   const elementToSuppr = e.currentTarget.dataset.suppr;
@@ -51,7 +53,6 @@ a.addEventListener("click", (e) => {
   );
   const spanText =document.createTextNode(`${elementToSuppr}?`)
   span.appendChild(spanText);
-  
   span.style.fontWeight ="bold";
   pConfirmation.appendChild(TextConfirmation);
   pConfirmation.appendChild(span);
@@ -72,24 +73,32 @@ a.addEventListener("click", (e) => {
   divConfirmation.appendChild(divButton);
   divConfirmation.prepend(pConfirmation);
   body.appendChild(divContainer);
-
   const elementClicked = e.currentTarget;
-  buttonYes.addEventListener("click", () => {
-    divConfirmation.remove();
-    divContainer.remove();
-    a.parentNode.remove();
-    const valueToDelete = elementClicked.dataset.value;
-    console.log(valueToDelete);
-    
-    //fetch de la requete pour la suppression en sql
-    fetch(`delete_mail-list.php?idToSuppr=${valueToDelete}`, {
-      method: "GET",
-    });
+
+   const toast = document.getElementById('snackbar');
+    buttonYes.addEventListener("click", () => {
+     
+      toast.innerHTML="Le mail a bien été supprimé";
+   divConfirmation.remove();
+   divContainer.remove();
+   a.parentNode.remove();
+   const valueToDelete = elementClicked.dataset.value;
+   toast.className='show';
+   setTimeout(function(){toast.className = toast.className.replace("show", ""); }, 3000);
+   //fetch de la requete pour la suppression en sql
+   fetch(`delete_mail-list.php?idToSuppr=${valueToDelete}`, {
+     method: "GET",
+   });
+
   });
   buttonNo.addEventListener("click", () => {
-    divConfirmation.remove();
-    divContainer.remove();
+    toast.className='show';
+    toast.innerHTML="Le mail n'a pas été supprimé";
+    setTimeout(function(){toast.className = toast.className.replace("show", ""); }, 3000);
+   divConfirmation.remove();
+   divContainer.remove();
   });
+
 });
 }
 

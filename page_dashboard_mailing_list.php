@@ -73,7 +73,7 @@ if(!isset($_SESSION['login'])){
                     </tr>
 
                 </template>
-
+                <div id="snackbar"></div>
                 
             </div>
 
