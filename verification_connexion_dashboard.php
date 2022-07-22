@@ -19,7 +19,7 @@ $passAdmin=$_POST['mdp'];
 	$result->bindParam(':login', $login);
 	$result->bindParam(':password', $passAdmin);
 	$result->execute();
-		if($result->rowCount() == 1 ){
+		if($result->rowCount() == 1 ){//si la requete correspond a au moin une ligne du tableau 
 			$_SESSION['login'] = $login;
 			//$then = $result->fetch(PDO::FETCH_ASSOC);
 			$response=array("response"=>"connecte",$bool=true);
