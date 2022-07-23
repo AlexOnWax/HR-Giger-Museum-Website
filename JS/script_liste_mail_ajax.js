@@ -26,52 +26,44 @@ function listMail(a, b) {
     });
 }
 //Fonction qui affiche la liste des mails de base
-function listOnLoad(){
+function listOnLoad(a) {
+  
   const load = new FormData();
-  load.append("value", 0);
+  load.append("value", a);
   listMail(`list_mail.php`, load);
 }
-listOnLoad();
+window.addEventListener("DOMContentLoaded",() => {
+  listOnLoad(0);
+})
+
+
+const hk =document.querySelector('h3');//juste pour tester le refresh de la page sur le titre
+hk.addEventListener("click", () => {
+  window.location.reload();
+})
+
+function templateConfirmation(a) {
+  //template de création de la div de confirmation de suppression
+  const elementToSuppr = a.currentTarget.dataset.suppr;
+  const body = document.querySelector("body");
+  let templateConf = document.querySelector("#confirmation");
+  let cloneConf = document.importNode(templateConf.content, true);
+  body.appendChild(cloneConf);
+  console.log(templateConf);
+  const spanText = document.createTextNode(`${elementToSuppr}`);
+  const spanMail = document.getElementById("span_mail");
+  spanMail.style.fontWeight = "bold";
+  spanMail.appendChild(spanText);
+}
 
 function suppr(a) {
   a.addEventListener("click", (e) => {
     //quand le click est entendu, je créé une demande de confirmation
-    const elementToSuppr = e.currentTarget.dataset.suppr;
-    const body = document.querySelector("BODY");
-    const divContainer = document.createElement("DIV");
-    divContainer.setAttribute("id", "container_confirmation_flex");
-    const divConfirmation = document.createElement("DIV");
-    divConfirmation.setAttribute("class", "div_confirmation");
-    const pConfirmation = document.createElement("P");
-    const span = document.createElement("SPAN");
-    const TextConfirmation = document.createTextNode(
-      `Voulez-vous vraiment supprimer `
-    );
-    const spanText = document.createTextNode(`${elementToSuppr}?`);
-    span.appendChild(spanText);
-    span.style.fontWeight = "bold";
-    pConfirmation.appendChild(TextConfirmation);
-    pConfirmation.appendChild(span);
-    divContainer.appendChild(divConfirmation);
-    const divButton = document.createElement("DIV");
-    divButton.setAttribute("id", "div_button");
-    const buttonYes = document.createElement("BUTTON");
-    const buttonNo = document.createElement("BUTTON");
-    buttonNo.setAttribute("id", "button_yes");
-    buttonNo.setAttribute("class", "conf");
-    buttonYes.innerHTML = "OUI";
-    buttonNo.innerHTML = "NON";
-    buttonYes.setAttribute("id", "button_no");
-    buttonYes.setAttribute("class", "conf");
-    divButton.appendChild(buttonYes);
-    divButton.appendChild(buttonNo);
-    divConfirmation.appendChild(divButton);
-    divConfirmation.prepend(pConfirmation);
-    body.appendChild(divContainer);
+    templateConfirmation(e);
     const elementClicked = e.currentTarget;
     const toast = document.getElementById("snackbar");
-    //si la réponse est oui je lance le fetch delete et attend la réponse  
-    buttonYes.addEventListener("click", () => {
+    //si la réponse est oui je lance le fetch delete et attend la réponse
+    document.getElementById("button_yes").addEventListener("click", () => {
       const valueToDelete = elementClicked.dataset.value;
       //fetch de la requete pour la suppression en sql
       fetch(`delete_mail-list.php?idToSuppr=${valueToDelete}`, {
@@ -84,35 +76,31 @@ function suppr(a) {
             //si la réponse est valide  alors j'affice un Toast validant l'action
             toast.innerHTML = "Le mail a bien été supprimé";
             toast.className = "show";
-            setTimeout(function () {//efface le toast apres un certain temps
+            setTimeout(function () {
+              //efface le toast apres un certain temps
               toast.className = toast.className.replace("show", "");
             }, 3000);
-           
-            
           } else {
-            //sinon le toast indique un problème
-            toast.innerHTML = "un problème est survenu";
-
+            toast.innerHTML = "un problème est survenu"; //sinon le toast indique un problème
           }
-          listOnLoad();//fonction pour recharger la liste apres le click sur oui
+          //listOnLoad(0); //fonction pour recharger la liste apres le click sur oui
+          window.location.reload();
         });
-        //puis je remove la div de confirmation de suppression
-      divConfirmation.remove();
-      divContainer.remove();
+      document.getElementById("div_confirmation").remove(); //puis je remove la div de confirmation de suppression
+      document.getElementById("container_confirmation_flex").remove();
       a.parentNode.remove();
     });
-    //si je choisis de cliquer sur non
-    buttonNo.addEventListener("click", () => {
-      // le toast affirme l'annulation
-      listOnLoad();//fonction pour recharger la liste apres le click sur non
+    document.getElementById("button_no").addEventListener("click", () => {
+      //si je choisis de cliquer sur non,le toast affirme l'annulation
+      //listOnLoad(0); //fonction pour recharger la liste apres le click sur non
+      window.location.reload();
       toast.className = "show";
       toast.innerHTML = "Le mail n'a pas été supprimé";
       setTimeout(function () {
         toast.className = toast.className.replace("show", "");
-      }, 3000);
-      //et je remove la div
-      divConfirmation.remove();
-      divContainer.remove();
+      }, 3000); //et je remove la div
+      document.getElementById("div_confirmation").remove();
+      document.getElementById("container_confirmation_flex").remove();
     });
   });
 }
@@ -152,7 +140,8 @@ btnOrderDate.addEventListener("click", function () {
   }
 });
 
-function trieAlpha(a) {//trie à bulle
+function trieAlpha(a) {
+  //trie à bulle
   let lignes = document.querySelectorAll(".lignes");
   const tBody = document.querySelector("tbody");
   for (let i = 0; i < lignes.length; i++) {
@@ -170,7 +159,8 @@ function trieAlpha(a) {//trie à bulle
   }
 }
 
-function trieAlphaRevers(a) {//trie à bulle
+function trieAlphaRevers(a) {
+  //trie à bulle
   let lignes = document.querySelectorAll(".lignes");
   const tBody = document.querySelector("tbody");
   for (let i = 0; i < lignes.length; i++) {
@@ -193,7 +183,7 @@ const buttonRechercher = document.querySelector("#rechercher");
 const form = document.querySelector("form");
 //eventListener de l'input de recherche
 form.addEventListener("submit", function (e) {
-  e.preventDefault();//enleve le comportement "normal" du form
+  e.preventDefault(); //enleve le comportement "normal" du form
   let lignes = document.querySelectorAll(".lignes");
   lignes.forEach((ligne) => {
     //je remove les lignes deja existantes avant d'afficher le résultat de ma recherche
@@ -204,3 +194,5 @@ form.addEventListener("submit", function (e) {
   //lancement de la fonction via recherche.php
   listMail("recherche.php", search);
 });
+
+

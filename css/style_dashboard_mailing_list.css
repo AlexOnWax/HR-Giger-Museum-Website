@@ -12,25 +12,22 @@ body {
 }
 
 #snackbar {
-  visibility: hidden; /* Hidden by default. Visible on click */
-  min-width: 250px; /* Set a default minimum width */
-  margin-left: -125px; /* Divide value of min-width by 2 */
-  background-color: #333; /* Black background color */
-  color: #fff; /* White text color */
-  text-align: center; /* Centered text */
-  border-radius: 2px; /* Rounded borders */
-  padding: 16px; /* Padding */
-  position: fixed; /* Sit on top of the screen */
-  z-index: 1; /* Add a z-index if needed */
-  left: 50%; /* Center the snackbar */
-  bottom: 30px; /* 30px from the bottom */
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
 }
 
-/* Show the snackbar when clicking on a button (class added with JavaScript) */
 #snackbar.show {
-  visibility: visible; /* Show the snackbar */
-  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-  However, delay the fade out process for 2.5 seconds */
+  visibility: visible;
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
@@ -51,7 +48,7 @@ body {
   display: flex;
 }
 
-.div_confirmation {
+#div_confirmation {
   width: 400px;
   height: 120px;
   background-color: #fff;
@@ -60,24 +57,24 @@ body {
   display: flex;
   flex-direction: column;
 }
-.div_confirmation p {
+#div_confirmation p {
   color: black;
   text-align: center;
 }
-.div_confirmation div {
+#div_confirmation div {
   display: flex;
   justify-content: space-around;
 }
-.div_confirmation #button_yes {
+#div_confirmation #button_yes {
   width: 100px;
 }
-.div_confirmation #button_yes:hover {
+#div_confirmation #button_yes:hover {
   background-color: grey;
 }
-.div_confirmation #button_no {
+#div_confirmation #button_no {
   width: 100px;
 }
-.div_confirmation #button_no:hover {
+#div_confirmation #button_no:hover {
   background-color: grey;
 }
 
@@ -89,6 +86,29 @@ header {
   background-color: #161D2F;
   padding: 20px;
   border-radius: 10px 10px 10px 0;
+}
+header div {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+header div #log-out {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  border: solid 1px #fff;
+  border-radius: 25px;
+  padding: 10px;
+}
+header div #log-out:hover {
+  background-color: #fff;
+  color: #101729;
+}
+header div #csv {
+  text-decoration: none;
+  color: #fff;
 }
 header h2 {
   font-size: 44.8px;
@@ -114,6 +134,7 @@ button:hover {
   display: flex;
 }
 .element_principal aside {
+  position: fixed;
   height: 80vh;
   width: 10vw;
   display: flex;
@@ -123,25 +144,19 @@ button:hover {
   background-color: #161D2F;
   border-radius: 0 0 10px 10px;
 }
-.element_principal aside input {
+.element_principal aside #form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.element_principal aside #form input {
   width: 80%;
   border-radius: 3px;
   padding: 4px;
   border: none;
   background: rgb(255, 255, 255) no-repeat right 10px center;
   border: solid 1px rgb(94, 85, 85);
-}
-.element_principal aside .log a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  border: solid 1px #fff;
-  border-radius: 25px;
-  padding: 10px;
-}
-.element_principal aside .log a:hover {
-  background-color: #fff;
-  color: #101729;
 }
 .element_principal aside .log p {
   font-size: 25px;
@@ -151,11 +166,17 @@ button:hover {
 }
 .element_principal .tableau {
   width: 100%;
-  height: 80vh;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.element_principal .tableau #show_more {
+  padding: 10px;
 }
 .element_principal .tableau table {
   width: 100%;
-  padding: 10px;
+  padding-left: 11%;
 }
 .element_principal .tableau table svg {
   padding-left: 5px;
