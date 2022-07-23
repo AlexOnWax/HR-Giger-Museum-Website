@@ -24,30 +24,26 @@ body {
   height: 100vh;
   padding: 0.5vw;
 }
+//------Toast--------
 #snackbar {
-  visibility: hidden; /* Hidden by default. Visible on click */
-  min-width: 250px; /* Set a default minimum width */
-  margin-left: -125px; /* Divide value of min-width by 2 */
-  background-color: #333; /* Black background color */
-  color: #fff; /* White text color */
-  text-align: center; /* Centered text */
-  border-radius: 2px; /* Rounded borders */
-  padding: 16px; /* Padding */
-  position: fixed; /* Sit on top of the screen */
-  z-index: 1; /* Add a z-index if needed */
-  left: 50%; /* Center the snackbar */
-  bottom: 30px; /* 30px from the bottom */
+  visibility: hidden; 
+  min-width: 250px; 
+  margin-left: -125px; 
+  background-color: #333; 
+  color: #fff; 
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1; 
+  left: 50%;
+  bottom: 30px;
 }
-
-/* Show the snackbar when clicking on a button (class added with JavaScript) */
 #snackbar.show {
-  visibility: visible; /* Show the snackbar */
-  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-  However, delay the fade out process for 2.5 seconds */
+  visibility: visible;
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
-
 #container_confirmation_flex{
   width: 100%;
   height: 100%;
@@ -64,12 +60,12 @@ body {
  display:flex ;
  }
 }
-
+//--------------
+//------div de confirmation de suppression----
 .div_confirmation{
 width: 400px;
 height: 120px;
 background-color: #fff;
-
 left: 50%;
 top: 50%;
 display: flex;
@@ -97,7 +93,7 @@ div{
   }
 }
 }
-
+//--------------
 
 header {
   display: flex;
@@ -123,8 +119,6 @@ button {
   display: flex;
 
   aside {
-    //position: fixed;
-   
     height: 80vh;
     width: 10vw;
     display: flex;
@@ -133,8 +127,6 @@ button {
     align-items: center;
     background-color: $colorSecondaire;
     border-radius: 0 0 10px 10px;
-   
-    
     input {
       width: 80%;
       border-radius: 3px;
@@ -165,24 +157,9 @@ button {
       }
     }
   }
-
-  //     .list {
-
-  //     width: 100%;
-  //     position: relative;
-  //     button {
-  //         position: absolute;
-  //         right: 0px;
-  //         bottom: 0px;
-  //         }
-
-  // }
   .tableau {
     width: 100%;
     height: 80vh;
-  
-
-    // background-color: rgb(43, 53, 53);
     table {
       width: 100%;
       padding: 10px;
