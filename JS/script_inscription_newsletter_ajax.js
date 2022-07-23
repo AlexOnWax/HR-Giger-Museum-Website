@@ -4,7 +4,7 @@ const button = document.querySelector("form > button");
 const input = document.querySelector(".input");
 const error = document.querySelector(".invisible");
 const goodMessage = document.querySelector(".invisible_good");
-//---Validation formulaire---
+//Verification du mail avant son inscription dans la BDD
 function formValidation() {
   goodMessage.classList.remove("help");
   error.classList.remove("help");

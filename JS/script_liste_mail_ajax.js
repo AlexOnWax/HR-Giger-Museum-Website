@@ -116,9 +116,6 @@ function suppr(a) {
     });
   });
 }
-
-
-
 //j'appelle la fonction au clique sur le boutton showmore
 let nbrShowMore = 0;
 const btnShowMore = document.getElementById("show_more");
@@ -172,6 +169,7 @@ function trieAlpha(a) {//trie à bulle
     }
   }
 }
+
 function trieAlphaRevers(a) {//trie à bulle
   let lignes = document.querySelectorAll(".lignes");
   const tBody = document.querySelector("tbody");

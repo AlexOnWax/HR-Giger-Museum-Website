@@ -3,13 +3,12 @@ const body = document.querySelector("body");
 const targetElements = document.querySelectorAll(".page");
 const burgerMenu = document.querySelector(".box");
 const listHeader = document.querySelector(".list-nav");
-let isDown = false;
-let startX;
+//let isDown = false;
+//let startX;
 let scrollLeft;
 let scrollSize = body.clientWidth;
 
 //animation au démarage
-
 window.addEventListener("DOMContentLoaded", () => {
   // permet de lancer l'animation des le demmarage du site
   const titleAnim = document.querySelector("#title-museum_landing-page");
@@ -23,13 +22,13 @@ window.addEventListener("DOMContentLoaded", () => {
       opacity: 0,
       ease: Elastic.easeOut.config(1, 0.75),
     })
-    //staggerFrom pour plusieur elements '-=1' permet d'avancer l'activation avant la fin de l'animation precedente
+    //staggerFrom pour plusieur elements 
     .staggerFrom(
       animImg,
       1,
       { yPercent: -100, opacity: 0, ease: Elastic.easeOut.config(1, 0.75) },
       0.2,
-      "-=1"
+      "-=1"//'-=1' permet d'avancer l'activation avant la fin de l'animation precedente
     );
 
   titletime.play(); //on actionne car on a mis pause precedement
@@ -39,20 +38,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
 const btn = document.querySelector(".btn1");
 // const responsiveNav= document.querySelector(".responsive-nav");
-
 btn.addEventListener("click", presentation);
-
 function presentation() {
   btn.classList.toggle("active");
 }
-
 q = 0;
-
 burgerMenu.addEventListener("click", () => {
   q++;
   listHeader.classList.toggle("active-burger");
 
-  console.log(q % 2);
+ 
 
   if (q % 2 == 0) {
     listHeader.classList.remove("active-responsive-nav");
