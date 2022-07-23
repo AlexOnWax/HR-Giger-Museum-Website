@@ -151,7 +151,7 @@ button {
     width: 10vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: $colorSecondaire;
     border-radius: 0 0 10px 10px;
@@ -213,6 +213,9 @@ button {
         margin-bottom: 50px;
         tr {
           height: 6vh;
+          &:hover {
+            background-color: rgb(64, 78, 95);
+          }
           td {
             border-bottom: solid 1px rgb(59, 56, 56);
             img {

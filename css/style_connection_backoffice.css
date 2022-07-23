@@ -92,6 +92,7 @@ body {
   border: none;
   border-radius: 5px;
   height: 40px;
+  color: #fff;
 }
 .main_container .partie_droite_login form button {
   justify-self: flex-end;

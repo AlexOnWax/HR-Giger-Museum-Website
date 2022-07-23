@@ -1,10 +1,12 @@
 function listMail(a, b) {
+  
   fetch(a, {
     method: "POST",
     body: b,
   })
     .then((response) => {
       return response.json();
+      
     })
     .then((data) => {
       for (i = 0; i < data.length; i++) {
@@ -33,6 +35,7 @@ function listOnLoad(a) {
   listMail(`list_mail.php`, load);
 }
 window.addEventListener("DOMContentLoaded",() => {
+  
   listOnLoad(0);
 })
 
@@ -57,6 +60,7 @@ function templateConfirmation(a) {
 }
 
 function suppr(a) {
+  
   a.addEventListener("click", (e) => {
     //quand le click est entendu, je créé une demande de confirmation
     templateConfirmation(e);
@@ -83,8 +87,8 @@ function suppr(a) {
           } else {
             toast.innerHTML = "un problème est survenu"; //sinon le toast indique un problème
           }
-          //listOnLoad(0); //fonction pour recharger la liste apres le click sur oui
-          window.location.reload();
+          listMail(list_mail.php,0); //fonction pour recharger la liste apres le click sur oui
+          //window.location.reload();
         });
       document.getElementById("div_confirmation").remove(); //puis je remove la div de confirmation de suppression
       document.getElementById("container_confirmation_flex").remove();
@@ -92,8 +96,8 @@ function suppr(a) {
     });
     document.getElementById("button_no").addEventListener("click", () => {
       //si je choisis de cliquer sur non,le toast affirme l'annulation
-      //listOnLoad(0); //fonction pour recharger la liste apres le click sur non
-      window.location.reload();
+       //fonction pour recharger la liste apres le click sur non
+      
       toast.className = "show";
       toast.innerHTML = "Le mail n'a pas été supprimé";
       setTimeout(function () {
@@ -101,6 +105,8 @@ function suppr(a) {
       }, 3000); //et je remove la div
       document.getElementById("div_confirmation").remove();
       document.getElementById("container_confirmation_flex").remove();
+      listMail(list_mail.php,0); 
+      //window.location.reload();
     });
   });
 }

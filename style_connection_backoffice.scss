@@ -83,6 +83,7 @@ body {
         border: none;
         border-radius: 5px;
         height: 40px;
+        color: #fff;
       }
       button {
         justify-self: flex-end;
@@ -125,4 +126,5 @@ body {
 
 .error.input {
   border: solid 3px red;
+  
 }

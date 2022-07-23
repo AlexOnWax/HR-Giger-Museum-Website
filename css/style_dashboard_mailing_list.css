@@ -139,7 +139,7 @@ button:hover {
   width: 10vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-color: #161D2F;
   border-radius: 0 0 10px 10px;
@@ -195,6 +195,9 @@ button:hover {
 }
 .element_principal .tableau table tbody tr {
   height: 6vh;
+}
+.element_principal .tableau table tbody tr:hover {
+  background-color: rgb(64, 78, 95);
 }
 .element_principal .tableau table tbody tr td {
   border-bottom: solid 1px rgb(59, 56, 56);
