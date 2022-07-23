@@ -107,7 +107,6 @@ for (let i = 0; i < sections.length; i++) {
 }
 
 //utilisation de Observer pour la disparition de la fleches de droite
-
 const sectionsArrow = document.querySelectorAll(".page");
 const gMain = document.getElementById("left_arrow-main");
 const dMain = document.getElementById("right_arrow-main");
@@ -120,7 +119,6 @@ const intersectionCallbackArrow = (x) => {
     gMain.style.visibility = "visible";
   }
 };
-
 const intersectionOptionsArrow = {
   threshold: [0.9],
 };
@@ -128,13 +126,10 @@ const intersectionObserverArrow = new IntersectionObserver(
   intersectionCallbackArrow,
   intersectionOptionsArrow
 );
-
 for (let i = 0; i < sections.length; i++) {
   intersectionObserverArrow.observe(sectionsArrow[0]);
 }
-
 //utilisation de Observer pour la disparition de la fleches de gauche
-
 const intersectionCallbackArrow2 = (x) => {
   if (x[0].isIntersecting === true) {
     dMain.style.visibility = "hidden";
@@ -142,7 +137,6 @@ const intersectionCallbackArrow2 = (x) => {
     dMain.style.visibility = "visible";
   }
 };
-
 const intersectionOptionsArrow2 = {
   threshold: [0.9],
 };
@@ -153,25 +147,20 @@ const intersectionObserverArrow2 = new IntersectionObserver(
 for (let i = 0; i < sections.length; i++) {
   intersectionObserverArrow2.observe(sectionsArrow[5]);
 }
-
 //Activation des fleches de déplacements du site Desktop
-
 dMain.addEventListener("click", () => {
   cont.scrollLeft += scrollSize;
 });
 gMain.addEventListener("click", () => {
   cont.scrollLeft -= scrollSize;
 });
-
 // carrousel version Desktop
-
 nbr = 5;
 p = 0;
 const container = document.getElementById("container");
 const g = document.getElementById("g");
 const d = document.getElementById("d");
 container.style.width = 800 * nbr + "px";
-
 for (i = 1; i <= nbr; i++) {
   div = document.createElement("div");
   div.className = "photo";
@@ -179,7 +168,6 @@ for (i = 1; i <= nbr; i++) {
   container.appendChild(div);
 }
 afficherMasquer();
-
 g.onclick = function () {
   if (p > -nbr + 1) {
     p--;
@@ -208,16 +196,13 @@ function afficherMasquer() {
     d.style.visibility = "visible";
   }
 }
-
 // carrousel du responsive mobile
-
 nbrR = 5;
 pR = 0;
 const containerResponsvive = document.getElementById("container-responsive");
 const gR = document.getElementById("g-responsive");
 const dR = document.getElementById("d-responsive");
 containerResponsvive.style.width = 370 * nbrR + "px";
-
 for (i = 1; i <= nbr; i++) {
   divR = document.createElement("div");
   divR.className = "photo-responsive";
@@ -225,7 +210,6 @@ for (i = 1; i <= nbr; i++) {
   containerResponsvive.appendChild(divR);
 }
 afficherMasquerR();
-
 gR.onclick = function () {
   if (pR > -nbrR + 1) {
     pR--;
@@ -254,9 +238,7 @@ function afficherMasquerR() {
     dR.style.visibility = "visible";
   }
 }
-
 //Bouton switch langue
-
 const titreHours = document.querySelector("#opening-hours h2");
 const titreNewsSpan = document.querySelector("#title-article-news span");
 const paragrapheNews = document.querySelector(".paragraphe-news");
@@ -277,18 +259,15 @@ const buttonText = document.querySelector(".button-languev2 > span");
 const hours1 = document.querySelector("#hours-1");
 const hours2 = document.querySelector("#hours-2");
 const hours3 = document.querySelector("#hours-3");
-
 w = 0;
 boutonLangue.addEventListener("click", () => {
   w++;
-
   if (w % 2 !== 0) {
     buttonText.replaceChildren("ENGLISH");
   } else {
     buttonText.replaceChildren("FRANÇAIS");
   }
 });
-
 fetch("traduction.json").then((response) =>
   response.json().then((data) => {
     let j = 0;
@@ -301,13 +280,10 @@ fetch("traduction.json").then((response) =>
         t = 0;
       }
       k = 0;
-
       navs.forEach((navig) => {
         k++;
-
         navig.replaceChildren(`${data[t].nav[k]}`);
       });
-
       titreNewsSpan.replaceChildren(`${data[t].PageMuseum.spanTitre}`);
       titreHours.replaceChildren(`${data[t].PageMuseum.TitreHoraire}`);
       hours1.replaceChildren(`${data[t].PageMuseum.horaire1}`);

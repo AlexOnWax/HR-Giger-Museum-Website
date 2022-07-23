@@ -7,7 +7,6 @@ function listMail(a, b) {
       return response.json();
     })
     .then((data) => {
-      //const arrayTab = [];
       for (i = 0; i < data.length; i++) {
         //Creations du template afin de creer le tableau
         let template = document.querySelector("#mailList");
@@ -21,19 +20,26 @@ function listMail(a, b) {
         td[2].setAttribute("data-value", `${data[i].idNewsletter}`);
         td[2].setAttribute("data-suppr", `${data[i].email}`);
         tbody.appendChild(clone);
+        // permet de lancer la fonction suppression si appelé
         suppr(td[2]);
       }
     });
 }
+//Fonction qui affiche la liste des mails de base
+function listOnLoad(){
+  const load = new FormData();
+  load.append("value", 0);
+  listMail(`list_mail.php`, load);
+}
+listOnLoad();
+
 function suppr(a) {
   a.addEventListener("click", (e) => {
-    //mon body
+    //quand le click est entendu, je créé une demande de confirmation
     const elementToSuppr = e.currentTarget.dataset.suppr;
     const body = document.querySelector("BODY");
-    //div container
     const divContainer = document.createElement("DIV");
     divContainer.setAttribute("id", "container_confirmation_flex");
-    // div confirmation
     const divConfirmation = document.createElement("DIV");
     divConfirmation.setAttribute("class", "div_confirmation");
     const pConfirmation = document.createElement("P");
@@ -47,7 +53,6 @@ function suppr(a) {
     pConfirmation.appendChild(TextConfirmation);
     pConfirmation.appendChild(span);
     divContainer.appendChild(divConfirmation);
-    //button et div button
     const divButton = document.createElement("DIV");
     divButton.setAttribute("id", "div_button");
     const buttonYes = document.createElement("BUTTON");
@@ -65,7 +70,7 @@ function suppr(a) {
     body.appendChild(divContainer);
     const elementClicked = e.currentTarget;
     const toast = document.getElementById("snackbar");
-
+    //si la réponse est oui je lance le fetch delete et attend la réponse  
     buttonYes.addEventListener("click", () => {
       const valueToDelete = elementClicked.dataset.value;
       //fetch de la requete pour la suppression en sql
@@ -74,47 +79,55 @@ function suppr(a) {
       })
         .then((response) => response.json())
         .then((response) => {
+          //je teste la réponse de php
           if (response[0] == true) {
+            //si la réponse est valide  alors j'affice un Toast validant l'action
             toast.innerHTML = "Le mail a bien été supprimé";
             toast.className = "show";
-            setTimeout(function () {
+            setTimeout(function () {//efface le toast apres un certain temps
               toast.className = toast.className.replace("show", "");
             }, 3000);
+           
             
           } else {
-            
+            //sinon le toast indique un problème
+            toast.innerHTML = "un problème est survenu";
 
           }
+          listOnLoad();//fonction pour recharger la liste apres le click sur oui
         });
+        //puis je remove la div de confirmation de suppression
       divConfirmation.remove();
       divContainer.remove();
       a.parentNode.remove();
     });
+    //si je choisis de cliquer sur non
     buttonNo.addEventListener("click", () => {
+      // le toast affirme l'annulation
+      listOnLoad();//fonction pour recharger la liste apres le click sur non
       toast.className = "show";
       toast.innerHTML = "Le mail n'a pas été supprimé";
       setTimeout(function () {
         toast.className = toast.className.replace("show", "");
       }, 3000);
+      //et je remove la div
       divConfirmation.remove();
       divContainer.remove();
     });
   });
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  const load = new FormData();
-  load.append("value", 0);
-  listMail(`list_mail.php`, load);
-});
 
+
+//j'appelle la fonction au clique sur le boutton showmore
 let nbrShowMore = 0;
 const btnShowMore = document.getElementById("show_more");
 btnShowMore.addEventListener("click", () => {
+  //je prepare le FormData puis incrémente de 10 en 10 à chaque clique
   const showMore = new FormData();
   nbrShowMore = nbrShowMore + 10;
+  //IMPORTANT: comme je n'ai pas de formulaire j'"append" ('value',nbrShowMore) pour lancer le fetch avec la method POST
   showMore.append("value", nbrShowMore);
-
   listMail(`list_mail.php`, showMore);
 });
 
@@ -129,10 +142,12 @@ btnOrderMail.addEventListener("click", () => {
   }
 });
 
+//lancement du trie au click
 const btnOrderDate = document.getElementById("order_date");
 let moduloDate = 0;
 btnOrderDate.addEventListener("click", function () {
   moduloDate++;
+  //modulo pour alterner puis je lance la fonction trie ou trie reverse
   if (moduloDate % 2 == 0) {
     trieAlphaRevers(1);
   } else {
@@ -140,7 +155,7 @@ btnOrderDate.addEventListener("click", function () {
   }
 });
 
-function trieAlpha(a) {
+function trieAlpha(a) {//trie à bulle
   let lignes = document.querySelectorAll(".lignes");
   const tBody = document.querySelector("tbody");
   for (let i = 0; i < lignes.length; i++) {
@@ -157,8 +172,7 @@ function trieAlpha(a) {
     }
   }
 }
-
-function trieAlphaRevers(a) {
+function trieAlphaRevers(a) {//trie à bulle
   let lignes = document.querySelectorAll(".lignes");
   const tBody = document.querySelector("tbody");
   for (let i = 0; i < lignes.length; i++) {
@@ -179,13 +193,16 @@ function trieAlphaRevers(a) {
 const inputRecherche = document.querySelector("input");
 const buttonRechercher = document.querySelector("#rechercher");
 const form = document.querySelector("form");
-
+//eventListener de l'input de recherche
 form.addEventListener("submit", function (e) {
-  e.preventDefault();
+  e.preventDefault();//enleve le comportement "normal" du form
   let lignes = document.querySelectorAll(".lignes");
   lignes.forEach((ligne) => {
+    //je remove les lignes deja existantes avant d'afficher le résultat de ma recherche
     ligne.remove();
   });
+  //preparation du FormData
   const search = new FormData(form);
+  //lancement de la fonction via recherche.php
   listMail("recherche.php", search);
 });

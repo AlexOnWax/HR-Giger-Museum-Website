@@ -1,4 +1,12 @@
 <?php
+session_start();
+$nom=$_SESSION['login'];
+if(!isset($_SESSION['login'])){
+   header('Location:page_connection_backoffice.php');
+   exit();
+}
+
+
 
 require __DIR__ .'/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);

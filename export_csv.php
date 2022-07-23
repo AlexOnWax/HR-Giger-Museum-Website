@@ -1,4 +1,12 @@
 <?php
+//oblige l'utilisateur à etre logé pour acceder à cette page
+session_start();
+$nom=$_SESSION['login'];
+if(!isset($_SESSION['login'])){
+   header('Location:page_connection_backoffice.php');
+   exit();
+}
+//-------------------------------------------------------------
 require __DIR__ .'/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -6,13 +14,11 @@ $servername=$_ENV['servername'];
 $dbName=$_ENV['dbName'];
 $user=$_ENV['username'];
 $pass=$_ENV['password'];
+
 try{
 $pdoExport = new PDO("mysql:host=$servername;dbname=$dbName;charset=utf8", $user, $pass, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-
-
 }catch(PDOExeption $erreur){
     echo $erreur->getMessage();
-
 }
 header("Content-Type: application/octet-stream");
 header("Content-Transfer-Encoding: Binary");
@@ -34,7 +40,4 @@ while ($row = $result->fetch(PDO::FETCH_NAMED)) {
     ]);
     echo "\r\n";
 }
-
-
-
 ?>

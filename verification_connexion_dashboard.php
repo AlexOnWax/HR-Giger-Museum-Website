@@ -1,6 +1,5 @@
 <?php
 session_start();
-// var_dump($_POST);
 require __DIR__.'/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
