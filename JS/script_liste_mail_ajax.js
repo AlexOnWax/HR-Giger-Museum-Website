@@ -119,10 +119,13 @@ btnShowMore.addEventListener("click", () => {
 const btnOrderMail = document.querySelector("#order_mail");
 let moduloMail = 0;
 btnOrderMail.addEventListener("click", () => {
+ 
   moduloMail++;
   if (moduloMail % 2 == 0) {
+    btnOrderMail.style.transform = "rotate(-360deg)";
     trieAlphaRevers(0);
   } else {
+     btnOrderMail.style.transform = "rotate(180deg)";
     trieAlpha(0);
   }
 });
@@ -131,11 +134,14 @@ btnOrderMail.addEventListener("click", () => {
 const btnOrderDate = document.getElementById("order_date");
 let moduloDate = 0;
 btnOrderDate.addEventListener("click", function () {
+  btnOrderDate.style.transform = "rotate(180deg)";
   moduloDate++;
   //modulo pour alterner puis je lance la fonction trie ou trie reverse
   if (moduloDate % 2 == 0) {
+    btnOrderDate.style.transform = "rotate(-360deg)";
     trieAlphaRevers(1);
   } else {
+    btnOrderDate.style.transform = "rotate(180deg)";
     trieAlpha(1);
   }
 });

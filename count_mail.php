@@ -19,9 +19,4 @@ $result->execute();
 $fetch = $result->fetchAll((PDO::FETCH_ASSOC));
 
 
-
-
-
-
-
 ?>
