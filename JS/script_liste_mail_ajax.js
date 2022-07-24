@@ -9,6 +9,7 @@ function listMail(a, b) {
       
     })
     .then((data) => {
+      console.log(data);
       for (i = 0; i < data.length; i++) {
         //Creations du template afin de creer le tableau
         let template = document.querySelector("#mailList");
@@ -86,8 +87,11 @@ function suppr(a) {
           } else {
             toast.innerHTML = "un problème est survenu"; //sinon le toast indique un problème
           }
-          listMail(list_mail.php,0); //fonction pour recharger la liste apres le click sur oui
-          //window.location.reload();
+          
+      //     const restart = new FormData();
+      // restart.append("value", 0);
+      // listMail("list_mail.php",restart);  //fonction pour recharger la liste apres le click sur oui
+          window.location.reload();
         });
       document.getElementById("div_confirmation").remove(); //puis je remove la div de confirmation de suppression
       document.getElementById("container_confirmation_flex").remove();
@@ -104,21 +108,37 @@ function suppr(a) {
       }, 3000); //et je remove la div
       document.getElementById("div_confirmation").remove();
       document.getElementById("container_confirmation_flex").remove();
-      listMail(list_mail.php,0); 
-      //window.location.reload();
+      
+      // const restart = new FormData();
+      // restart.append("value", 0);
+      // listMail("list_mail.php",restart); 
+      window.location.reload();
     });
   });
 }
 //j'appelle la fonction au clique sur le boutton showmore
-let nbrShowMore = 0;
+
 const btnShowMore = document.getElementById("show_more");
+let nbrShowMore = 0;
 btnShowMore.addEventListener("click", () => {
   //je prepare le FormData puis incrémente de 10 en 10 à chaque clique
-  const showMore = new FormData();
   nbrShowMore = nbrShowMore + 10;
+  const showMore = new FormData();
   //IMPORTANT: comme je n'ai pas de formulaire j'"append" ('value',nbrShowMore) pour lancer le fetch avec la method POST
-  showMore.append("value", nbrShowMore);
-  listMail(`list_mail.php`, showMore);
+  showMore.append("value",nbrShowMore);
+  
+  listMail("list_mail.php",showMore);
+  fetch("count.php", {
+    method: "POST",
+    body:showMore,
+  }).then(function(response) { 
+let test =response.headers.get('nbr');
+ const actualListe =document.getElementById('actual_liste');
+ actualListe.textContent=test;
+ 
+     })
+  
+
 });
 
 const btnOrderMail = document.querySelector("#order_mail");
@@ -207,6 +227,7 @@ form.addEventListener("submit", function (e) {
 });
 
 function count(){
+  //a revoir et comenter ***************************************************
 fetch(`count_mail.php?value=Mail`, {
         method: "GET",
       })
@@ -217,8 +238,7 @@ fetch(`count_mail.php?value=Mail`, {
         .then((data) => {
 let totalMail = data;
 const totalListe =document.getElementById('total_liste');
-let totalTextcontent=document.createTextNode(totalMail);
-totalListe.appendChild(totalTextcontent);
+totalListe.textContent=totalMail;
         })
 };
 count();

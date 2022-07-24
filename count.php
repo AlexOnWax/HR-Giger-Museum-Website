@@ -12,22 +12,18 @@ $servername=$_ENV['servername'];
 $dbName=$_ENV['dbName'];
 $user=$_ENV['username'];
 $pass=$_ENV['password'];
-$count =$_GET['value'];
 
 
-$pdoCount = new PDO('mysql:host='.$servername.';dbname='.$dbName, $user, $pass);
-$resultTotal = $pdoCount->prepare('SELECT COUNT(email) FROM Mail');
-//$result->bindParam(':email', $count);
-$resultTotal->execute();
+if (isset($_POST['value'])) {
+    $show=$_POST['value'];
+ };
 
-$countMail= $resultTotal->fetchAll((PDO::FETCH_COLUMN));
-$nbr=$countMail[0];
-settype($nbr,"integer");
-print json_encode($nbr);
-
-
-
-
+$pdo = new PDO('mysql:host='.$servername.';dbname='.$dbName, $user, $pass);
+$result = $pdo->prepare('SELECT * FROM Mail LIMIT 10 OFFSET :nbr');
+$result->bindParam(':nbr', $show, PDO::PARAM_INT );
+$result->execute();
+$count = $result->rowCount();
+header('nbr:'.($count+$show));
 
 
 ?>
