@@ -66,7 +66,7 @@ if(!isset($_SESSION['login'])){
 
 
                 </table>
-                <button id="show_more">Show more</button><p><span>10</span>/<span>100</span></p>
+                <button id="show_more">Show more</button><p><span>10</span>/<span id="total_liste"></span></p>
 
 
                 <template id="mailList">

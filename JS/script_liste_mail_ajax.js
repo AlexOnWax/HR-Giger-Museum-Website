@@ -52,7 +52,6 @@ function templateConfirmation(a) {
   let templateConf = document.querySelector("#confirmation");
   let cloneConf = document.importNode(templateConf.content, true);
   body.appendChild(cloneConf);
-  console.log(templateConf);
   const spanText = document.createTextNode(`${elementToSuppr}`);
   const spanMail = document.getElementById("span_mail");
   spanMail.style.fontWeight = "bold";
@@ -207,4 +206,19 @@ form.addEventListener("submit", function (e) {
   listMail("recherche.php", search);
 });
 
-
+function count(){
+fetch(`count_mail.php?value=Mail`, {
+        method: "GET",
+      })
+      .then((response) => {
+        return response.json();
+        
+      })
+        .then((data) => {
+let totalMail = data;
+const totalListe =document.getElementById('total_liste');
+let totalTextcontent=document.createTextNode(totalMail);
+totalListe.appendChild(totalTextcontent);
+        })
+};
+count();

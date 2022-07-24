@@ -12,11 +12,22 @@ $servername=$_ENV['servername'];
 $dbName=$_ENV['dbName'];
 $user=$_ENV['username'];
 $pass=$_ENV['password'];
+$count =$_GET['value'];
+
 
 $pdoCount = new PDO('mysql:host='.$servername.';dbname='.$dbName, $user, $pass);
 $result = $pdoCount->prepare('SELECT COUNT(email) FROM Mail');
+//$result->bindParam(':email', $count);
 $result->execute();
-$fetch = $result->fetchAll((PDO::FETCH_ASSOC));
+
+$countMail= $result->fetchAll((PDO::FETCH_COLUMN));
+$nbr=$countMail[0];
+settype($nbr,"integer");
+print json_encode($nbr);
+
+
+
+
 
 
 ?>
