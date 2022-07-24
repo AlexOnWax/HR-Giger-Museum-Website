@@ -38,7 +38,7 @@ if(!isset($_SESSION['login'])){
 <form id="form" novalidate>
         
         <input type="search" name="search">
-        <button id="rechercher">rechercher</button>
+        <button id="rechercher">Rechercher</button>
         
         </form>
        
