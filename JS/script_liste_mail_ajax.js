@@ -1,23 +1,24 @@
+let totalListe = document.getElementById("total_liste");
+const btnShowMore = document.getElementById("show_more");
+
 function listMail(a, b) {
-  
   fetch(a, {
     method: "POST",
     body: b,
-   
   })
     .then((response) => {
-      let test =response.headers.get('nbr');
+      let test = response.headers.get("nbr");
       console.log(test);
-       const actualListe =document.getElementById('actual_liste');
-       const totalListe =document.getElementById('total_liste');
-       
-       actualListe.textContent=test;
-       removeButtonShowMore(totalListe,actualListe);
+      let actualListe = document.getElementById("actual_liste");
+      //let totalListe =document.getElementById('total_liste');
+
+      actualListe.textContent = test;
+      removeButtonShowMore(totalListe, actualListe);
       return response.json();
-      
     })
     .then((data) => {
       console.log(data);
+
       for (i = 0; i < data.length; i++) {
         //Creations du template afin de creer le tableau
         let template = document.querySelector("#mailList");
@@ -33,27 +34,24 @@ function listMail(a, b) {
         tbody.appendChild(clone);
         // permet de lancer la fonction suppression si appelé
         suppr(td[2]);
+        count();
       }
-      
-    }) 
+    });
 }
 //Fonction qui affiche la liste des mails de base
 function listOnLoad(a) {
-  
   const load = new FormData();
   load.append("value", a);
   listMail(`list_mail.php`, load);
 }
-window.addEventListener("DOMContentLoaded",() => {
-  
+window.addEventListener("DOMContentLoaded", () => {
   listOnLoad(0);
-})
+});
 
-
-const hk =document.querySelector('h3');//juste pour tester le refresh de la page sur le titre
+const hk = document.querySelector("h3"); //juste pour tester le refresh de la page sur le titre
 hk.addEventListener("click", () => {
   window.location.reload();
-})
+});
 
 function templateConfirmation(a) {
   //template de création de la div de confirmation de suppression
@@ -69,7 +67,6 @@ function templateConfirmation(a) {
 }
 
 function suppr(a) {
-  
   a.addEventListener("click", (e) => {
     //quand le click est entendu, je créé une demande de confirmation
     templateConfirmation(e);
@@ -93,14 +90,16 @@ function suppr(a) {
               //efface le toast apres un certain temps
               toast.className = toast.className.replace("show", "");
             }, 3000);
+
+            totalListe.textContent = totalListe.textContent - 1;
           } else {
             toast.innerHTML = "un problème est survenu"; //sinon le toast indique un problème
           }
-          
-      //     const restart = new FormData();
-      // restart.append("value", 0);
-      // listMail("list_mail.php",restart);  //fonction pour recharger la liste apres le click sur oui
-          window.location.reload();
+
+          //const restart = new FormData();
+          //restart.append("value", 0);
+          //listMail("list_mail.php",restart);  //fonction pour recharger la liste apres le click sur oui
+          //window.location.reload();
         });
       document.getElementById("div_confirmation").remove(); //puis je remove la div de confirmation de suppression
       document.getElementById("container_confirmation_flex").remove();
@@ -108,8 +107,8 @@ function suppr(a) {
     });
     document.getElementById("button_no").addEventListener("click", () => {
       //si je choisis de cliquer sur non,le toast affirme l'annulation
-       //fonction pour recharger la liste apres le click sur non
-      
+      //fonction pour recharger la liste apres le click sur non
+
       toast.className = "show";
       toast.innerHTML = "Le mail n'a pas été supprimé";
       setTimeout(function () {
@@ -117,50 +116,36 @@ function suppr(a) {
       }, 3000); //et je remove la div
       document.getElementById("div_confirmation").remove();
       document.getElementById("container_confirmation_flex").remove();
-      
-      // const restart = new FormData();
-      // restart.append("value", 0);
-      // listMail("list_mail.php",restart); 
-      window.location.reload();
+
+      //const restart = new FormData();
+      //restart.append("value", 0);
+      //listMail("list_mail.php",restart);
+      //window.location.reload();
     });
   });
 }
 //j'appelle la fonction au clique sur le boutton showmore
 
-const btnShowMore = document.getElementById("show_more");
+//const btnShowMore = document.getElementById("show_more");
 let nbrShowMore = 0;
 btnShowMore.addEventListener("click", () => {
   //je prepare le FormData puis incrémente de 10 en 10 à chaque clique
   nbrShowMore = nbrShowMore + 10;
   const showMore = new FormData();
   //IMPORTANT: comme je n'ai pas de formulaire j'"append" ('value',nbrShowMore) pour lancer le fetch avec la method POST
-  showMore.append("value",nbrShowMore);
-  
-  listMail("list_mail.php",showMore);
-//   fetch("count.php", {
-//     method: "POST",
-//     body:showMore,
-//   }).then(function(response) { 
-// let test =response.headers.get('nbr');
-//  const actualListe =document.getElementById('actual_liste');
- 
-//  actualListe.textContent=test;
- 
-//      })
-  
-
+  showMore.append("value", nbrShowMore);
+  listMail("list_mail.php", showMore);
 });
 
 const btnOrderMail = document.querySelector("#order_mail");
 let moduloMail = 0;
 btnOrderMail.addEventListener("click", () => {
- 
   moduloMail++;
   if (moduloMail % 2 == 0) {
     btnOrderMail.style.transform = "rotate(0)";
     trieAlphaRevers(0);
   } else {
-     btnOrderMail.style.transform = "rotate(180deg)";
+    btnOrderMail.style.transform = "rotate(180deg)";
     trieAlpha(0);
   }
 });
@@ -224,6 +209,9 @@ const buttonRechercher = document.querySelector("#rechercher");
 const form = document.querySelector("form");
 //eventListener de l'input de recherche
 form.addEventListener("submit", function (e) {
+  const pNbr = document.getElementById("p_nbr");
+  pNbr.style.display = "none";
+  btnShowMore.style.display = "none";
   e.preventDefault(); //enleve le comportement "normal" du form
   let lignes = document.querySelectorAll(".lignes");
   lignes.forEach((ligne) => {
@@ -236,29 +224,24 @@ form.addEventListener("submit", function (e) {
   listMail("recherche.php", search);
 });
 
-function count(){
+function count() {
   //a revoir et commenter ***************************************************
-fetch(`count_mail.php?value=Mail`, {
-        method: "GET",
-      })
-      .then((response) => {
-        return response.json();
-        
-      })
-        .then((data) => {
-let totalMail = data;
-const totalListe =document.getElementById('total_liste');
-totalListe.textContent=totalMail;
-
-        })
-};
-count();
-
-
-function removeButtonShowMore(a,b) {
-if (a.textContent==b.textContent){
-  const btnShowMore = document.getElementById("show_more");
-  btnShowMore.style.display="none";
+  fetch(`count_mail.php?value=Mail`, {
+    method: "GET",
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      let totalMail = data;
+      //let totalListe =document.getElementById('total_liste');
+      totalListe.textContent = totalMail;
+    });
 }
 
+function removeButtonShowMore(a, b) {
+  if (a.textContent == b.textContent) {
+    //const btnShowMore = document.getElementById("show_more");
+    btnShowMore.style.display = "none";
+  }
 }

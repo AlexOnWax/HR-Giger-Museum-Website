@@ -20,7 +20,7 @@ if (isset($_POST['value'])) {
 };
 
 $pdo = new PDO('mysql:host='.$servername.';dbname='.$dbName, $user, $pass);
-$result = $pdo->prepare('SELECT * FROM Mail LIMIT 8 OFFSET :nbr');
+$result = $pdo->prepare('SELECT * FROM Mail LIMIT 10 OFFSET :nbr');
 $result->bindParam(':nbr', $showMore, PDO::PARAM_INT );
 $result->execute();
 $count = $result->rowCount();
