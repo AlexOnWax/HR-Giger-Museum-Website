@@ -1,6 +1,6 @@
 let totalListe = document.getElementById("total_liste");
 const btnShowMore = document.getElementById("show_more");
-
+let actualListe = document.getElementById("actual_liste");
 function listMail(a, b) {
   fetch(a, {
     method: "POST",
@@ -8,17 +8,13 @@ function listMail(a, b) {
   })
     .then((response) => {
       let test = response.headers.get("nbr");
-      console.log(test);
-      let actualListe = document.getElementById("actual_liste");
-      //let totalListe =document.getElementById('total_liste');
-
+      let testTotal = response.headers.get("nbrTotal");
       actualListe.textContent = test;
+      totalListe.textContent= testTotal;
       removeButtonShowMore(totalListe, actualListe);
       return response.json();
     })
     .then((data) => {
-      console.log(data);
-
       for (i = 0; i < data.length; i++) {
         //Creations du template afin de creer le tableau
         let template = document.querySelector("#mailList");
@@ -34,7 +30,6 @@ function listMail(a, b) {
         tbody.appendChild(clone);
         // permet de lancer la fonction suppression si appelé
         suppr(td[2]);
-        count();
       }
     });
 }
@@ -92,6 +87,7 @@ function suppr(a) {
             }, 3000);
 
             totalListe.textContent = totalListe.textContent - 1;
+            actualListe.textContent = actualListe.textContent - 1;
           } else {
             toast.innerHTML = "un problème est survenu"; //sinon le toast indique un problème
           }
@@ -224,20 +220,7 @@ form.addEventListener("submit", function (e) {
   listMail("recherche.php", search);
 });
 
-function count() {
-  //a revoir et commenter ***************************************************
-  fetch(`count_mail.php?value=Mail`, {
-    method: "GET",
-  })
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      let totalMail = data;
-      //let totalListe =document.getElementById('total_liste');
-      totalListe.textContent = totalMail;
-    });
-}
+
 
 function removeButtonShowMore(a, b) {
   if (a.textContent == b.textContent) {
