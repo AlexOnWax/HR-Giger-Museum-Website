@@ -92,10 +92,8 @@ if(!isset($_SESSION['login'])){
                         </div>
 
                     </div>
-                    
-
-
                 </template>
+
                 <div id="snackbar"></div>
                 
             </div>

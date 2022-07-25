@@ -3,8 +3,16 @@ function listMail(a, b) {
   fetch(a, {
     method: "POST",
     body: b,
+   
   })
     .then((response) => {
+      let test =response.headers.get('nbr');
+      console.log(test);
+       const actualListe =document.getElementById('actual_liste');
+       const totalListe =document.getElementById('total_liste');
+       
+       actualListe.textContent=test;
+       removeButtonShowMore(totalListe,actualListe);
       return response.json();
       
     })
@@ -26,7 +34,8 @@ function listMail(a, b) {
         // permet de lancer la fonction suppression si appelé
         suppr(td[2]);
       }
-    });
+      
+    }) 
 }
 //Fonction qui affiche la liste des mails de base
 function listOnLoad(a) {
@@ -128,15 +137,16 @@ btnShowMore.addEventListener("click", () => {
   showMore.append("value",nbrShowMore);
   
   listMail("list_mail.php",showMore);
-  fetch("count.php", {
-    method: "POST",
-    body:showMore,
-  }).then(function(response) { 
-let test =response.headers.get('nbr');
- const actualListe =document.getElementById('actual_liste');
- actualListe.textContent=test;
+//   fetch("count.php", {
+//     method: "POST",
+//     body:showMore,
+//   }).then(function(response) { 
+// let test =response.headers.get('nbr');
+//  const actualListe =document.getElementById('actual_liste');
  
-     })
+//  actualListe.textContent=test;
+ 
+//      })
   
 
 });
@@ -147,7 +157,7 @@ btnOrderMail.addEventListener("click", () => {
  
   moduloMail++;
   if (moduloMail % 2 == 0) {
-    btnOrderMail.style.transform = "rotate(-360deg)";
+    btnOrderMail.style.transform = "rotate(0)";
     trieAlphaRevers(0);
   } else {
      btnOrderMail.style.transform = "rotate(180deg)";
@@ -159,11 +169,11 @@ btnOrderMail.addEventListener("click", () => {
 const btnOrderDate = document.getElementById("order_date");
 let moduloDate = 0;
 btnOrderDate.addEventListener("click", function () {
-  btnOrderDate.style.transform = "rotate(180deg)";
+  //btnOrderDate.style.transform = "rotate(180deg)";
   moduloDate++;
   //modulo pour alterner puis je lance la fonction trie ou trie reverse
   if (moduloDate % 2 == 0) {
-    btnOrderDate.style.transform = "rotate(-360deg)";
+    btnOrderDate.style.transform = "rotate(0)";
     trieAlphaRevers(1);
   } else {
     btnOrderDate.style.transform = "rotate(180deg)";
@@ -227,7 +237,7 @@ form.addEventListener("submit", function (e) {
 });
 
 function count(){
-  //a revoir et comenter ***************************************************
+  //a revoir et commenter ***************************************************
 fetch(`count_mail.php?value=Mail`, {
         method: "GET",
       })
@@ -239,6 +249,16 @@ fetch(`count_mail.php?value=Mail`, {
 let totalMail = data;
 const totalListe =document.getElementById('total_liste');
 totalListe.textContent=totalMail;
+
         })
 };
 count();
+
+
+function removeButtonShowMore(a,b) {
+if (a.textContent==b.textContent){
+  const btnShowMore = document.getElementById("show_more");
+  btnShowMore.style.display="none";
+}
+
+}
