@@ -17,13 +17,14 @@ $count =$_GET['value'];
 
 $pdoCount = new PDO('mysql:host='.$servername.';dbname='.$dbName, $user, $pass);
 $resultTotal = $pdoCount->prepare('SELECT COUNT(email) FROM Mail');
-//$result->bindParam(':email', $count);
+
 $resultTotal->execute();
 
 $countMail= $resultTotal->fetchAll((PDO::FETCH_COLUMN));
 $nbr=$countMail[0];
 settype($nbr,"integer");
 print json_encode($nbr);
+//commentaire test
 
 
 
