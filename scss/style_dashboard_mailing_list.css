@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #101729;
+  background-color: #fff;
   color: #fff;
   font-family: "Lato", sans-serif;
   width: 100vw;
@@ -83,7 +83,7 @@ header {
   height: 8vh;
   justify-content: space-between;
   align-items: center;
-  background-color: #101729;
+  background-color: #fff;
   padding: 20px;
   border-radius: 10px 10px 10px 0;
 }
