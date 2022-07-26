@@ -20,17 +20,20 @@ if (isset($_POST['value'])) {
 };
 
 $pdo = new PDO('mysql:host='.$servername.';dbname='.$dbName, $user, $pass);
-$result = $pdo->prepare('SELECT * FROM Mail LIMIT 30 OFFSET :nbr');
+$result = $pdo->prepare('SELECT * FROM Mail LIMIT 10 OFFSET :nbr');
 $resultTotal = $pdo->prepare('SELECT COUNT(email) FROM Mail');
 
 $result->bindParam(':nbr', $showMore, PDO::PARAM_INT );
 $result->execute();
 $resultTotal->execute();
+
 $count = $result->rowCount();
-$countTotal = $resultTotal->fetchColumn();
+$countTotal = $resultTotal->fetchColumn();//recupère la valeur qui est dans la colonne resultant de la requete
+
 $fetch = $result->fetchAll((PDO::FETCH_ASSOC));
 
 print json_encode($fetch);//on encode en Json
+
 header('nbrTotal:'.$countTotal);
 header('nbr:'.($count+$showMore));
 

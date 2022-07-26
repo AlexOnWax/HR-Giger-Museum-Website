@@ -1,6 +1,7 @@
-let totalListe = document.getElementById("total_liste");
+const totalListe = document.getElementById("total_liste");
 const btnShowMore = document.getElementById("show_more");
-let actualListe = document.getElementById("actual_liste");
+const actualListe = document.getElementById("actual_liste");
+
 function listMail(a, b) {
   fetch(a, {
     method: "POST",
@@ -86,16 +87,11 @@ function suppr(a) {
               toast.className = toast.className.replace("show", "");
             }, 3000);
 
-            totalListe.textContent = totalListe.textContent - 1;
-            actualListe.textContent = actualListe.textContent - 1;
+            totalListe.textContent --;
+            actualListe.textContent --;
           } else {
             toast.innerHTML = "un problème est survenu"; //sinon le toast indique un problème
           }
-
-          //const restart = new FormData();
-          //restart.append("value", 0);
-          //listMail("list_mail.php",restart);  //fonction pour recharger la liste apres le click sur oui
-          //window.location.reload();
         });
       document.getElementById("div_confirmation").remove(); //puis je remove la div de confirmation de suppression
       document.getElementById("container_confirmation_flex").remove();
@@ -112,11 +108,6 @@ function suppr(a) {
       }, 3000); //et je remove la div
       document.getElementById("div_confirmation").remove();
       document.getElementById("container_confirmation_flex").remove();
-
-      //const restart = new FormData();
-      //restart.append("value", 0);
-      //listMail("list_mail.php",restart);
-      //window.location.reload();
     });
   });
 }
