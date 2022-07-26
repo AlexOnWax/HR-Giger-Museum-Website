@@ -1,6 +1,7 @@
 const totalListe = document.getElementById("total_liste");
 const btnShowMore = document.getElementById("show_more");
 const actualListe = document.getElementById("actual_liste");
+let nbrShowMore = 0;
 
 function listMail(a, b) {
   fetch(a, {
@@ -89,6 +90,7 @@ function suppr(a) {
 
             totalListe.textContent --;
             actualListe.textContent --;
+            nbrShowMore --;//#todo a voir
           } else {
             toast.innerHTML = "un problème est survenu"; //sinon le toast indique un problème
           }
@@ -114,7 +116,7 @@ function suppr(a) {
 //j'appelle la fonction au clique sur le boutton showmore
 
 //const btnShowMore = document.getElementById("show_more");
-let nbrShowMore = 0;
+
 btnShowMore.addEventListener("click", () => {
   //je prepare le FormData puis incrémente de 10 en 10 à chaque clique
   nbrShowMore = nbrShowMore + 10;
