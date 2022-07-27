@@ -6,13 +6,16 @@
   background-color: rgb(64, 78, 95);
   border: none;
   border-radius: 5px;
-  height: 40px;
+  height: 30px;
+  width: 150px;
   color: #fff;
   &:hover {
     color: $colorPrimaire;
     background-color: #fff;
   }
 }
+
+
 body {
   margin: 0;
   padding: 0;
@@ -23,6 +26,18 @@ body {
   width: 100vw;
   height: 100vh;
   padding: 0.5vw;
+  @media screen and (max-width: 575.98px) {
+  font-size: $fontTaille*0.5;
+  }
+  @media screen and (min-width: 576px) {
+    font-size: $fontTaille*0.6;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: $fontTaille*0.7;
+  }
+  @media screen and (min-width: 992px) {
+    font-size: $fontTaille*1;
+  }
 }
 //------Toast--------
 #snackbar {
@@ -94,21 +109,75 @@ body {
   }
 }
 //--------------
+aside {
+  //position: fixed;
+  height: 7vh;
+  //width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $colorSecondaire;
+  border-radius: 0 0 10px 10px;
+  @media screen and (max-width: 575.98px) {
 
+    height: auto;
+    padding:5px;
+  }
+  .refresh{
+   width: 100%;
+  }
+  #form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+
+    input {
+      width: 300%;
+      border-radius: 3px;
+      padding: 4px;
+      border: none;
+      background: rgb(255, 255, 255) no-repeat right 10px center;
+      border: solid 1px rgb(94, 85, 85);
+    }
+  }
+
+
+
+
+    p {
+      font-size: 25px;
+      text-transform: uppercase;
+      //border: solid 1px grey;
+      padding: 5px 15px;
+    }
+
+
+}
 header {
   display: flex;
-  height: 8vh;
+  height: 7vh;
   justify-content: space-between;
   align-items: center;
   background-color:$colorPrimaire;
   padding: 20px;
   border-radius: 10px 10px 10px 0;
-div {
+  @media screen and (max-width: 575.98px) {
+    flex-direction: row;
+    height: auto;
+padding:px;
+  }
+#div_header {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
+  @media screen and (max-width: 575.98px) {
+flex-direction: column;
+gap: 5px;
+  }
 
  #log-out {
     text-decoration: none;
@@ -130,58 +199,37 @@ div {
  
   h2 {
     font-size: $fontTaille * 2.8;
+    @media screen and (max-width: 575.98px) {
+      font-size: $fontTaille*1;
+      margin: 0 0 2px 0;
+    }
+
   }
+
   h3 {
     font-size: $fontTaille * 1.5;
+    @media screen and (max-width: 575.98px) {
+      font-size: $fontTaille * 1.1;
+      margin: 0 0 10px 0;
+    }
   }
   
   
 }
+
 button {
   @include buttonB;
+  @media screen and (max-width: 575.98px) {
+    font-size: $fontTaille*0.8;
+    width: 100%;
+  }
 }
 
 .element_principal {
   display: flex;
 
-  aside {
-    position: fixed;
 
-    height: 80vh;
-    width: 10vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: $colorSecondaire;
-    border-radius: 0 0 10px 10px;
-    #form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
 
-      input {
-        width: 80%;
-        border-radius: 3px;
-        padding: 4px;
-        border: none;
-        background: rgb(255, 255, 255) no-repeat right 10px center;
-        border: solid 1px rgb(94, 85, 85);
-      }
-    }
-
-    .log {
-     
-
-      p {
-        font-size: 25px;
-        text-transform: uppercase;
-        border: solid 1px grey;
-        padding: 5px 15px;
-      }
-    }
-  }
   .tableau {
     width: 100%;
     height: 70vh;
@@ -190,12 +238,14 @@ button {
     //justify-content: center;
     align-items: center;
 
+
     #show_more {
       padding: 10px;
     }
     table {
+
       width: 100%;
-      padding-left: 11%;
+     // padding-left: 11%;
 
       svg {
         padding: 0 5px 0 5px;

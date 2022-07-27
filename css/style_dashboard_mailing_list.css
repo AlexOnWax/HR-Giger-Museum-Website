@@ -10,6 +10,26 @@ body {
   height: 100vh;
   padding: 0.5vw;
 }
+@media screen and (max-width: 575.98px) {
+  body {
+    font-size: 8px;
+  }
+}
+@media screen and (min-width: 576px) {
+  body {
+    font-size: 9.6px;
+  }
+}
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 11.2px;
+  }
+}
+@media screen and (min-width: 992px) {
+  body {
+    font-size: 16px;
+  }
+}
 
 #snackbar {
   visibility: hidden;
@@ -78,23 +98,74 @@ body {
   background-color: grey;
 }
 
+aside {
+  height: 7vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #161D2F;
+  border-radius: 0 0 10px 10px;
+}
+@media screen and (max-width: 575.98px) {
+  aside {
+    height: auto;
+    padding: 5px;
+  }
+}
+aside .refresh {
+  width: 100%;
+}
+aside #form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+}
+aside #form input {
+  width: 300%;
+  border-radius: 3px;
+  padding: 4px;
+  border: none;
+  background: rgb(255, 255, 255) no-repeat right 10px center;
+  border: solid 1px rgb(94, 85, 85);
+}
+aside p {
+  font-size: 25px;
+  text-transform: uppercase;
+  padding: 5px 15px;
+}
+
 header {
   display: flex;
-  height: 8vh;
+  height: 7vh;
   justify-content: space-between;
   align-items: center;
   background-color: #101729;
   padding: 20px;
   border-radius: 10px 10px 10px 0;
 }
-header div {
+@media screen and (max-width: 575.98px) {
+  header {
+    flex-direction: row;
+    height: auto;
+    padding: px;
+  }
+}
+header #div_header {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
 }
-header div #log-out {
+@media screen and (max-width: 575.98px) {
+  header #div_header {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+header #div_header #log-out {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
@@ -102,19 +173,31 @@ header div #log-out {
   border-radius: 25px;
   padding: 10px;
 }
-header div #log-out:hover {
+header #div_header #log-out:hover {
   background-color: #fff;
   color: #101729;
 }
-header div #csv {
+header #div_header #csv {
   text-decoration: none;
   color: #fff;
 }
 header h2 {
   font-size: 44.8px;
 }
+@media screen and (max-width: 575.98px) {
+  header h2 {
+    font-size: 16px;
+    margin: 0 0 2px 0;
+  }
+}
 header h3 {
   font-size: 24px;
+}
+@media screen and (max-width: 575.98px) {
+  header h3 {
+    font-size: 17.6px;
+    margin: 0 0 10px 0;
+  }
 }
 
 button {
@@ -122,47 +205,23 @@ button {
   background-color: rgb(64, 78, 95);
   border: none;
   border-radius: 5px;
-  height: 40px;
+  height: 30px;
+  width: 150px;
   color: #fff;
 }
 button:hover {
   color: #101729;
   background-color: #fff;
 }
+@media screen and (max-width: 575.98px) {
+  button {
+    font-size: 12.8px;
+    width: 100%;
+  }
+}
 
 .element_principal {
   display: flex;
-}
-.element_principal aside {
-  position: fixed;
-  height: 80vh;
-  width: 10vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #161D2F;
-  border-radius: 0 0 10px 10px;
-}
-.element_principal aside #form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-.element_principal aside #form input {
-  width: 80%;
-  border-radius: 3px;
-  padding: 4px;
-  border: none;
-  background: rgb(255, 255, 255) no-repeat right 10px center;
-  border: solid 1px rgb(94, 85, 85);
-}
-.element_principal aside .log p {
-  font-size: 25px;
-  text-transform: uppercase;
-  border: solid 1px grey;
-  padding: 5px 15px;
 }
 .element_principal .tableau {
   width: 100%;
@@ -176,7 +235,6 @@ button:hover {
 }
 .element_principal .tableau table {
   width: 100%;
-  padding-left: 11%;
 }
 .element_principal .tableau table svg {
   padding: 0 5px 0 5px;

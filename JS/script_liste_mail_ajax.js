@@ -1,6 +1,12 @@
 const totalListe = document.getElementById("total_liste");
 const btnShowMore = document.getElementById("show_more");
 const actualListe = document.getElementById("actual_liste");
+
+const buttonRefresh = document.querySelector(".refresh");
+console.log(buttonRefresh);
+
+
+const body = document.querySelector("body");
 let nbrShowMore = 0;
 
 function listMail(a, b) {
@@ -45,10 +51,7 @@ window.addEventListener("DOMContentLoaded", () => {
   listOnLoad(0);
 });
 
-const hk = document.querySelector("h3"); //juste pour tester le refresh de la page sur le titre
-hk.addEventListener("click", () => {
-  window.location.reload();
-});
+
 
 function templateConfirmation(a) {
   //template de création de la div de confirmation de suppression
@@ -90,7 +93,7 @@ function suppr(a) {
 
             totalListe.textContent --;
             actualListe.textContent --;
-            nbrShowMore --;//#todo a voir
+            nbrShowMore --;
           } else {
             toast.innerHTML = "un problème est survenu"; //sinon le toast indique un problème
           }
@@ -195,25 +198,35 @@ function trieAlphaRevers(a) {
 
 const inputRecherche = document.querySelector("input");
 const buttonRechercher = document.querySelector("#rechercher");
+
+
+
 const form = document.querySelector("form");
 //eventListener de l'input de recherche
 form.addEventListener("submit", function (e) {
+
   const pNbr = document.getElementById("p_nbr");
   pNbr.style.display = "none";
   btnShowMore.style.display = "none";
+
   e.preventDefault(); //enleve le comportement "normal" du form
+
   let lignes = document.querySelectorAll(".lignes");
+
   lignes.forEach((ligne) => {
     //je remove les lignes deja existantes avant d'afficher le résultat de ma recherche
     ligne.remove();
   });
+  buttonRefresh.classList.add("show");// je fait apparaitre le boutton retour
   //preparation du FormData
   const search = new FormData(form);
   //lancement de la fonction via recherche.php
   listMail("recherche.php", search);
 });
 
-
+buttonRefresh.addEventListener('click',() => {
+  window.location.reload();
+})
 
 function removeButtonShowMore(a, b) {
   if (a.textContent == b.textContent) {

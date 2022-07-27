@@ -24,28 +24,31 @@ if(!isset($_SESSION['login'])){
     <header>
 <h3>Hr.GIGER<br>MUSEUM</h2>
 <h2>Newletter Mailing list</h3>
-<div>
+
+<div id="div_header">
+
     <a id="log-out" href='logout.php'>Log Out </a>
 <a id="csv" href='export_csv.php'><button >Export CSV</button></a>
 </div>
 
 
     </header>
-    <div class="element_principal">
-
     <aside>
         <div>
-<form id="form" novalidate>
-        
-        <input type="search" name="search">
-        <button id="rechercher">Rechercher</button>
-        
-        </form>
-       
-    </div>
+            <form id="form" novalidate>
 
-<div class="log"><div><?php echo "<p>".$nom."</p>"; ?></div></div>
+                <input type="search" name="search">
+                <button id="rechercher">Rechercher</button>
+                <button class="refresh">Supprimer Filtres</button>
+            </form>
+
+        </div>
+
+
     </aside>
+    <div class="element_principal">
+
+
 
 
             <div class="tableau">
@@ -67,6 +70,8 @@ if(!isset($_SESSION['login'])){
 
                 </table>
                 <button id="show_more">Show more</button><p id="p_nbr"><span id="actual_liste"></span>/<span id="total_liste"></span></p>
+
+
 
 
                 <template id="mailList">
@@ -95,8 +100,10 @@ if(!isset($_SESSION['login'])){
                 </template>
 
                 <div id="snackbar"></div>
-                
+
+
             </div>
+
 
         </div>
     </div>
