@@ -27,17 +27,15 @@ body {
   height: 100vh;
   padding: 0.5vw;
   @media screen and (max-width: 575.98px) {
-  font-size: $fontTaille*0.5;
+  font-size: $fontTaille*0.9;
   }
   @media screen and (min-width: 576px) {
-    font-size: $fontTaille*0.6;
+    font-size: $fontTaille*0.9;
   }
   @media screen and (min-width: 768px) {
-    font-size: $fontTaille*0.7;
-  }
-  @media screen and (min-width: 992px) {
     font-size: $fontTaille*1;
   }
+
 }
 //------Toast--------
 #snackbar {
@@ -114,24 +112,67 @@ aside {
   height: 7vh;
   //width: 100%;
   display: flex;
+  padding-left: 35%;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: $colorSecondaire;
   border-radius: 0 0 10px 10px;
+  #csv {
+    text-decoration: none;
+    color: #fff;
+    padding-right: 20px;
+    #button_csv{
+      @media screen and (max-width: 575.98px) {
+width:85px;
+        height: 45px;
+
+      }
+
+    }
+    &:hover button svg {
+      fill: black;
+    }
+      svg{
+      fill: #fff;
+
+    }
+
+
+  }
   @media screen and (max-width: 575.98px) {
 
-    height: auto;
-    padding:5px;
+gap: 15px;
+    height: 7vh;
+    padding:15px;
+  }
+  @media screen and (max-width: 991.98px) {
+gap: 15px;
+
   }
   .refresh{
+    display: none;
    width: 100%;
+    @media screen and (max-width: 575.98px) {
+      height: 45px;
+      padding: 10px 15px 10px 15px;
+    }
+
+    &.show {
+      display: block;
+    }
   }
   #form {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 1.5rem;
+    #rechercher {
+      @media screen and (max-width: 575.98px) {
+        height: 45px;
+        padding: 10px 15px 10px 15px;
+      }
+    }
 
     input {
       width: 300%;
@@ -166,7 +207,7 @@ header {
   @media screen and (max-width: 575.98px) {
     flex-direction: row;
     height: auto;
-padding:px;
+
   }
 #div_header {
   display: flex;
@@ -178,12 +219,14 @@ padding:px;
 flex-direction: column;
 gap: 5px;
   }
-
+  @media screen and (max-width: 767.98px) {
+    flex-direction: column;
+  }
  #log-out {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
-    border: solid 1px #fff;
+    //border: solid 1px #fff;
     border-radius: 25px;
     padding: 10px;
     &:hover {
@@ -191,26 +234,30 @@ gap: 5px;
       color: $colorPrimaire;
     }
   }
-#csv {
-    text-decoration: none;
-    color: #fff;
-  }
+
 }
  
   h2 {
     font-size: $fontTaille * 2.8;
     @media screen and (max-width: 575.98px) {
-      font-size: $fontTaille*1;
-      margin: 0 0 2px 0;
+      //font-size: $fontTaille*1;
+      //margin: 0 0 2px 0;
+      display: none;
+    }
+    @media screen and (max-width: 991.98px) {
+      font-size: $fontTaille*1.5;
+
+
     }
 
-  }
+    }
 
   h3 {
-    font-size: $fontTaille * 1.5;
+    font-size: $fontTaille * 1.9;
     @media screen and (max-width: 575.98px) {
-      font-size: $fontTaille * 1.1;
+      font-size: $fontTaille * 1.7;
       margin: 0 0 10px 0;
+      //display: none;
     }
   }
   
@@ -237,7 +284,13 @@ button {
     flex-direction: column;
     //justify-content: center;
     align-items: center;
-
+    #p_nbr {
+      padding: 10px;
+    }
+    .td1{
+      @media screen and (max-width: 575.98px) {
+        display: none;
+      }}
 
     #show_more {
       padding: 10px;
@@ -258,6 +311,13 @@ button {
         th {
           text-align: start;
         }
+        .thToHide{
+          //#todo
+          @media screen and (max-width: 575.98px) {
+            display: none;
+          }
+
+        }
       }
       tbody {
         margin-bottom: 50px;
@@ -268,6 +328,9 @@ button {
           }
           td {
             border-bottom: solid 1px rgb(59, 56, 56);
+            @media screen and (max-width: 991.98px) {
+              padding-left: 40px;
+            }
             img {
               cursor: pointer;
             }

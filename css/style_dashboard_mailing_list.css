@@ -12,20 +12,15 @@ body {
 }
 @media screen and (max-width: 575.98px) {
   body {
-    font-size: 8px;
+    font-size: 14.4px;
   }
 }
 @media screen and (min-width: 576px) {
   body {
-    font-size: 9.6px;
+    font-size: 14.4px;
   }
 }
 @media screen and (min-width: 768px) {
-  body {
-    font-size: 11.2px;
-  }
-}
-@media screen and (min-width: 992px) {
   body {
     font-size: 16px;
   }
@@ -101,26 +96,66 @@ body {
 aside {
   height: 7vh;
   display: flex;
+  padding-left: 35%;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: #161D2F;
   border-radius: 0 0 10px 10px;
 }
+aside #csv {
+  text-decoration: none;
+  color: #fff;
+  padding-right: 20px;
+}
+@media screen and (max-width: 575.98px) {
+  aside #csv #button_csv {
+    width: 85px;
+    height: 45px;
+  }
+}
+aside #csv:hover button svg {
+  fill: black;
+}
+aside #csv svg {
+  fill: #fff;
+}
 @media screen and (max-width: 575.98px) {
   aside {
-    height: auto;
-    padding: 5px;
+    gap: 15px;
+    height: 7vh;
+    padding: 15px;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  aside {
+    gap: 15px;
   }
 }
 aside .refresh {
+  display: none;
   width: 100%;
+}
+@media screen and (max-width: 575.98px) {
+  aside .refresh {
+    height: 45px;
+    padding: 10px 15px 10px 15px;
+  }
+}
+aside .refresh.show {
+  display: block;
 }
 aside #form {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 1.5rem;
+}
+@media screen and (max-width: 575.98px) {
+  aside #form #rechercher {
+    height: 45px;
+    padding: 10px 15px 10px 15px;
+  }
 }
 aside #form input {
   width: 300%;
@@ -149,7 +184,6 @@ header {
   header {
     flex-direction: row;
     height: auto;
-    padding: px;
   }
 }
 header #div_header {
@@ -165,11 +199,15 @@ header #div_header {
     gap: 5px;
   }
 }
+@media screen and (max-width: 767.98px) {
+  header #div_header {
+    flex-direction: column;
+  }
+}
 header #div_header #log-out {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
-  border: solid 1px #fff;
   border-radius: 25px;
   padding: 10px;
 }
@@ -177,25 +215,25 @@ header #div_header #log-out:hover {
   background-color: #fff;
   color: #101729;
 }
-header #div_header #csv {
-  text-decoration: none;
-  color: #fff;
-}
 header h2 {
   font-size: 44.8px;
 }
 @media screen and (max-width: 575.98px) {
   header h2 {
-    font-size: 16px;
-    margin: 0 0 2px 0;
+    display: none;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  header h2 {
+    font-size: 24px;
   }
 }
 header h3 {
-  font-size: 24px;
+  font-size: 30.4px;
 }
 @media screen and (max-width: 575.98px) {
   header h3 {
-    font-size: 17.6px;
+    font-size: 27.2px;
     margin: 0 0 10px 0;
   }
 }
@@ -230,6 +268,14 @@ button:hover {
   flex-direction: column;
   align-items: center;
 }
+.element_principal .tableau #p_nbr {
+  padding: 10px;
+}
+@media screen and (max-width: 575.98px) {
+  .element_principal .tableau .td1 {
+    display: none;
+  }
+}
 .element_principal .tableau #show_more {
   padding: 10px;
 }
@@ -248,6 +294,11 @@ button:hover {
 .element_principal .tableau table thead th {
   text-align: start;
 }
+@media screen and (max-width: 575.98px) {
+  .element_principal .tableau table thead .thToHide {
+    display: none;
+  }
+}
 .element_principal .tableau table tbody {
   margin-bottom: 50px;
 }
@@ -259,6 +310,11 @@ button:hover {
 }
 .element_principal .tableau table tbody tr td {
   border-bottom: solid 1px rgb(59, 56, 56);
+}
+@media screen and (max-width: 991.98px) {
+  .element_principal .tableau table tbody tr td {
+    padding-left: 40px;
+  }
 }
 .element_principal .tableau table tbody tr td img {
   cursor: pointer;

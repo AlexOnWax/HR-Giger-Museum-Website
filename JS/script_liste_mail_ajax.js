@@ -1,9 +1,9 @@
 const totalListe = document.getElementById("total_liste");
 const btnShowMore = document.getElementById("show_more");
 const actualListe = document.getElementById("actual_liste");
-
+const buttonCsv = document.getElementById('csv');
 const buttonRefresh = document.querySelector(".refresh");
-console.log(buttonRefresh);
+
 
 
 const body = document.querySelector("body");
@@ -82,7 +82,7 @@ function suppr(a) {
         .then((response) => response.json())
         .then((response) => {
           //je teste la réponse de php
-          if (response[0] == true) {
+          if (response[0] === true) {
             //si la réponse est valide  alors j'affice un Toast validant l'action
             toast.innerHTML = "Le mail a bien été supprimé";
             toast.className = "show";
@@ -133,7 +133,7 @@ const btnOrderMail = document.querySelector("#order_mail");
 let moduloMail = 0;
 btnOrderMail.addEventListener("click", () => {
   moduloMail++;
-  if (moduloMail % 2 == 0) {
+  if (moduloMail % 2 === 0) {
     btnOrderMail.style.transform = "rotate(0)";
     trieAlphaRevers(0);
   } else {
@@ -149,7 +149,7 @@ btnOrderDate.addEventListener("click", function () {
   //btnOrderDate.style.transform = "rotate(180deg)";
   moduloDate++;
   //modulo pour alterner puis je lance la fonction trie ou trie reverse
-  if (moduloDate % 2 == 0) {
+  if (moduloDate % 2 === 0) {
     btnOrderDate.style.transform = "rotate(0)";
     trieAlphaRevers(1);
   } else {
@@ -196,8 +196,8 @@ function trieAlphaRevers(a) {
   }
 }
 
-const inputRecherche = document.querySelector("input");
-const buttonRechercher = document.querySelector("#rechercher");
+// const inputRecherche = document.querySelector("input");
+// const buttonRechercher = document.querySelector("#rechercher");
 
 
 
@@ -217,6 +217,7 @@ form.addEventListener("submit", function (e) {
     //je remove les lignes deja existantes avant d'afficher le résultat de ma recherche
     ligne.remove();
   });
+  buttonCsv.style.display="none";
   buttonRefresh.classList.add("show");// je fait apparaitre le boutton retour
   //preparation du FormData
   const search = new FormData(form);
@@ -229,8 +230,8 @@ buttonRefresh.addEventListener('click',() => {
 })
 
 function removeButtonShowMore(a, b) {
-  if (a.textContent == b.textContent) {
-    //const btnShowMore = document.getElementById("show_more");
+  if (a.textContent === b.textContent) {
+
     btnShowMore.style.display = "none";
   }
 }
