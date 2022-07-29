@@ -72,6 +72,11 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 575.98px) {
+  #div_confirmation {
+    width: 300px;
+  }
+}
 #div_confirmation p {
   color: black;
   text-align: center;
@@ -93,79 +98,91 @@ body {
   background-color: grey;
 }
 
-aside {
+#top_menu {
   height: 7vh;
   display: flex;
-  padding-left: 35%;
+  padding-left: 30%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   background-color: #161D2F;
   border-radius: 0 0 10px 10px;
 }
-aside #csv {
-  text-decoration: none;
-  color: #fff;
-  padding-right: 20px;
-}
 @media screen and (max-width: 575.98px) {
-  aside #csv #button_csv {
-    width: 85px;
-    height: 45px;
-  }
-}
-aside #csv:hover button svg {
-  fill: black;
-}
-aside #csv svg {
-  fill: #fff;
-}
-@media screen and (max-width: 575.98px) {
-  aside {
-    gap: 15px;
+  #top_menu {
     height: 7vh;
     padding: 15px;
   }
 }
 @media screen and (max-width: 991.98px) {
-  aside {
+  #top_menu {
     gap: 15px;
   }
 }
-aside .refresh {
-  display: none;
-  width: 100%;
-}
-@media screen and (max-width: 575.98px) {
-  aside .refresh {
-    height: 45px;
-    padding: 10px 15px 10px 15px;
-  }
-}
-aside .refresh.show {
-  display: block;
-}
-aside #form {
+#top_menu #form {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 1.5rem;
 }
-@media screen and (max-width: 575.98px) {
-  aside #form #rechercher {
-    height: 45px;
-    padding: 10px 15px 10px 15px;
-  }
-}
-aside #form input {
-  width: 300%;
+#top_menu input {
+  width: 25vw;
   border-radius: 3px;
   padding: 4px;
   border: none;
   background: rgb(255, 255, 255) no-repeat right 10px center;
   border: solid 1px rgb(94, 85, 85);
 }
-aside p {
+@media screen and (max-width: 575.98px) {
+  #top_menu input {
+    width: 43vw;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  #top_menu #rechercher {
+    width: auto;
+    height: 25px;
+    padding: 0 15px 0 15px;
+  }
+}
+#top_menu .refresh {
+  display: none;
+  width: 50px;
+}
+@media screen and (max-width: 575.98px) {
+  #top_menu .refresh {
+    height: 25px;
+  }
+}
+#top_menu .refresh.show {
+  display: block;
+}
+#top_menu #csv {
+  text-decoration: none;
+  color: #fff;
+  padding-right: 20px;
+}
+@media screen and (max-width: 575.98px) {
+  #top_menu #csv {
+    justify-content: flex-end;
+  }
+}
+#top_menu #csv #button_csv {
+  padding: 0;
+}
+@media screen and (max-width: 575.98px) {
+  #top_menu #csv #button_csv {
+    width: 30px;
+    height: 30px;
+  }
+}
+#top_menu #csv:hover button svg {
+  fill: black;
+}
+#top_menu #csv svg {
+  fill: #fff;
+}
+#top_menu p {
   font-size: 25px;
   text-transform: uppercase;
   padding: 5px 15px;

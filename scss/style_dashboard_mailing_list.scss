@@ -75,7 +75,7 @@ body {
 }
 //--------------
 //------div de confirmation de suppression----
-#div_confirmation {
+#div_confirmation {//#todo
   width: 400px;
   height: 120px;
   background-color: #fff;
@@ -83,6 +83,9 @@ body {
   top: 50%;
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 575.98px) {
+    width: 300px;
+  }
 
   p {
     color: black;
@@ -107,42 +110,21 @@ body {
   }
 }
 //--------------
-aside {
+#top_menu {
   //position: fixed;
   height: 7vh;
-  //width: 100%;
+  //width: 100vw;
   display: flex;
-  padding-left: 35%;
+  padding-left: 30%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   background-color: $colorSecondaire;
   border-radius: 0 0 10px 10px;
-  #csv {
-    text-decoration: none;
-    color: #fff;
-    padding-right: 20px;
-    #button_csv{
-      @media screen and (max-width: 575.98px) {
-width:85px;
-        height: 45px;
 
-      }
-
-    }
-    &:hover button svg {
-      fill: black;
-    }
-      svg{
-      fill: #fff;
-
-    }
-
-
-  }
   @media screen and (max-width: 575.98px) {
-
-gap: 15px;
+//flex-direction: column;
+//gap: 15px;
     height: 7vh;
     padding:15px;
   }
@@ -150,39 +132,84 @@ gap: 15px;
 gap: 15px;
 
   }
+
+  #form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 1.5rem;
+
+
+
+
+    }
+
+
+  input {
+    width: 25vw;
+    border-radius: 3px;
+    padding: 4px;
+    border: none;
+    background: rgb(255, 255, 255) no-repeat right 10px center;
+    border: solid 1px rgb(94, 85, 85);
+    @media screen and (max-width: 575.98px) {
+      width: 43vw;
+    }
+  }
+  #rechercher {
+    @media screen and (max-width: 575.98px) {
+width:auto ;
+      height: 25px;
+      padding: 0 15px 0 15px;
+    }
+
+}
+
+
+
   .refresh{
     display: none;
-   width: 100%;
+    width: 50px;
     @media screen and (max-width: 575.98px) {
-      height: 45px;
-      padding: 10px 15px 10px 15px;
+
+      height: 25px;
+      //padding: 0 15px 0 15px;
     }
 
     &.show {
       display: block;
     }
   }
-  #form {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.5rem;
-    #rechercher {
+  #csv {
+    text-decoration: none;
+    color: #fff;
+    padding-right: 20px;
+    @media screen and (max-width: 575.98px) {
+      justify-content: flex-end;
+    }
+    #button_csv {
+padding: 0;
       @media screen and (max-width: 575.98px) {
-        height: 45px;
-        padding: 10px 15px 10px 15px;
+
+        width: 30px;
+        height: 30px;
+
       }
+
     }
 
-    input {
-      width: 300%;
-      border-radius: 3px;
-      padding: 4px;
-      border: none;
-      background: rgb(255, 255, 255) no-repeat right 10px center;
-      border: solid 1px rgb(94, 85, 85);
+    &:hover button svg {
+      fill: black;
+    }
+
+    svg {
+      fill: #fff;
+
     }
   }
+
+
 
 
 
