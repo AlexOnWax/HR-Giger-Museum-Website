@@ -1,38 +1,54 @@
 const cont = document.querySelector(".flex");
 const body = document.querySelector("body");
-const targetElements = document.querySelectorAll(".page");
 const burgerMenu = document.querySelector(".box");
 const listHeader = document.querySelector(".list-nav");
-//let isDown = false;
-//let startX;
-let scrollLeft;
+
+
 let scrollSize = body.clientWidth;
+console.log(scrollSize);
+
+
+
+  window.addEventListener("DOMContentLoaded", () => {
+    // permet de lancer l'animation des le demmarage du site
+    if(scrollSize >= 1000) {
+      const titleAnim = document.querySelector("#title-museum_landing-page");
+      const animImg = document.querySelectorAll(".card");
+      //on creer les parametres de la timeline (containair à animation)avec de bases l'option de pause
+      const titletime = gsap.timeline({paused: true}); //pause car bonne pratique
+      titletime
+          //from pour un seul element
+          .from(titleAnim, 2, {
+            xPercent: -100,
+            opacity: 0,
+            ease: Elastic.easeOut.config(1, 0.75),
+          })
+          //staggerFrom pour plusieur elements
+          .staggerFrom(
+              animImg,
+              1,
+              {yPercent: -100, opacity: 0, ease: Elastic.easeOut.config(1, 0.75)},
+              0.2,
+              "-=1"//'-=1' permet d'avancer l'activation avant la fin de l'animation precedente
+          );
+
+      titletime.play(); //on actionne car on a mise pause avant
+    }else{
+      const rods= document.querySelectorAll('.les-rods');
+      rods.forEach((rod) => {
+//#todo a revoir pour enlever l'animation en mobile
+        rod.classList.add('hide');
+      })
+    }
+  });
+
+
+
+
 
 //animation au démarage
-window.addEventListener("DOMContentLoaded", () => {
-  // permet de lancer l'animation des le demmarage du site
-  const titleAnim = document.querySelector("#title-museum_landing-page");
-  const animImg = document.querySelectorAll(".card");
-  //on creer les parametres de la timeline (containair à animation)avec de bases l'option de pause
-  const titletime = gsap.timeline({ paused: true }); //pause car bonne pratique
-  titletime
-    //from pour un seul element
-    .from(titleAnim, 2, {
-      xPercent: -100,
-      opacity: 0,
-      ease: Elastic.easeOut.config(1, 0.75),
-    })
-    //staggerFrom pour plusieur elements 
-    .staggerFrom(
-      animImg,
-      1,
-      { yPercent: -100, opacity: 0, ease: Elastic.easeOut.config(1, 0.75) },
-      0.2,
-      "-=1"//'-=1' permet d'avancer l'activation avant la fin de l'animation precedente
-    );
 
-  titletime.play(); //on actionne car on a mis pause precedement
-});
+
 
 //Menu Burger
 
@@ -49,7 +65,7 @@ burgerMenu.addEventListener("click", () => {
 
  
 
-  if (q % 2 == 0) {
+  if (q % 2 === 0) {
     listHeader.classList.remove("active-responsive-nav");
     listHeader.classList.add("desactive-responsive-nav");
   } else {
@@ -59,24 +75,25 @@ burgerMenu.addEventListener("click", () => {
 });
 
 //scroll
-cont.addEventListener("wheel", (x) => {
-  //  x.preventDefault();
-  cont.scrollLeft += x.deltaY * 20;
-});
+
+  cont.addEventListener("wheel", (x) => {
+    //  x.preventDefault();
+    cont.scrollLeft += x.deltaY * 20;
+
+  });
 
 /*NavBar reactive --------------------------------------------*/
 
 const sections = document.querySelectorAll(".page");
 const sectionsArr = Array.from(sections);
 const navItems = document.querySelectorAll(".list-nav a");
-let i = 0;
+// let i = 0;
 function activateNavByIndex(index) {
   const currentActive = document.querySelectorAll(".active-card");
 
   for (let i = currentActive.length - 1; i >= 0; i--) {
     currentActive[i].classList.remove("active-card");
   }
-
   navItems[index].classList.add("active-card");
 }
 
@@ -105,7 +122,7 @@ for (let i = 0; i < sections.length; i++) {
 const sectionsArrow = document.querySelectorAll(".page");
 const gMain = document.getElementById("left_arrow-main");
 const dMain = document.getElementById("right_arrow-main");
-const sectionsTableau = Array.from(sectionsArrow);
+
 
 const intersectionCallbackArrow = (x) => {
   if (x[0].isIntersecting === true) {
@@ -180,12 +197,12 @@ g.onclick = function () {
   };
 };
 function afficherMasquer() {
-  if (p == -nbr + 1) {
+  if (p === -nbr + 1) {
     g.style.visibility = "hidden";
   } else {
     g.style.visibility = "visible";
   }
-  if (p == 0) {
+  if (p === 0) {
     d.style.visibility = "hidden";
   } else {
     d.style.visibility = "visible";
@@ -222,12 +239,12 @@ gR.onclick = function () {
   };
 };
 function afficherMasquerR() {
-  if (pR == -nbrR + 1) {
+  if (pR === -nbrR + 1) {
     gR.style.visibility = "hidden";
   } else {
     gR.style.visibility = "visible";
   }
-  if (pR == 0) {
+  if (pR === 0) {
     dR.style.visibility = "hidden";
   } else {
     dR.style.visibility = "visible";
@@ -239,16 +256,13 @@ const titreNewsSpan = document.querySelector("#title-article-news span");
 const paragrapheNews = document.querySelector(".paragraphe-news");
 const titrePhotoGallery = document.querySelector(".main-exhibition h3");
 const bio = document.querySelector(".text-bio-link");
-const navList = document.querySelectorAll(".list-nav  a");
 const titreAccess = document.querySelector("#page-access .title-page");
 const titreGallery = document.querySelector("#page-exhibition .title-page");
 const titreVideo = document.querySelector("#page-video .title-page");
 const titreBio = document.querySelector("#page-bio .title-page");
 const subscribeNewsletter = document.querySelector(".main-sub h2");
 const followUs = document.querySelector(".information h3");
-const findUs = document.querySelector(".information h4");
 const navs = document.querySelectorAll(".hover_menu");
-const Langue = document.querySelector("#button-text");
 const boutonLangue = document.querySelector(".button-languev2");
 const buttonText = document.querySelector(".button-languev2 > span");
 const hours1 = document.querySelector("#hours-1");
@@ -269,12 +283,12 @@ fetch("traduction.json").then((response) =>
     let t = 0;
     boutonLangue.addEventListener("click", () => {
       j++;
-      if (j % 2 == 0) {
+      if (j % 2 === 0) {
         t = 1;
       } else {
         t = 0;
       }
-      k = 0;
+      let k = 0;
       navs.forEach((navig) => {
         k++;
         navig.replaceChildren(`${data[t].nav[k]}`);

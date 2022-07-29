@@ -1,0 +1,39 @@
+/*Animation en Background sur tout le site, formes "fantomatique" qui se baladent*/
+.les-rods {
+    position: relative;
+
+}
+.les-rods .hide{
+    display: none;
+}
+.mooving-rod {
+    position: absolute;
+    top: 0px;
+    left: -100px;
+    width: 5px;
+    height: 100vh;
+    backdrop-filter: blur(50px);
+    background-color: rgba(0, 0, 0, 0.034);
+    border-radius: 25px;
+    z-index: -1;
+    animation: rod 10s ease-in-out infinite alternate;
+}
+.mooving-rod:nth-child(2) {
+    animation-delay: 0.5s;
+    box-shadow: 70px 5px 80px rgba(201, 180, 180, 0.904);
+}
+.mooving-rod:nth-child(3) {
+    animation-delay: 2s;
+    box-shadow: 10px 90px 150px rgba(201, 180, 180, 0.904);
+}
+@keyframes rod {
+    0% {
+        transform: translate(0vw);
+    }
+    50% {
+        transform: translate(100vw);
+    }
+    100% {
+        transform: translate(0vw);
+    }
+}
