@@ -80,7 +80,7 @@ body {
 /*Header----------------*/
 header {
   position: fixed;
-  top: 0rem;
+  top: 0;
   width: 100vw; /**/
   height: 8vh; /**/
   display: flex;
@@ -144,7 +144,7 @@ ul li {
   transition: all 0.5s ease-in-out;
 }
 .lignes:nth-child(1) {
-  top: 0px;
+  top: 0;
 }
 .lignes:nth-child(2) {
   top: 18px;
@@ -227,11 +227,11 @@ ul li {
   font-family: "Cinzel", serif;
   font-size: 20vh;
   font-weight: lighter;
-  background-clip: text;
+  /*background-clip: text;*/
   -webkit-background-clip: text;
-  -moz-background-clip: text;
+  /*-moz-background-clip: text;*/
   -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
+  //-moz-text-fill-color: transparent;
   background-image: url(../img/gold2.webp);
   background-size: 100%;
 }
@@ -297,7 +297,7 @@ ul li {
   grid-template-rows: 1fr 1fr;
   justify-items: center;
   align-items: center;
-  gap: 0rem;
+  gap: 0;
   padding: 0 5rem 16.875rem 3.125rem;
   font-size: 2.5rem;
   margin-bottom: 20px;
@@ -620,7 +620,7 @@ form > input {
 /*footer-----------------------*/
 footer {
   position: fixed;
-  bottom: 0rem;
+  bottom: 0;
   width: 100%;
   height: 8vh;
   display: flex;
@@ -663,7 +663,7 @@ footer {
   /*Header----------------*/
   header {
     position: fixed;
-    top: 0rem;
+    top: 0;
     width: 100vw;
     height: auto;
     display: flex;
@@ -674,6 +674,7 @@ footer {
     backdrop-filter: blur(20px);
   }
   .logo-title-header {
+
     display: flex;
     gap: 1rem;
     align-items: flex-start;
@@ -696,15 +697,15 @@ footer {
     position: absolute;
     width: 100%;
     top: 80px;
-    left: 0px;
-    height: 0vh;
+    left: 0;
+    height: 0;
     transition: all 2s ease;
     display: none;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     background-color: rgba(22, 21, 21, 0.979);
-    padding: 0px;
+    padding: 0;
   }
   .list-nav ul {
     display: flex;
@@ -713,8 +714,8 @@ footer {
     align-items: center;
     gap: 10px;
     list-style-type: none;
-    padding: 0px;
-    width: 5rem;
+    padding: 0;
+    /*width: 5rem;*/
     width: 100%;
   }
   .list-nav > ul > li > a {
@@ -731,7 +732,7 @@ footer {
   }
   @keyframes nav_anim1 {
     from {
-      height: 0vh;
+      height: 0;
       opacity: 0;
     }
     to {
@@ -750,7 +751,7 @@ footer {
       opacity: 1;
     }
     to {
-      height: 0vh;
+      height: 0;
       opacity: 0;
     }
   }
@@ -764,7 +765,7 @@ footer {
     font-size: 3rem;
     font-family: "Cinzel", serif;
     font-weight: normal;
-    margin-left: 0rem;
+    margin-left: 0;
     border: solid 1px;
   }
   #left_arrow-main {
@@ -801,7 +802,7 @@ footer {
     height: auto;
   }
   #title-museum_landing-page {
-    margin-left: 0rem;
+    margin-left: 0;
     margin-top: 5rem;
     position: relative;
   }
@@ -822,7 +823,7 @@ footer {
   }
   .grid-main-img {
     display: flex;
-    margin-right: 0em;
+    margin-right: 0;
   }
 
   /*firstpage Landing Page--------------*/
@@ -1021,7 +1022,7 @@ footer {
     height: 100%;
     width: 100%;
     padding: 10px;
-    margin-right: 0px;
+    margin-right: 0;
   }
   .info-sub h2 {
     font-size: 4rem;
@@ -1066,19 +1067,19 @@ footer {
   }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
-  body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    background-color: rgb(0, 0, 0);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    color: #fff;
-    font-family: "Play", sans-serif;
-  }
+  /*body {*/
+  /*  box-sizing: border-box;*/
+  /*  margin: 0;*/
+  /*  padding: 0;*/
+  /*  background-color: rgb(0, 0, 0);*/
+  /*  background-attachment: fixed;*/
+  /*  background-repeat: no-repeat;*/
+  /*  background-position: center;*/
+  /*  background-size: cover;*/
+  /*  height: 100vh;*/
+  /*  color: #fff;*/
+  /*  font-family: "Play", sans-serif;*/
+  /*}*/
   .flex {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
@@ -1095,7 +1096,7 @@ footer {
   /*Header----------------*/
   header {
     position: fixed;
-    top: 0rem;
+    top: 0;
     width: 100vw;
     height: auto;
     display: flex;
@@ -1124,21 +1125,21 @@ footer {
     display: block;
   }
 
-  .list-nav {
-    backdrop-filter: blur(20px);
-    position: absolute;
-    width: 100%;
-    top: 80px;
-    left: 0px;
-    height: 0vh;
-    transition: all 2s ease;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    background-color: rgba(22, 21, 21, 0.979);
-    padding: 0px;
-  }
+  /*.list-nav {*/
+  /*  backdrop-filter: blur(20px);*/
+  /*  position: absolute;*/
+  /*  width: 100%;*/
+  /*  top: 80px;*/
+  /*  left: 0;*/
+  /*  height: 0;*/
+  /*  transition: all 2s ease;*/
+  /*  display: none;*/
+  /*  justify-content: center;*/
+  /*  align-items: center;*/
+  /*  text-decoration: none;*/
+  /*  background-color: rgba(22, 21, 21, 0.979);*/
+  /*  padding: 0;*/
+  /*}*/
 
   .list-nav ul {
     display: flex;
@@ -1147,8 +1148,8 @@ footer {
     align-items: center;
     gap: 10px;
     list-style-type: none;
-    padding: 0px;
-    width: 5rem;
+    padding: 0;
+    /*width: 5rem;*/
     width: 100%;
   }
   .list-nav > ul > li > a {
@@ -1165,7 +1166,7 @@ footer {
   }
   @keyframes nav_anim1 {
     from {
-      height: 0vh;
+      height: 0;
       opacity: 0;
     }
     to {
@@ -1186,7 +1187,7 @@ footer {
       opacity: 1;
     }
     to {
-      height: 0vh;
+      height: 0;
       opacity: 0;
     }
   }
@@ -1205,7 +1206,7 @@ footer {
     font-size: 3rem;
     font-family: "Cinzel", serif;
     font-weight: normal;
-    margin-left: 0rem;
+    margin-left: 0;
     border: solid 1px;
   }
   #left_arrow-main {
@@ -1243,7 +1244,7 @@ footer {
     height: auto;
   }
   #title-museum_landing-page {
-    margin-left: 0rem;
+    margin-left: 0;
     margin-top: 5rem;
     position: relative;
   }
@@ -1265,8 +1266,8 @@ footer {
   }
   .grid-main-img {
     display: flex;
-    margin-right: 0em;
-    margin: 0px;
+    /*margin-right: 0em;*/
+    margin: 0;
   }
 
   /*firstpage Landing Page--------------*/
@@ -1469,7 +1470,7 @@ footer {
     height: 100%;
     width: 100%;
     padding: 10px;
-    margin-right: 0px;
+    margin-right: 0;
   }
   .info-sub h2 {
     font-size: 4rem;
@@ -1517,19 +1518,19 @@ footer {
   }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
-  body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    background-color: rgb(0, 0, 0);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    color: #fff;
-    font-family: "Play", sans-serif;
-  }
+  /*body {*/
+  /*  box-sizing: border-box;*/
+  /*  margin: 0;*/
+  /*  padding: 0;*/
+  /*  background-color: rgb(0, 0, 0);*/
+  /*  background-attachment: fixed;*/
+  /*  background-repeat: no-repeat;*/
+  /*  background-position: center;*/
+  /*  background-size: cover;*/
+  /*  height: 100vh;*/
+  /*  color: #fff;*/
+  /*  font-family: "Play", sans-serif;*/
+  /*}*/
   .flex {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
@@ -1546,7 +1547,7 @@ footer {
   /*Header----------------*/
   header {
     position: fixed;
-    top: 0rem;
+    top: 0;
     width: 100vw;
     height: auto;
     display: flex;
@@ -1580,15 +1581,15 @@ footer {
     position: absolute;
     width: 100%;
     top: 80px;
-    left: 0px;
-    height: 0vh;
+    left: 0;
+    height: 0;
     transition: all 2s ease;
     display: none;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     background-color: rgba(22, 21, 21, 0.979);
-    padding: 0px;
+    padding: 0;
   }
 
   .list-nav ul {
@@ -1598,8 +1599,8 @@ footer {
     align-items: center;
     gap: 10px;
     list-style-type: none;
-    padding: 0px;
-    width: 5rem;
+    padding: 0;
+    /*width: 5rem;*/
     width: 100%;
   }
   .list-nav > ul > li > a {
@@ -1616,7 +1617,7 @@ footer {
   }
   @keyframes nav_anim1 {
     from {
-      height: 0vh;
+      height: 0;
       opacity: 0;
     }
     to {
@@ -1637,7 +1638,7 @@ footer {
       opacity: 1;
     }
     to {
-      height: 0vh;
+      height: 0;
       opacity: 0;
     }
   }
@@ -1656,7 +1657,7 @@ footer {
     font-size: 3rem;
     font-family: "Cinzel", serif;
     font-weight: normal;
-    margin-left: 0rem;
+    margin-left: 0;
     border: solid 1px;
   }
   #left_arrow-main {
@@ -1694,7 +1695,7 @@ footer {
     height: auto;
   }
   #title-museum_landing-page {
-    margin-left: 0rem;
+    margin-left: 0;
     margin-top: 5rem;
     position: relative;
   }
@@ -1716,8 +1717,8 @@ footer {
   }
   .grid-main-img {
     display: flex;
-    margin-right: 0em;
-    margin: 0px;
+    /*margin-right: 0em;*/
+    margin: 0;
   }
 
   /*firstpage Landing Page--------------*/
@@ -1923,7 +1924,7 @@ footer {
     height: 100%;
     width: 100%;
     padding: 10px;
-    margin-right: 0px;
+    margin-right: 0
   }
   .info-sub h2 {
     font-size: 4rem;
@@ -1971,19 +1972,19 @@ footer {
   }
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    background-color: rgb(0, 0, 0);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    color: #fff;
-    font-family: "Play", sans-serif;
-  }
+  /*body {*/
+  /*  box-sizing: border-box;*/
+  /*  margin: 0;*/
+  /*  padding: 0;*/
+  /*  background-color: rgb(0, 0, 0);*/
+  /*  background-attachment: fixed;*/
+  /*  background-repeat: no-repeat;*/
+  /*  background-position: center;*/
+  /*  background-size: cover;*/
+  /*  height: 100vh;*/
+  /*  color: #fff;*/
+  /*  font-family: "Play", sans-serif;*/
+  /*}*/
   .flex {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
@@ -2000,7 +2001,7 @@ footer {
   /*Header----------------*/
   header {
     position: fixed;
-    top: 0rem;
+    top: 0;
     width: 100vw;
     height: auto;
     display: flex;
@@ -2029,21 +2030,21 @@ footer {
     display: block;
   }
 
-  .list-nav {
-    backdrop-filter: blur(20px);
-    position: absolute;
-    width: 100%;
-    top: 80px;
-    left: 0px;
-    height: 0vh;
-    transition: all 2s ease;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    background-color: rgba(22, 21, 21, 0.979);
-    padding: 0px;
-  }
+  /*.list-nav {*/
+  /*  backdrop-filter: blur(20px);*/
+  /*  position: absolute;*/
+  /*  width: 100%;*/
+  /*  top: 80px;*/
+  /*  left: 0;*/
+  /*  height: 0;*/
+  /*  transition: all 2s ease;*/
+  /*  display: none;*/
+  /*  justify-content: center;*/
+  /*  align-items: center;*/
+  /*  text-decoration: none;*/
+  /*  background-color: rgba(22, 21, 21, 0.979);*/
+  /*  padding: 0;*/
+  /*}*/
 
   .list-nav ul {
     display: flex;
@@ -2052,8 +2053,8 @@ footer {
     align-items: center;
     gap: 10px;
     list-style-type: none;
-    padding: 0px;
-    width: 5rem;
+    padding: 0;
+    /*width: 5rem;*/
     width: 100%;
   }
   .list-nav > ul > li > a {
@@ -2070,7 +2071,7 @@ footer {
   }
   @keyframes nav_anim1 {
     from {
-      height: 0vh;
+      height: 0;
       opacity: 0;
     }
     to {
@@ -2091,7 +2092,7 @@ footer {
       opacity: 1;
     }
     to {
-      height: 0vh;
+      height: 0;
       opacity: 0;
     }
   }
@@ -2110,7 +2111,7 @@ footer {
     font-size: 3rem;
     font-family: "Cinzel", serif;
     font-weight: normal;
-    margin-left: 0rem;
+    margin-left: 0;
     border: solid 1px;
   }
   #left_arrow-main {
@@ -2148,7 +2149,7 @@ footer {
     height: auto;
   }
   #title-museum_landing-page {
-    margin-left: 0rem;
+    margin-left: 0;
     margin-top: 5rem;
     position: relative;
   }
@@ -2170,8 +2171,8 @@ footer {
   }
   .grid-main-img {
     display: flex;
-    margin-right: 0em;
-    margin: 0px;
+    /*margin-right: 0em;*/
+    margin: 0;
   }
 
   /*firstpage Landing Page--------------*/
@@ -2377,7 +2378,7 @@ footer {
     height: 100%;
     width: 100%;
     padding: 10px;
-    margin-right: 0px;
+    margin-right: 0;
   }
   .info-sub h2 {
     font-size: 4rem;

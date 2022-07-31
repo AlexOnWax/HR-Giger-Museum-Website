@@ -2,7 +2,6 @@
 
 const formulaire = document.querySelector("form");
 const inputs = document.querySelectorAll(".input");
-const formBtn = document.querySelector("form > button");
 const errors = document.querySelectorAll(".invisible");
 
 // Validation du formulaire de connexion au Dashboard
@@ -36,7 +35,7 @@ function formValidation() {
       })
         .then((response) => response.json())
         .then((response) => {
-          if (response[0] == false) {
+          if (response[0] === false) {
             console.log("ERROR");
           } else {// permet la redirection si ok
             window.location.assign("page_dashboard_mailing_list.php");

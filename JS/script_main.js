@@ -167,87 +167,92 @@ gMain.addEventListener("click", () => {
   cont.scrollLeft -= scrollSize;
 });
 // carrousel version Desktop
-nbr = 5;
-p = 0;
-const container = document.getElementById("container");
-const g = document.getElementById("g");
-const d = document.getElementById("d");
-container.style.width = 800 * nbr + "px";
-for (i = 1; i <= nbr; i++) {
-  div = document.createElement("div");
-  div.className = "photo";
-  div.style.backgroundImage = "url('img/carrousel/carr" + i + ".webp')";
-  container.appendChild(div);
-}
-afficherMasquer();
-g.onclick = function () {
-  if (p > -nbr + 1) {
-    p--;
-    container.style.transform = "translate(" + p * 800 + "px)";
-    container.style.transition = "all 0.5s ease";
-    afficherMasquer();
+if(scrollSize >= 1000) {
+  nbr = 5;
+  p = 0;
+  const container = document.getElementById("container");
+  const g = document.getElementById("g");
+  const d = document.getElementById("d");
+  container.style.width = 800 * nbr + "px";
+  for (i = 1; i <= nbr; i++) {
+    div = document.createElement("div");
+    div.className = "photo";
+    div.style.backgroundImage = "url('img/carrousel/carr" + i + ".webp')";
+    container.appendChild(div);
   }
-  d.onclick = function () {
-    if (p < 0) {
-      p++;
+  afficherMasquer();
+  g.onclick = function () {
+    if (p > -nbr + 1) {
+      p--;
       container.style.transform = "translate(" + p * 800 + "px)";
       container.style.transition = "all 0.5s ease";
       afficherMasquer();
     }
+    d.onclick = function () {
+      if (p < 0) {
+        p++;
+        container.style.transform = "translate(" + p * 800 + "px)";
+        container.style.transition = "all 0.5s ease";
+        afficherMasquer();
+      }
+    };
   };
-};
-function afficherMasquer() {
-  if (p === -nbr + 1) {
-    g.style.visibility = "hidden";
-  } else {
-    g.style.visibility = "visible";
+
+  function afficherMasquer() {
+    if (p === -nbr + 1) {
+      g.style.visibility = "hidden";
+    } else {
+      g.style.visibility = "visible";
+    }
+    if (p === 0) {
+      d.style.visibility = "hidden";
+    } else {
+      d.style.visibility = "visible";
+    }
   }
-  if (p === 0) {
-    d.style.visibility = "hidden";
-  } else {
-    d.style.visibility = "visible";
-  }
-}
+}else {
 // carrousel du responsive mobile
-nbrR = 5;
-pR = 0;
-const containerResponsvive = document.getElementById("container-responsive");
-const gR = document.getElementById("g-responsive");
-const dR = document.getElementById("d-responsive");
-containerResponsvive.style.width = 370 * nbrR + "px";
-for (i = 1; i <= nbr; i++) {
-  divR = document.createElement("div");
-  divR.className = "photo-responsive";
-  divR.style.backgroundImage = "url('img/carrouselR/carrR" + i + ".webp')";
-  containerResponsvive.appendChild(divR);
-}
-afficherMasquerR();
-gR.onclick = function () {
-  if (pR > -nbrR + 1) {
-    pR--;
-    containerResponsvive.style.transform = "translate(" + pR * 370 + "px)";
-    containerResponsvive.style.transition = "all 0.5s ease";
-    afficherMasquerR();
+  nbrR = 5;
+  pR = 0;
+  const containerResponsive = document.getElementById("container-responsive");
+  const gR = document.getElementById("g-responsive");
+  const dR = document.getElementById("d-responsive");
+  containerResponsive.style.width = 370 * nbrR + "px";
+  for (i = 1; i <= nbrR; i++) {
+    divR = document.createElement("div");
+    divR.className = "photo-responsive";
+    divR.style.backgroundImage = "url('img/carrouselR/carrR" + i + ".webp')";
+    containerResponsive.appendChild(divR);
   }
-  dR.onclick = function () {
-    if (pR < 0) {
-      pR++;
-      containerResponsvive.style.transform = "translate(" + pR * 370 + "px)";
-      containerResponsvive.style.transition = "all 0.5s ease";
+  afficherMasquerR();
+  gR.onclick = function () {
+    if (pR > -nbrR + 1) {
+      pR--;
+      containerResponsive.style.transform = "translate(" + pR * 370 + "px)";
+      containerResponsive.style.transition = "all 0.5s ease";
       afficherMasquerR();
     }
+    dR.onclick = function () {
+      if (pR < 0) {
+        pR++;
+        containerResponsive.style.transform = "translate(" + pR * 370 + "px)";
+        containerResponsive.style.transition = "all 0.5s ease";
+        afficherMasquerR();
+      }
+    };
   };
-};
-function afficherMasquerR() {
-  if (pR === -nbrR + 1) {
-    gR.style.visibility = "hidden";
-  } else {
-    gR.style.visibility = "visible";
-  }
-  if (pR === 0) {
-    dR.style.visibility = "hidden";
-  } else {
-    dR.style.visibility = "visible";
+
+  function afficherMasquerR() {
+    if (pR === -nbrR + 1) {
+      gR.style.visibility = "hidden";
+    } else {
+      gR.style.visibility = "visible";
+    }
+    if (pR === 0) {
+      dR.style.visibility = "hidden";
+    } else {
+      dR.style.visibility = "visible";
+    }
   }
 }
 //Bouton switch langue

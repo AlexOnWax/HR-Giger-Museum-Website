@@ -23,7 +23,7 @@ function listMail(a, b) {
       return response.json();
     })
     .then((data) => {
-      for (i = 0; i < data.length; i++) {
+      for (let i = 0; i < data.length; i++) {
         //Creations du template afin de creer le tableau
         let template = document.querySelector("#mailList");
         let tbody = document.querySelector("tbody");

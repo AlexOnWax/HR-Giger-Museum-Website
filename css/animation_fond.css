@@ -8,7 +8,7 @@
 }
 .mooving-rod {
     position: absolute;
-    top: 0px;
+    top: 0;
     left: -100px;
     width: 5px;
     height: 100vh;

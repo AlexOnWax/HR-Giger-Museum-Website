@@ -22,8 +22,8 @@ if(!isset($_SESSION['login'])){
 <body>
 
     <header>
-<h3>Hr.GIGER MUSEUM</h2>
-<h2>Newletter Mailing list</h3>
+<h3>Hr.GIGER MUSEUM</h3>
+<h3>Newletter Mailing list</h3>
 
 <div id="div_header">
 
@@ -38,8 +38,10 @@ if(!isset($_SESSION['login'])){
             <form id="form" novalidate>
 
 
+                <label>
                     <input type="search" name="search">
-                    <button id="rechercher">Rechercher</button>
+                </label>
+                <button id="rechercher">Rechercher</button>
 
 
                     <button class="refresh"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,13 +68,13 @@ if(!isset($_SESSION['login'])){
                 <table>
 
                     <thead>
-                       <th width="40%">Mail<svg id="order_mail" data_value="order_mail" width="10" height="10" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                       <th>Mail<svg id="order_mail" data_value="order_mail" width="10" height="10" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8.75567 16.4797C9.53267 17.6882 11.4087 17.6882 12.1857 16.4797L20.6537 3.29981C21.4537 2.05494 20.4937 0.471077 18.9387 0.471077H2.00267C0.448671 0.471077 -0.511329 2.05494 0.287671 3.29981L8.75567 16.4797Z" fill="#F8F8F8"/>
                         </svg></th>
-                       <th width="40%" class="thToHide">Subscribe<svg id="order_date" data_value="order_date" width="10" height="10" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                       <th class="thToHide">Subscribe<svg id="order_date" data_value="order_date" width="10" height="10" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8.75567 16.4797C9.53267 17.6882 11.4087 17.6882 12.1857 16.4797L20.6537 3.29981C21.4537 2.05494 20.4937 0.471077 18.9387 0.471077H2.00267C0.448671 0.471077 -0.511329 2.05494 0.287671 3.29981L8.75567 16.4797Z" fill="#F8F8F8"/>
                         </svg></th>
-                       <th width="20%">Unsubscribe</th>
+                       <th>Unsubscribe</th>
                     </thead>
                     <tbody id="tableauSelection">
                     
@@ -117,6 +119,6 @@ if(!isset($_SESSION['login'])){
 
 
         </div>
-    </div>
+
 </body>
 </html>
