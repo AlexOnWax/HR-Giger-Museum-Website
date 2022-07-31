@@ -80,8 +80,7 @@ burgerMenu.addEventListener("click", () => {
     //  x.preventDefault();
     cont.scrollLeft += x.deltaY * 20;
 
-  });
-
+  },{passive: true})
 /*NavBar reactive --------------------------------------------*/
 
 const sections = document.querySelectorAll(".page");
