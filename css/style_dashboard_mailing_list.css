@@ -3,12 +3,12 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
   background-color: #101729;
   color: #fff;
   font-family: "Lato", sans-serif;
   width: 100vw;
   height: 100vh;
-  padding: 0.5vw;
 }
 @media screen and (max-width: 575.98px) {
   body {
@@ -129,7 +129,6 @@ body {
   width: 25vw;
   border-radius: 3px;
   padding: 4px;
-  border: none;
   background: rgb(255, 255, 255) no-repeat right 10px center;
   border: solid 1px rgb(94, 85, 85);
 }
@@ -256,7 +255,7 @@ header h3 {
 }
 
 button {
-  margin-top: 0px;
+  margin-top: 0;
   background-color: rgb(64, 78, 95);
   border: none;
   border-radius: 5px;
@@ -287,6 +286,9 @@ button:hover {
 }
 .element_principal .tableau #p_nbr {
   padding: 10px;
+}
+.element_principal .tableau .td0 {
+  padding-left: 2vw;
 }
 @media screen and (max-width: 575.98px) {
   .element_principal .tableau .td1 {

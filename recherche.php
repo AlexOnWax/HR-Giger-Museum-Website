@@ -31,11 +31,10 @@ $dbnl->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $sql=$dbnl->prepare("SELECT * FROM Mail WHERE email LIKE :recherche");
 $sql->bindValue(':recherche','%'.$recherche.'%',PDO::PARAM_STR);//Ajoute securité précise le type de donné attendu
 $sql->execute();	
-$recherche = $sql->fetchAll((PDO::FETCH_ASSOC));
+$recherche = $sql->fetchAll(PDO::FETCH_ASSOC);//creer un tableau associatif
 print json_encode($recherche);
 }catch(PDOException $e){
     echo "Erreur :" . $e;
 }
 }
 
-?>

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Connexion to the dashboard" />
     <title>Document</title>
     <link rel="stylesheet" href="css/style_connection_backoffice.css">
     <script src="JS/script_connection_dashboard_ajax.js" defer></script>
@@ -30,7 +31,7 @@
             <label for="Password"></label><input name="mdp" type="password" class="input" id="Password" required placeholder="Password">
             <div class="invisible"></div>
             </div>
-            <button id="btn" type="submit" name="submit" href="dashboard_mailing_list.html">Sign In</button>
+            <button id="btn" type="submit" name="submit">Sign In</button>
     </form>
 
 

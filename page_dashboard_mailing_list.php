@@ -15,6 +15,8 @@ if(!isset($_SESSION['login'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard" />
+
     <title>Document</title>
     <link rel="stylesheet" href="css/style_dashboard_mailing_list.css">
     <script src="JS/script_liste_mail_ajax.js" defer></script>
@@ -38,19 +40,19 @@ if(!isset($_SESSION['login'])){
             <form id="form" novalidate>
 
 
-                <label>
-                    <input type="search" name="search">
+                <label for="search">
+                    <input type="search" id="search" name="search">
                 </label>
-                <button id="rechercher">Rechercher</button>
+                <button id="rechercher" aria-label="Rechercher">Rechercher</button>
 
 
-                    <button class="refresh"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <button class="refresh" aria-label="Remove Filter"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8.414 0.414001L7 1.828L8.172 3H4C3.73478 3 3.48043 3.10536 3.29289 3.29289C3.10536 3.48043 3 3.73478 3 4V6.59C3 7.113 3.213 7.627 3.583 7.997L9 13.414V21C9.0002 21.1704 9.04387 21.3379 9.1269 21.4867C9.20992 21.6354 9.32955 21.7605 9.47444 21.8502C9.61934 21.9398 9.78471 21.9909 9.9549 21.9988C10.1251 22.0066 10.2945 21.9709 10.447 21.895L14.447 19.895C14.786 19.725 15 19.379 15 19V13.414L16.793 11.621L19.728 14.556L21.142 13.142L8.414 0.414001ZM15.379 10.207L13.293 12.293C13.2 12.3857 13.1262 12.4959 13.0759 12.6172C13.0256 12.7386 12.9998 12.8687 13 13V18.382L11 19.382V13C11.0002 12.8687 10.9744 12.7386 10.9241 12.6172C10.8738 12.4959 10.8 12.3857 10.707 12.293L5 6.59V5H10.172L15.379 10.207V10.207ZM20 3H13.828L15.828 5H19.001L19.003 6.583L18.207 7.379L19.621 8.793L20.417 7.997C20.787 7.627 21 7.113 21 6.59V4C21 3.73478 20.8946 3.48043 20.7071 3.29289C20.5196 3.10536 20.2652 3 20 3V3Z" fill="#F8F8F8"/>
                         </svg></button>
 
 
             </form>
-            <a id="csv" href='export_csv.php'><button id="button_csv"><svg  width="24" height="24" viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
+            <a id="csv" href='export_csv.php'><button id="button_csv" aria-label="csv"><svg  width="24" height="24" viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15.959 20.046H4.00001V4.004H10.979V8.984H15.959V10H18.01V8.014L15.96 5.962L14 4.004L12.01 2.014H4.01001C3.48107 2.01585 2.97447 2.22748 2.60138 2.60244C2.2283 2.9774 2.01921 3.48505 2.02001 4.014L2.01001 20.014C2.00921 20.5429 2.2183 21.0506 2.59138 21.4256C2.96447 21.8005 3.47107 22.0121 4.00001 22.014H18.01V20.014L15.959 20.046ZM21.26 18.014L23.01 12.014H21.51L20.51 15.444L19.51 12.014H18.01L19.76 18.014H21.26Z" fill=""/>
                         <path d="M10.01 12.014H7.01001C6.74504 12.0148 6.49114 12.1204 6.30378 12.3078C6.11641 12.4951 6.0108 12.749 6.01001 13.014V17.014C6.0108 17.279 6.11641 17.5329 6.30378 17.7202C6.49114 17.9076 6.74504 18.0132 7.01001 18.014H10.01C10.275 18.0132 10.5289 17.9076 10.7162 17.7202C10.9036 17.5329 11.0092 17.279 11.01 17.014V16.014H9.51001V16.514H7.51001V13.514H9.51001V14.014H11.01V13.014C11.0092 12.749 10.9036 12.4951 10.7162 12.3078C10.5289 12.1204 10.275 12.0148 10.01 12.014ZM17.01 13.52V12.014H13.01C12.7448 12.014 12.4904 12.1194 12.3029 12.3069C12.1154 12.4944 12.01 12.7488 12.01 13.014V14.771C12.01 15.0362 12.1154 15.2906 12.3029 15.4781C12.4904 15.6656 12.7448 15.771 13.01 15.771H15.52V16.514H12.01V18.021H16.01C16.2752 18.021 16.5296 17.9156 16.7171 17.7281C16.9047 17.5406 17.01 17.2862 17.01 17.021V15.264C17.01 14.9988 16.9047 14.7444 16.7171 14.5569C16.5296 14.3694 16.2752 14.264 16.01 14.264H13.5V13.521L17.01 13.52Z" fill=""/>
                     </svg></button></a>
@@ -82,7 +84,7 @@ if(!isset($_SESSION['login'])){
 
 
                 </table>
-                <button id="show_more">Show more</button><p id="p_nbr"><span id="actual_liste"></span>/<span id="total_liste"></span></p>
+                <button id="show_more" aria-label="Show more">Show more</button><p id="p_nbr"><span id="actual_liste"></span>/<span id="total_liste"></span></p>
 
 
 
@@ -104,8 +106,8 @@ if(!isset($_SESSION['login'])){
                         <div id="div_confirmation">
                             <p id="p_conf">Voulez-vous vraiment supprimer <span id="span_mail"></span>?</p>
                             <div id="div_button">
-                                <button id="button_yes">OUI</button>
-                                <button id="button_no">NON</button>
+                                <button id="button_yes" aria-label="oui">OUI</button>
+                                <button id="button_no" aria-label="non">NON</button>
                             </div>
                         </div>
 

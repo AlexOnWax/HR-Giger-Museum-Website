@@ -86,6 +86,7 @@ burgerMenu.addEventListener("click", () => {
 const sections = document.querySelectorAll(".page");
 const sectionsArr = Array.from(sections);
 const navItems = document.querySelectorAll(".list-nav a");
+if(scrollSize >= 1000) {
 // let i = 0;
 function activateNavByIndex(index) {
   const currentActive = document.querySelectorAll(".active-card");
@@ -95,7 +96,7 @@ function activateNavByIndex(index) {
   }
   navItems[index].classList.add("active-card");
 }
-
+}
 const intersectionCallback = (x) => {
   if (x[0].intersectionRatio > 0.25) {
     activateNavByIndex(sectionsArr.indexOf(x[0].target));
@@ -166,14 +167,16 @@ gMain.addEventListener("click", () => {
   cont.scrollLeft -= scrollSize;
 });
 // carrousel version Desktop
-if(scrollSize >= 1000) {
+let divR;
+let div;
+if (scrollSize >= 1000) {
   nbr = 5;
   p = 0;
   const container = document.getElementById("container");
   const g = document.getElementById("g");
   const d = document.getElementById("d");
   container.style.width = 800 * nbr + "px";
-  for (i = 1; i <= nbr; i++) {
+  for (let i = 1; i <= nbr; i++) {
     div = document.createElement("div");
     div.className = "photo";
     div.style.backgroundImage = "url('img/carrousel/carr" + i + ".webp')";
@@ -209,7 +212,7 @@ if(scrollSize >= 1000) {
       d.style.visibility = "visible";
     }
   }
-}else {
+} else {
 // carrousel du responsive mobile
   nbrR = 5;
   pR = 0;
@@ -217,7 +220,7 @@ if(scrollSize >= 1000) {
   const gR = document.getElementById("g-responsive");
   const dR = document.getElementById("d-responsive");
   containerResponsive.style.width = 370 * nbrR + "px";
-  for (i = 1; i <= nbrR; i++) {
+  for (let i = 1; i <= nbrR; i++) {
     divR = document.createElement("div");
     divR.className = "photo-responsive";
     divR.style.backgroundImage = "url('img/carrouselR/carrR" + i + ".webp')";

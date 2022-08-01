@@ -2,7 +2,7 @@
 @import "colors";
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300&display=swap");
 @mixin buttonB {
-  margin-top: 0px;
+  margin-top: 0;
   background-color: rgb(64, 78, 95);
   border: none;
   border-radius: 5px;
@@ -15,17 +15,17 @@
   }
 }
 
-
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
   background-color: $colorPrimaire;
   color: #fff;
   font-family: "Lato", sans-serif;
   width: 100vw;
   height: 100vh;
-  padding: 0.5vw;
+
   @media screen and (max-width: 575.98px) {
   font-size: $fontTaille*0.9;
   }
@@ -150,7 +150,7 @@ gap: 15px;
     width: 25vw;
     border-radius: 3px;
     padding: 4px;
-    border: none;
+
     background: rgb(255, 255, 255) no-repeat right 10px center;
     border: solid 1px rgb(94, 85, 85);
     @media screen and (max-width: 575.98px) {
@@ -311,8 +311,12 @@ button {
     flex-direction: column;
     //justify-content: center;
     align-items: center;
+
     #p_nbr {
       padding: 10px;
+    }
+    .td0 {
+      padding-left: 2vw;
     }
     .td1{
       @media screen and (max-width: 575.98px) {
@@ -323,6 +327,7 @@ button {
       padding: 10px;
     }
     table {
+
 
       width: 100%;
      // padding-left: 11%;
@@ -339,7 +344,6 @@ button {
           text-align: start;
         }
         .thToHide{
-          //#todo
           @media screen and (max-width: 575.98px) {
             display: none;
           }
