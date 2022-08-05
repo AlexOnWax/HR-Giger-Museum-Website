@@ -1,27 +1,20 @@
 <?php
 session_start();
-require __DIR__.'/vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-$servername=$_ENV['servername'];
-$dbName=$_ENV['dbName'];
-$user=$_ENV['username'];
-$pass=$_ENV['password'];
+require_once('connection_databases.php');
 
 if (isset($_POST['login']) && isset($_POST['mdp']) && !empty($_POST['login']) && !empty($_POST['mdp'])){
 $login=$_POST['login'];
 $passAdmin=$_POST['mdp'];
 	try{
 	$pdo = new PDO('mysql:host='.$servername.';dbname='.$dbName, $user, $pass);
-	$result = $pdo->prepare('SELECT * FROM Users WHERE Login= :login AND Password= :password');
+	$result = $pdo->prepare('SELECT login FROM Users WHERE Login= :login AND Password= :password');
 	$result->bindParam(':login', $login);
 	$result->bindParam(':password', $passAdmin);
 	$result->execute();
 		if($result->rowCount() == 1 ){//si la requete correspond a au moin une ligne du tableau 
 			$_SESSION['login'] = $login;
 			//$then = $result->fetch(PDO::FETCH_ASSOC);
-			$response=array("response"=>"connecte",$bool=true);
+            $response=array("response"=>"connecte",$bool=true);
 			echo json_encode($response);
 		}else{
 			$response=array("response"=>"Non connecte",$bool=false);

@@ -138,7 +138,7 @@ gap: 15px;
     flex-direction: row;
     align-items: center;
 
-    gap: 1.5rem;
+
 
 
 
@@ -148,7 +148,7 @@ gap: 15px;
 
   input {
     width: 25vw;
-    border-radius: 3px;
+    border-radius: 3px 0 0 3px;
     padding: 4px;
 
     background: rgb(255, 255, 255) no-repeat right 10px center;
@@ -158,10 +158,14 @@ gap: 15px;
     }
   }
   #rechercher {
+    height: 25px;
+    padding: 0 5px 0 5px;
+    border-radius: 0 5px 5px  0 ;
     @media screen and (max-width: 575.98px) {
-width:auto ;
+
+  width:auto ;
       height: 25px;
-      padding: 0 15px 0 15px;
+      padding: 0 5px 5px 5px ;
     }
 
 }

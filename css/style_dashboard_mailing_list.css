@@ -123,11 +123,10 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1.5rem;
 }
 #top_menu input {
   width: 25vw;
-  border-radius: 3px;
+  border-radius: 3px 0 0 3px;
   padding: 4px;
   background: rgb(255, 255, 255) no-repeat right 10px center;
   border: solid 1px rgb(94, 85, 85);
@@ -137,11 +136,16 @@ body {
     width: 43vw;
   }
 }
+#top_menu #rechercher {
+  height: 25px;
+  padding: 0 5px 0 5px;
+  border-radius: 0 5px 5px 0;
+}
 @media screen and (max-width: 575.98px) {
   #top_menu #rechercher {
     width: auto;
     height: 25px;
-    padding: 0 15px 0 15px;
+    padding: 0 5px 5px 5px;
   }
 }
 #top_menu .refresh {

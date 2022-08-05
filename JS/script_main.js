@@ -5,7 +5,7 @@ const listHeader = document.querySelector(".list-nav");
 
 
 let scrollSize = body.clientWidth;
-console.log(scrollSize);
+
 
 
 

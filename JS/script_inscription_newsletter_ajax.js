@@ -28,7 +28,7 @@ function formValidation() {
     }).then((response) =>{
 
     let codeError = response.headers.get("error");
-        console.log(codeError)
+
 
         if(codeError == "23000"){
             const message = document.createTextNode(`This email already exist`);
@@ -46,14 +46,6 @@ function formValidation() {
                 goodMessage.replaceChildren(message);
                 goodMessage.classList.add("help");
                 input.classList.add("good");
-
-
-      // if (data) {
-      //   const message = document.createTextNode(`Email already in our database`);
-      //   error.replaceChildren(message);
-      //   error.classList.add("help");
-      //   input.classList.add("error");
-      // }
 
   }
 })}}

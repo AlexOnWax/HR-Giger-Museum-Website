@@ -8,14 +8,7 @@ if(!isset($_SESSION['login'])){
 
 
 
-require __DIR__ .'/vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-$servername=$_ENV['servername'];
-$dbName=$_ENV['dbName'];
-$user=$_ENV['username'];
-$pass=$_ENV['password'];
+require_once('connection_databases.php');
 
 
 
@@ -28,7 +21,7 @@ $recherche = htmlspecialchars($_POST['search']);
 try{
 $dbnl = new PDO('mysql:host='.$servername.';dbname='.$dbName, $user, $pass);
 $dbnl->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$sql=$dbnl->prepare("SELECT * FROM Mail WHERE email LIKE :recherche");
+    $sql=$dbnl->prepare("SELECT idNewsletter,email,date_sub FROM Mail WHERE email LIKE :recherche");
 $sql->bindValue(':recherche','%'.$recherche.'%',PDO::PARAM_STR);//Ajoute securité précise le type de donné attendu
 $sql->execute();	
 $recherche = $sql->fetchAll(PDO::FETCH_ASSOC);//creer un tableau associatif

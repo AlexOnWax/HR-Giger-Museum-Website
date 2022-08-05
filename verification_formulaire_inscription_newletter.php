@@ -1,13 +1,6 @@
 <?php
 
-require __DIR__ .'/vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-$servername=$_ENV['servername'];
-$dbName=$_ENV['dbName'];
-$user=$_ENV['username'];
-$pass=$_ENV['password'];
+require_once('connection_databases.php');
 
 if(!empty($_POST['email']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
     $email = $_POST['email'];

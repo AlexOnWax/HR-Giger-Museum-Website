@@ -36,7 +36,7 @@ function formValidation() {
         .then((response) => response.json())
         .then((response) => {
           if (response[0] === false) {
-            console.log("ERROR");
+
           } else {// permet la redirection si ok
             window.location.assign("page_dashboard_mailing_list.php");
           }

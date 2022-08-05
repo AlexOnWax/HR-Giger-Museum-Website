@@ -25,7 +25,7 @@ if(!isset($_SESSION['login'])){
 
     <header>
 <h3>Hr.GIGER MUSEUM</h3>
-<h3>Newletter Mailing list</h3>
+<h3>Newsletter Mailing list</h3>
 
 <div id="div_header">
 

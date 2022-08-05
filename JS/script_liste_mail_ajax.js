@@ -9,10 +9,10 @@ const buttonRefresh = document.querySelector(".refresh");
 const body = document.querySelector("body");
 let nbrShowMore = 0;
 
-function listMail(a, b) {
-  fetch(a, {
+function listMail(php, formdata) {
+  fetch(php, {
     method: "POST",
-    body: b,
+    body: formdata,
   })
     .then((response) => {
       let test = response.headers.get("nbr");
@@ -42,9 +42,9 @@ function listMail(a, b) {
     });
 }
 //Fonction qui affiche la liste des mails de base
-function listOnLoad(a) {
+function listOnLoad(nbr) {
   const load = new FormData();
-  load.append("value", a);
+  load.append("value", nbr);
   listMail(`list_mail.php`, load);
 }
 window.addEventListener("DOMContentLoaded", () => {
@@ -53,9 +53,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-function templateConfirmation(a) {
+function templateConfirmation(target) {
   //template de création de la div de confirmation de suppression
-  const elementToSuppr = a.currentTarget.dataset.suppr;
+  const elementToSuppr = target.currentTarget.dataset.suppr;
   const body = document.querySelector("body");
   let templateConf = document.querySelector("#confirmation");
   let cloneConf = document.importNode(templateConf.content, true);
@@ -66,8 +66,8 @@ function templateConfirmation(a) {
   spanMail.appendChild(spanText);
 }
 
-function suppr(a) {
-  a.addEventListener("click", (e) => {
+function suppr(element) {
+  element.addEventListener("click", (e) => {
     //quand le click est entendu, je créé une demande de confirmation
     templateConfirmation(e);
     const elementClicked = e.currentTarget;
@@ -100,7 +100,7 @@ function suppr(a) {
         });
       document.getElementById("div_confirmation").remove(); //puis je remove la div de confirmation de suppression
       document.getElementById("container_confirmation_flex").remove();
-      a.parentNode.remove();
+      element.parentNode.remove();
     });
     document.getElementById("button_no").addEventListener("click", () => {
       //si je choisis de cliquer sur non,le toast affirme l'annulation
@@ -158,39 +158,39 @@ btnOrderDate.addEventListener("click", function () {
   }
 });
 
-function trieAlpha(a) {
+function trieAlpha(ligne) {
   //trie à bulle
   let lignes = document.querySelectorAll(".lignes");
   const tBody = document.querySelector("tbody");
   for (let i = 0; i < lignes.length; i++) {
-    let email = lignes[i].querySelector(`.td${a}`).dataset.value;
+    let email = lignes[i].querySelector(`.td${ligne}`).dataset.value;
 
     for (let k = i + 1; k < lignes.length; k++) {
-      let emailK = lignes[k].querySelector(`.td${a}`).dataset.value;
+      let emailK = lignes[k].querySelector(`.td${ligne}`).dataset.value;
 
       if (email > emailK) {
         tBody.insertBefore(lignes[k], lignes[i]);
         lignes = document.querySelectorAll(".lignes");
-        email = lignes[i].querySelector(`.td${a}`).dataset.value;
+        email = lignes[i].querySelector(`.td${ligne}`).dataset.value;
       }
     }
   }
 }
 
-function trieAlphaRevers(a) {
+function trieAlphaRevers(ligne) {
   //trie à bulle
   let lignes = document.querySelectorAll(".lignes");
   const tBody = document.querySelector("tbody");
   for (let i = 0; i < lignes.length; i++) {
-    let email = lignes[i].querySelector(`.td${a}`).dataset.value;
+    let email = lignes[i].querySelector(`.td${ligne}`).dataset.value;
 
     for (let k = i + 1; k < lignes.length; k++) {
-      let emailK = lignes[k].querySelector(`.td${a}`).dataset.value;
+      let emailK = lignes[k].querySelector(`.td${ligne}`).dataset.value;
 
       if (email < emailK) {
         tBody.insertBefore(lignes[k], lignes[i]);
         lignes = document.querySelectorAll(".lignes");
-        email = lignes[i].querySelector(`.td${a}`).dataset.value;
+        email = lignes[i].querySelector(`.td${ligne}`).dataset.value;
       }
     }
   }
@@ -229,8 +229,8 @@ buttonRefresh.addEventListener('click',() => {
   window.location.reload();
 })
 
-function removeButtonShowMore(a, b) {
-  if (a.textContent === b.textContent) {
+function removeButtonShowMore(nb1, nb2) {
+  if (nb1.textContent === nb2.textContent) {
 
     btnShowMore.style.display = "none";
   }
