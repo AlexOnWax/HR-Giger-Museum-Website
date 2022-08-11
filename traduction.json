@@ -4,7 +4,7 @@
       "nav": {
           "1": "ACCUEIL",
           "2": "MUSÉE",
-          "3": "GALLERIE",
+          "3": "GALERIE",
           "4": "FILM",
           "5": "BIOGRAPHIE",
           "6": "CONTACT"
@@ -19,7 +19,7 @@
           "expo":  "Une exposition collective de Stanisky Grof Organisée par Nadia Honarchian et Claude Steiner, en collaboration avec Carmen Giger-Scheifele, l'exposition est une suite de l'exposition collective Psychonauten l en 2008, qui était en l'honneur d'Albert Hofmann, le découvreur du LSD." 
     },
        "PageGallery":{
-          "titrePage": "GALLERIE DE PHOTOS",
+          "titrePage": "GALERIE DE PHOTOS",
           "titre":"Galerie photos des dernières expositions"
     },
        "PageMovie":{
