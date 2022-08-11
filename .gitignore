@@ -1,4 +1,4 @@
-.env
+php/.env
 alex.env
 composer.lock
 vendor

@@ -22,7 +22,7 @@ function formValidation() {
   }else{
 
     const formData = new FormData(formulaireNewsletter);
-    fetch("verification_formulaire_inscription_newletter.php", {
+    fetch("php/verification_formulaire_inscription_newletter.php", {
       method: "POST",
       body: formData,
     }).then((response) =>{
