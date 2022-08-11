@@ -736,7 +736,7 @@ footer {
       opacity: 0;
     }
     to {
-      height: 48vh;
+      height:60vh;
       opacity: 1;
     }
   }
@@ -1188,7 +1188,7 @@ footer {
 
   @keyframes nav_anim2 {
     from {
-      height: 48vh;
+      height: 60vh;
       opacity: 1;
     }
     to {
