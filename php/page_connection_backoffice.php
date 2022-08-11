@@ -9,6 +9,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/style_connection_backoffice.css">
     <script src="../JS/script_connection_dashboard_ajax.js" defer></script>
+    <link rel="icon" type="image/webp" href="../img/bio_img.webp">
 </head>
 <body>
     <header>

@@ -20,6 +20,7 @@ if(!isset($_SESSION['login'])){
     <title>Document</title>
     <link rel="stylesheet" href="../css/style_dashboard_mailing_list.css">
     <script src="../JS/script_liste_mail_ajax.js" defer></script>
+    <link rel="icon" type="image/webp" href="../img/bio_img.webp">
 </head>
 <body>
 
