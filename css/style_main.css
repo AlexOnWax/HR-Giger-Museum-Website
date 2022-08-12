@@ -920,6 +920,7 @@ footer {
     align-items: center;
     height: auto;
     width: 100vw;
+    padding-bottom: 6vh;
   }
   .main-exhibition > h3 {
     font-family: "Play", sans-serif;;
@@ -1365,6 +1366,7 @@ footer {
     align-items: center;
     height: auto;
     width: 100vw;
+    padding-bottom: 6vh;
   }
   .main-exhibition > h3 {
     font-family: "Play", sans-serif;
@@ -1817,7 +1819,7 @@ footer {
     align-items: center;
     height: auto;
     width: 100vw;
-    padding-bottom: 5vh;
+    padding-bottom: 6vh;
   }
   .main-exhibition > h3 {
     font-family: "Play", sans-serif;
