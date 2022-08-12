@@ -11,7 +11,7 @@ let scrollSize = body.clientWidth;
 
   window.addEventListener("DOMContentLoaded", () => {
     // permet de lancer l'animation des le demmarage du site
-    if(scrollSize >= 1000) {
+
       const titleAnim = document.querySelector("#title-museum_landing-page");
       const animImg = document.querySelectorAll(".card");
       //on creer les parametres de la timeline (containair à animation)avec de bases l'option de pause
@@ -33,13 +33,7 @@ let scrollSize = body.clientWidth;
           );
 
       titletime.play(); //on actionne car on a mise pause avant
-    }else{
-      const rods= document.querySelectorAll('.les-rods');
-      rods.forEach((rod) => {
-//#todo a revoir pour enlever l'animation en mobile
-        rod.classList.add('hide');
-      })
-    }
+
   });
 
 
