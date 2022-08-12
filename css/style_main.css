@@ -1016,6 +1016,7 @@ footer {
   .main-sub iframe {
     width: 90vw;
     height: 80vh;
+    margin-bottom: 20vh;
   }
   .info-sub {
     display: flex;
@@ -1463,6 +1464,7 @@ footer {
   .main-sub iframe {
     width: 80vw;
     height: 80vh;
+    margin-bottom: 20vh;
   }
   .info-sub {
     display: flex;
@@ -1815,6 +1817,7 @@ footer {
     align-items: center;
     height: auto;
     width: 100vw;
+    padding-bottom: 5vh;
   }
   .main-exhibition > h3 {
     font-family: "Play", sans-serif;
@@ -1853,7 +1856,7 @@ footer {
   }
   .page-video .title-page {
     align-self: flex-start;
-    margin: 20px 20px 80px 20px;
+    margin: 20px 20px 40px 20px;
     font-size: 3rem;
     text-align: center;
   }
@@ -1915,6 +1918,7 @@ footer {
   .main-sub iframe {
     width: 80vw;
     height: 80vh;
+    margin-bottom: 20vh;
   }
   .info-sub {
     display: flex;
@@ -1971,6 +1975,7 @@ footer {
     justify-content: center;
     gap: 3rem;
   }
+
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
   /*body {*/
@@ -2359,6 +2364,7 @@ footer {
   .main-sub iframe {
     width: 80vw;
     height: 80vh;
+    margin-bottom: 20vh;
   }
   .info-sub {
     display: flex;
