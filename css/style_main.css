@@ -230,10 +230,10 @@ header li :hover {
   font-size: 20vh;
   font-weight: lighter;
   /*background-clip: text;*/
-  -webkit-background-clip: text;
+   -webkit-background-clip: text; 
   /*-moz-background-clip: text;*/
   -webkit-text-fill-color: transparent;
-  //-moz-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
   background-image: url(../img/gold2.webp);
   background-size: 100%;
 }
@@ -686,11 +686,7 @@ footer {
     margin-left: 1rem;
     padding-top: 1rem;
   }
-  .logo-title-header img {
-    /*width: 34px;*/
-    /*height: 66px;*/
-    /*margin-top: 13px;*/
-  }
+  
   .list-nav {
     display: none;
 
@@ -1079,12 +1075,7 @@ footer {
     gap: 3rem;
   }
 
-  .invisible.help {
-
-    margin-right: 0;
-  }
-
-
+  
 }
 
 
@@ -1135,11 +1126,7 @@ footer {
     margin-left: 1rem;
     padding-top: 1rem;
   }
-  .logo-title-header img {
-    /*width: 30px;*/
-    /*height: 60px;*/
-    /*margin-top: 13px;*/
-  }
+  
   .list-nav {
     display: none;
   }
@@ -1539,11 +1526,7 @@ footer {
     gap: 3rem;
   }
 
-  .invisible.help {
-    margin-right: 0;
-
-
-  }
+ 
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   /*body {*/
@@ -1592,11 +1575,7 @@ footer {
     margin-left: 1rem;
     padding-top: 1rem;
   }
-  .logo-title-header img {
-    /*width: 30px;*/
-    /*height: 60px;*/
-    /*margin-top: 13px;*/
-  }
+ 
   .list-nav {
     display: none;
   }
@@ -1998,11 +1977,7 @@ footer {
     justify-content: center;
     gap: 3rem;
   }
-  .invisible.help {
-    margin-right: 0;
 
-
-  }
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
   /*body {*/
@@ -2051,11 +2026,7 @@ footer {
     margin-left: 1rem;
     padding-top: 1rem;
   }
-  .logo-title-header img {
-    /*width: 30px;*/
-    /*height: 60px;*/
-    /*margin-top: 13px;*/
-  }
+  
   .list-nav {
     display: none;
   }
@@ -2494,25 +2465,27 @@ footer {
 /*validation du formulaire*/
 .invisible {
   color: hsl(0, 100%, 74%);
-  visibility: hidden;
-  margin-right: 55px;
+  display: none;
+
+
 }
 .invisible_good {
   color: hsl(134, 77%, 38%);
-  visibility: hidden;
+  display: none;
 }
 
 .help.invisible {
-  visibility: visible;
+  display: block;
   font-size: 20px;
 
 
 }
 .help.invisible_good {
-  visibility: visible;
+  display: block;
   font-size: 20px;
 
 }
+
 
 .error.input {
   border: solid 3px red;
