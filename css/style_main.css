@@ -635,6 +635,9 @@ footer {
 /*footer-----------------------*/
 
 @media (max-width: 575.98px) {
+
+
+
   body {
     box-sizing: border-box;
     margin: 0;
@@ -1075,7 +1078,16 @@ footer {
     justify-content: center;
     gap: 3rem;
   }
+
+  .invisible.help {
+
+    margin-right: 0;
+  }
+
+
 }
+
+
 @media (min-width: 576px) and (max-width: 767.98px) {
   /*body {*/
   /*  box-sizing: border-box;*/
@@ -1526,6 +1538,8 @@ footer {
     justify-content: center;
     gap: 3rem;
   }
+
+
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   /*body {*/
@@ -2473,6 +2487,7 @@ footer {
 .invisible {
   color: hsl(0, 100%, 74%);
   visibility: hidden;
+  margin-right: 55px;
 }
 .invisible_good {
   color: hsl(134, 77%, 38%);
@@ -2481,13 +2496,14 @@ footer {
 
 .help.invisible {
   visibility: visible;
-  text-align: left;
   font-size: 20px;
+
+
 }
 .help.invisible_good {
   visibility: visible;
-  text-align: left;
   font-size: 20px;
+
 }
 
 .error.input {
