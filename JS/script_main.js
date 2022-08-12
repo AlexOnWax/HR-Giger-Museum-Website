@@ -177,22 +177,24 @@ if (scrollSize >= 1000) {
     container.appendChild(div);
   }
   afficherMasquer();
-  g.onclick = function () {
+  g.addEventListener('click',function () {
     if (p > -nbr + 1) {
       p--;
       container.style.transform = "translate(" + p * 800 + "px)";
       container.style.transition = "all 0.5s ease";
       afficherMasquer();
     }
-    d.onclick = function () {
+  })
+
+  d.addEventListener('click',function () {
       if (p < 0) {
         p++;
         container.style.transform = "translate(" + p * 800 + "px)";
         container.style.transition = "all 0.5s ease";
         afficherMasquer();
       }
-    };
-  };
+    })
+
 
   function afficherMasquer() {
     if (p === -nbr + 1) {
@@ -221,22 +223,25 @@ if (scrollSize >= 1000) {
     containerResponsive.appendChild(divR);
   }
   afficherMasquerR();
-  gR.onclick = function () {
+
+  gR.addEventListener('click',function () {
+
     if (pR > -nbrR + 1) {
       pR--;
       containerResponsive.style.transform = "translate(" + pR * 370 + "px)";
       containerResponsive.style.transition = "all 0.5s ease";
       afficherMasquerR();
     }
-    dR.onclick = function () {
-      if (pR < 0) {
-        pR++;
-        containerResponsive.style.transform = "translate(" + pR * 370 + "px)";
-        containerResponsive.style.transition = "all 0.5s ease";
-        afficherMasquerR();
-      }
-    };
-  };
+  })
+    dR.addEventListener('click',function (){
+        if (pR < 0) {
+          pR++;
+          containerResponsive.style.transform = "translate(" + pR * 370 + "px)";
+          containerResponsive.style.transition = "all 0.5s ease";
+          afficherMasquerR();
+        }
+      });
+
 
   function afficherMasquerR() {
     if (pR === -nbrR + 1) {
