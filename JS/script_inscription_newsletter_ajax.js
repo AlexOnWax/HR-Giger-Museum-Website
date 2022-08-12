@@ -28,7 +28,8 @@ function formValidation() {
     }).then((response) =>{
 
     let codeError = response.headers.get("error");
-
+   console.log(response);
+    console.log(codeError);
 
         if(codeError == "23000"){
             const message = document.createTextNode(`This email already exist`);
