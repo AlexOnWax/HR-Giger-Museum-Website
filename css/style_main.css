@@ -1539,7 +1539,11 @@ footer {
     gap: 3rem;
   }
 
+  .invisible.help {
+    margin-right: 0;
 
+
+  }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   /*body {*/
@@ -1967,7 +1971,7 @@ footer {
     height: 10px;
   }
   #form-sub {
-    gap: 50px;
+    gap: 30px;
   }
   #btn {
     background-color: rgb(255, 255, 255);
@@ -1994,7 +1998,11 @@ footer {
     justify-content: center;
     gap: 3rem;
   }
+  .invisible.help {
+    margin-right: 0;
 
+
+  }
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
   /*body {*/
