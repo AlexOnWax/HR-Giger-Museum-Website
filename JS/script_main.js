@@ -80,19 +80,20 @@ burgerMenu.addEventListener("click", () => {
 const sections = document.querySelectorAll(".page");
 const sectionsArr = Array.from(sections);
 const navItems = document.querySelectorAll(".list-nav a");
-if(scrollSize >= 1000) {
+
 // let i = 0;
 function activateNavByIndex(index) {
   const currentActive = document.querySelectorAll(".active-card");
-
+  
   for (let i = currentActive.length - 1; i >= 0; i--) {
     currentActive[i].classList.remove("active-card");
   }
   navItems[index].classList.add("active-card");
+
 }
-}
+
 const intersectionCallback = (x) => {
-  if (x[0].intersectionRatio > 0.25) {
+  if (x[0].intersectionRatio > 0.25 && scrollSize >= 1000) {
     activateNavByIndex(sectionsArr.indexOf(x[0].target));
   }
 };
@@ -160,6 +161,7 @@ dMain.addEventListener("click", () => {
 gMain.addEventListener("click", () => {
   cont.scrollLeft -= scrollSize;
 });
+
 // carrousel version Desktop
 let divR;
 let div;
@@ -212,9 +214,9 @@ if (scrollSize >= 1000) {
 // carrousel du responsive mobile
   nbrR = 5;
   pR = 0;
-  const containerResponsive = document.getElementById("container-responsive");
-  const gR = document.getElementById("g-responsive");
-  const dR = document.getElementById("d-responsive");
+  const containerResponsive = document.querySelector("#container-responsive");
+  const gR = document.querySelector("#g-responsive");
+  const dR = document.querySelector("#d-responsive");
   containerResponsive.style.width = 370 * nbrR + "px";
   for (let i = 1; i <= nbrR; i++) {
     divR = document.createElement("div");
