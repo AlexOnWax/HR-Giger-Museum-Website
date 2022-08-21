@@ -379,9 +379,9 @@ header li :hover {
 #carrousel-responsive {
   /*carrousel*/
   display: none;
-  width: 370px;
+  width: 360px;
   height: 390px;
-  border: solid 0.25rem #fff;
+  /* border: solid 0.25rem #fff; */
   box-shadow: 0 0 0.875rem rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
@@ -790,8 +790,9 @@ footer {
   }
   .page-landing h1 {
     font-family: "Cinzel", serif;
-    font-size: 8rem;
+    font-size: 7rem;
     font-weight: normal;
+    text-align: center;
     background-image: url(../img/gold2.webp);
   }
   #main-title {
@@ -804,6 +805,7 @@ footer {
     height: auto;
   }
   #title-museum_landing-page {
+    width: 100vw;
     margin-left: 0;
     margin-top: 5rem;
     position: relative;
@@ -849,7 +851,7 @@ footer {
   }
   #grid-access {
     display: grid;
-    grid-template-columns: 390px;
+    grid-template-columns: 100vw;
     grid-template-rows: 200px 200px 200px 200px;
     justify-items: center;
     align-items: center;
@@ -877,7 +879,7 @@ footer {
   #img-museum {
     grid-area: 1/1/2/2;
     align-self: center;
-    width: 390px;
+    width: 100vw;
     height: 234px;
     /*width: 100vw;*/
   }
@@ -890,7 +892,7 @@ footer {
   #img-psy {
     align-self: center;
     grid-area: 3/1/4/2;
-    width: 390px;
+    width: 100vw;
     height: 234px;
     /*width: 100vw;*/
   }
@@ -989,7 +991,7 @@ footer {
     width: 100%;
   }
   .main-bio img {
-     /*width: 100vw; */
+     width: 100vw;
     margin-bottom: 40px;
   }
   .page-bio .title-page {
@@ -1750,7 +1752,7 @@ footer {
     grid-template-rows: 200px 200px;
     justify-items: center;
     align-items: center;
-    gap: 1rem;
+    gap: 6rem;
     padding: 0;
     font-size: 1rem;
   }
@@ -1774,7 +1776,7 @@ footer {
   #img-museum {
     grid-area: 1/1/2/2;
     align-self: center;
-    /*width: 50vw;*/
+    width: 45vw;
     /*height: 28vh;*/
   }
   .news-text-flex {
@@ -1786,7 +1788,7 @@ footer {
   #img-psy {
     align-self: center;
     grid-area: 1/2/2/3;
-    /*width: 50vw;*/
+    width: 45vw;
     /*height: 28vh;*/
   }
   #title-article-news {
@@ -1930,7 +1932,7 @@ footer {
     color: rgb(255, 255, 255);
     height: 100%;
     width: 100%;
-    padding: 10px;
+    padding: 0;
     margin-right: 0
   }
   .info-sub h2 {
