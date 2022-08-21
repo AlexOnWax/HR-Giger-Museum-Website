@@ -379,37 +379,34 @@ header li :hover {
 #carrousel-responsive {
   /*carrousel*/
   display: none;
-  width: 360px;
-  height: 390px;
-  /* border: solid 0.25rem #fff; */
-  box-shadow: 0 0 0.875rem rgba(0, 0, 0, 0.3);
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 9.375rem;
+ 
 }
 #container-responsive {
   /*carrousel*/
   width: 370px;
   height: 390px;
+  
 }
 .bouton-responsive {
   /*carrousel*/
   position: absolute;
   width: 3rem;
-  cursor: pointer;
   top: 50%;
+ 
 }
 #g-responsive {
   /*carrousel*/
   left: 0;
   opacity: 0.9;
   transition: all 0.3s ease;
+  
 }
 #d-responsive {
   /*carrousel*/
   right: 0;
   opacity: 0.9;
   transition: all 0.3s ease;
+  
 }
 #g-responsive:hover {
   /*carrousel*/
@@ -933,6 +930,13 @@ footer {
   #carrousel-responsive {
     display: block;
     margin-bottom: 0;
+    width: 360px;
+    height: 390px;
+    /* border: solid 0.25rem #fff; */
+    box-shadow: 0 0 0.875rem rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+  
   }
   #carrousel {
     /*carrousel*/
@@ -1379,6 +1383,13 @@ footer {
   #carrousel-responsive {
     display: block;
     margin-bottom: 0;
+    width: 360px;
+    height: 390px;
+    /* border: solid 0.25rem #fff; */
+    box-shadow: 0 0 0.875rem rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+   
   }
   #carrousel {
     /*carrousel*/
